@@ -1,0 +1,121 @@
+#container{
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-size:100% 100%;
+	background-image:url('../images/ironman.jpg');
+	overflow:hidden;
+}
+
+#window-top{
+	position:absolute;
+	top:0%;
+	width:100%;
+	height:49.5%;
+	background-color:#000;
+	opacity:0.85;
+	transition:top ease-in-out 2s;
+}
+
+#window-bottom{
+	position:absolute;
+	top:50.5%;
+	width:100%;
+	height:49.5%;
+	background-color:#fff;
+	opacity:0.85;
+	transition:top ease-in-out 2s;
+	text-align: center;
+  
+}
+
+#semicircle {
+     height: 100px;
+     width: 50px;
+     margin: -2.20% auto;
+     background-color: #91baf2;
+     -moz-border-radius: 100px 0 100px 100px;
+     -webkit-border-radius: 100px 0 0 100px;
+     -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.button {
+   border-top: 1px solid #010c12;
+   background: transparent;
+   /*background: -webkit-gradient(linear, left top, left bottom, from(#01060f), to(#2370a3));
+   background: -webkit-linear-gradient(top, #01060f, #2370a3);
+   background: -moz-linear-gradient(top, #01060f, #2370a3);
+   background: -ms-linear-gradient(top, #01060f, #2370a3);
+   background: -o-linear-gradient(top, #01060f, #2370a3);*/
+   padding: 9.5px 19px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #f7f4f7;
+   font-size: 14px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   
+   }
+.button:hover {
+   border-top-color: #062438;
+   background: #01060f;
+   background: -webkit-gradient(linear, left top, left bottom, from(#2370a3), to(#01060f));
+   background: -webkit-linear-gradient(top, #2370a3, #01060f);
+   background: -moz-linear-gradient(top, #2370a3, #01060f);
+   background: -ms-linear-gradient(top, #2370a3, #01060f);
+   background: -o-linear-gradient(top, #2370a3, #01060f);
+   color: #ebeaed;
+   }
+.button:active {
+   border-top-color: #e6edf2;
+   background: #e6edf2;
+   }
+
+#butt_links{
+  text-align: center;
+
+}
+
+/*
+#center-logo{
+	position:absolute;
+	width:8%;
+	height:16%;
+	margin-left: 46%;
+	top:42%;
+	border-radius:50%;
+	z-index:3;
+	background-image:URL('../images/light.png');
+	background-size:100% 100%;	
+	transition:top ease-in-out 2s;
+}
+
+#center-logo-back{
+	position:absolute;
+	width:10%;
+	height:20%;
+	margin-left:45%;
+	top:40%;
+	border-radius:50%;
+	transition:top ease-in-out 2s;	
+	background-color:#888;
+}*/
+
+#center-loading-line{
+	position:absolute;
+	width:100%;
+	height:1%;
+	top:49.5%;
+	z-index:2;
+	background-color:#888;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Festember14</title>
+
+	<script src="jquery.js"></script>	
+	<script src="src/easeljs/events/EventDispatcher.js"></script>
+    <script src="src/preloadjs/AbstractLoader.js"></script>
+    <script src="src/preloadjs/LoadQueue.js"></script>
+    <script src="src/preloadjs/TagLoader.js"></script>
+    <script src="src/preloadjs/XHRLoader.js"></script>
+    <script src="src/myscripts/slider_script.js"></script>
+
+	<link href="css/normalize.css" type="text/css" rel="stylesheet" />
+	<link href="css/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+<div id="container">
+	
+	<div id="window-top">
+	<img src="images/light.png" style="position:absolute;width:8.3%;height:32%;margin-left: 46%;top:84%;border-radius:50%;z-index:3;">
+	</div>
+
+
+
+    <div id="center-logo"></div>
+	
+	<div id="window-bottom">
+	   <div id="mask">
+	   <div id="semicircle"></div>
+
+	   <div id="butt_links" style="position:absolute;z-index:1;top:1%;">
+			<input type="button" class="button" id="home_id" name="Home" value="home" onclick ="choose_split_screen(this.value);"/>
+		    <input type="button" class="button" id="gallery_id" name="Gallery" value="gallery" onclick="choose_split_screen(this.value);"/>
+		    <input type="button" class="button" id="sponser_id" name="Sponser" value="sponser" onclick ="choose_split_screen(this.value);"/>
+		</div>
+	</div>
+	</div>
+
+	
+
+	<div id="center-loading-line"></div>
+	
+	<div id="center-logo-back"></div>
+
+</div>
+
+
+<script src="preloader.js"></script>
+<script src="src/myscripts/slider_script.js"></script>
+</body>
+	
+</html>
