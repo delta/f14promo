@@ -23,72 +23,66 @@ body{
 #sub_container1{
 	position:absolute;
 	top:26%;
-	left:1%;
-	width:23%;
+	left:0.2%;
+	width:24.75%;
 	height:60%;
 	background-color:#000;
 	opacity:0.85;
-	border-radius: 1rem;
 	cursor:pointer;
 }
 
 #sub_container2{
 	position:absolute;
 	top:26%;
-	left:26%;
-	width:23%;
+	left:25.2%;
+	width:24.75%;
 	height:60%;
 	background-color:#000;
 	opacity:0.85;
-	border-radius: 1rem;
 	cursor:pointer;
 }
 
 #sub_container3{
 	position:absolute;
 	top:26%;
-	left:51%;
-	width:23%;
+	left:50.2%;
+	width:24.75%;
 	height:60%;
 	background-color:#000;
 	opacity:0.85;
-	border-radius: 1rem;
 	cursor:pointer;
 }
 
 #sub_container4{
 	position:absolute;
 	top:26%;
-	left:76%;
-	width:23%;
+	left:75.2%;
+	width:24.75%;
 	height:60%;
 	background-color:#000;
 	opacity:0.85;
-	border-radius: 1rem;
 	cursor:pointer;
 }
 
 #breakToHomeUp{
 	position:absolute;
 	top:26%;
-	left:1%;
+	left:0%;
 	height:30%;
-	width:98%;
+	width:100%;
 	background-color:#000;
-	border-radius: 1rem 1rem 0rem 0rem;
 	opacity:0;
-	transition:top 2s;
+	transition:top 1s,opacity 100ms;
 }
 #breakToHomeDown{
 	position:absolute;
 	top:56%;
-	left:1%;
+	left:0%;
 	height:30%;
-	width:98%;
+	width:100%;
 	background-color:#000;
-	border-radius: 0rem 0rem 1rem 1rem;
 	opacity:0;
-	transition:top 2s;
+	transition:top 1s,opacity 100ms;
 }
 
 #header{
@@ -111,8 +105,8 @@ body{
 }
 
 #footer-content{
-	font-size:10px;
-	width:120px;
+	font-size:12px;
+	width:130px;
 	margin:0 auto;
 }
 

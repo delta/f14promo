@@ -63,7 +63,7 @@
            }
 		   
 		   sub_container = document.getElementById(id);
-		   sub_container.style.cssText = "transition : width 1s,left 1s;-moz-transition:width 1s,left 1s;-webkit-transition:width 1s ,left 1s;-o-transition: width 1s,left 1s; left:1%; width:98%; height:60%;";
+		   sub_container.style.cssText = "transition : width 1s,left 1s;-moz-transition:width 1s,left 1s;-webkit-transition:width 1s ,left 1s;-o-transition: width 1s,left 1s;left:0%; width:100%; height:60%;";
 		   document.getElementById("backToHome").style.display="initial";
         }
 		
@@ -73,23 +73,27 @@
 			
 			document.getElementById("breakToHomeUp").style.opacity= 0.85;
 			document.getElementById("breakToHomeDown").style.opacity = 0.85;
-			document.getElementById("breakToHomeUp").style.top = "-100%";
-			document.getElementById("breakToHomeDown").style.top = "200%";
+			document.getElementById("breakToHomeUp").style.top = "0%";
+			document.getElementById("breakToHomeDown").style.top = "70%";
 			
 			for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
                           
               sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
-           }			
-		
-		   setTimeout(function(){
+           }	
+		   
+		   setTimeout(function(){		   
 			for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
                           
               sub_container.style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
            }
+		   },300);
+		   
+		   setTimeout(function(){
+
 			document.getElementById("breakToHomeUp").style.opacity= 0;
 			document.getElementById("breakToHomeDown").style.opacity = 0;
 			document.getElementById("breakToHomeUp").style.top = "26%";
