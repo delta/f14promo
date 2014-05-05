@@ -10,7 +10,6 @@
     <script src="src/preloadjs/LoadQueue.js"></script>
     <script src="src/preloadjs/TagLoader.js"></script>
     <script src="src/preloadjs/XHRLoader.js"></script>
-    <script src="src/myscripts/slider_script.js"></script>
 
 	<link href="css/normalize.css" type="text/css" rel="stylesheet" />
 	<link href="css/style.css" type="text/css" rel="stylesheet" />
@@ -18,39 +17,85 @@
 </head>
 
 <body>
-<div id="container">
+	<div id="container">		<!-- Put content within -->
+	<div id="header"></div>
+    
+	<div id="breakToHomeUp"></div>
+	<div id="breakToHomeDown"></div>
 	
-	<div id="window-top">
-	<img src="images/light.png" style="position:absolute;width:8.3%;height:32%;margin-left: 46%;top:84%;border-radius:50%;z-index:3;">
+    <div id="hold_container">	<!-- Put page content -->
 	</div>
+		 <div id = "sub_container1" onclick="expand(this.id);"> </div>
+		 <div id = "sub_container2" onclick="expand(this.id);"> </div>
+		 <div id = "sub_container3" onclick="expand(this.id);"> </div>
+		 <div id = "sub_container4" onclick="expand(this.id);"> </div>
+  
 
-
-
-    <div id="center-logo"></div>
+	<div id="footer">
+	<div id="footer-content">
+		<p>POWERED BY <a href="">DELTA</a></p>
+	</div>
+	</div>
 	
+	</div>
+	
+	<div id="window-top">		<!-- For intial loading effect -->
+	</div>
+	<div id="center-logo"></div>
 	<div id="window-bottom">
-	   <div id="mask">
-	   <div id="semicircle"></div>
-
-	   <div id="butt_links" style="position:absolute;z-index:1;top:1%;">
-			<input type="button" class="button" id="home_id" name="Home" value="home" onclick ="choose_split_screen(this.value);"/>
-		    <input type="button" class="button" id="gallery_id" name="Gallery" value="gallery" onclick="choose_split_screen(this.value);"/>
-		    <input type="button" class="button" id="sponser_id" name="Sponser" value="sponser" onclick ="choose_split_screen(this.value);"/>
-		</div>
 	</div>
-	</div>
-
-	
 
 	<div id="center-loading-line"></div>
-	
-	<div id="center-logo-back"></div>
-
-</div>
-
-
-<script src="preloader.js"></script>
-<script src="src/myscripts/slider_script.js"></script>
+	<div id="center-logo-back">
+			<div id="center-loading-box"></div>
+	</div>
+	<button id="backToHome" onclick="breakOpen()">Home</button>
 </body>
-	
+
+<script type="text/javascript">
+		function expand(id)
+		{ 
+           for(var i=1;i<=4;i++)
+           { 
+              var sub_container = document.getElementById("sub_container"+i);
+                          
+              sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+           }
+		   
+		   sub_container = document.getElementById(id);
+		   sub_container.style.cssText = "transition : width 1s,left 1s;-moz-transition:width 1s,left 1s;-webkit-transition:width 1s ,left 1s;-o-transition: width 1s,left 1s; left:1%; width:98%; height:60%;";
+		   document.getElementById("backToHome").style.display="initial";
+        }
+		
+		function breakOpen(){	
+		   	document.getElementById("hold_container").style.opacity= 0;
+			document.getElementById("backToHome").style.display= "none";
+			
+			document.getElementById("breakToHomeUp").style.opacity= 0.85;
+			document.getElementById("breakToHomeDown").style.opacity = 0.85;
+			document.getElementById("breakToHomeUp").style.top = "-100%";
+			document.getElementById("breakToHomeDown").style.top = "200%";
+			
+			for(var i=1;i<=4;i++)
+           { 
+              var sub_container = document.getElementById("sub_container"+i);
+                          
+              sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+           }			
+		
+		   setTimeout(function(){
+			for(var i=1;i<=4;i++)
+           { 
+              var sub_container = document.getElementById("sub_container"+i);
+                          
+              sub_container.style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+           }
+			document.getElementById("breakToHomeUp").style.opacity= 0;
+			document.getElementById("breakToHomeDown").style.opacity = 0;
+			document.getElementById("breakToHomeUp").style.top = "26%";
+			document.getElementById("breakToHomeDown").style.top = "56%";
+		   },1000);
+		}
+</script>	
+<script src="preloader.js"></script>
 </html>
