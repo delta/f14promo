@@ -72,7 +72,7 @@ body{
 	width:100%;
 	background-color:#000;
 	opacity:0;
-	transition:top 1s,opacity 100ms;
+	transition:top ease-in-out 1s,opacity 100ms;
 }
 #breakToHomeDown{
 	position:absolute;
@@ -82,7 +82,7 @@ body{
 	width:100%;
 	background-color:#000;
 	opacity:0;
-	transition:top 1s,opacity 100ms;
+	transition:top ease-in-out 1s,opacity 100ms;
 }
 
 #header{
@@ -206,4 +206,58 @@ body{
 	transition:background 1s,color 1s;
 	background:#cc181e;
 	color:#000;
+}
+
+#image-holder{
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	opacity:0;
+	z-index:3;
+	display:none;
+	transition:opacity 500ms;
+}
+#image-holder p{
+	margin-left:95%;
+	color:#fff;
+	font-size:25px;	
+	cursor:pointer;
+}
+
+#image-container{
+	position:absolute;
+	top:15%;
+	left:20%;
+	width:60%;
+	height:70%;
+	background:#fff;
+	opacity:0;
+	background-size:100% 100%;
+	z-index:3;
+	transition:opacity 500ms;
+	display:none;
+}
+
+#gallery{
+	position:absolute;
+	width:100%;
+	height:60%;
+	top:20%;
+	overflow-x:auto;
+	display:none;
+	transition:opacity ease-in-out 1s;
+}
+
+.image{
+	position:relative;
+	float:left;
+	width:30%;
+	height:70%;
+	top:25%;
+	margin-left:5%;
+	background-image:URL('ironman.jpg');
+	background-size:100% 100%;
+	z-index:1;
+	cursor:pointer;
 }
