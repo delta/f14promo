@@ -145,10 +145,14 @@
           			$(this).removeClass("scaleUp");
           		});
     		$('.preview').click(function(){
+    			$('.containerText').css({"display":"none"});
+    			$('.line').css({"display":"none"});
     			$('.preview').css({"display":"none"});
     			expand($(this).parent().attr("id"));
     		});
     		$('#backToHome').click(function(){
+    			$('.containerText').css({"display":"block"});
+    			$('.line').css({"display":"block"});
     			$('.preview').css({'display':'block'});
     			breakOpen();
     		});
