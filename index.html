@@ -1,3 +1,5 @@
+<?php header("Access-Control-Allow-Origin: *");
+?>
 <!DOCTYPE html>
 <html>
 
@@ -31,11 +33,10 @@
 		 <div class="image" onclick="openImageHolder()"></div>
 		 </div>
 		 
-		 <div id = "sub_container1" onclick="expand(this.id);"> 
-		 </div>
-		 <div id = "sub_container2" onclick="expand(this.id);"> </div>
-		 <div id = "sub_container3" onclick="expand(this.id);"> </div>
-		 <div id = "sub_container4" onclick="expand(this.id);"> </div>
+		 <div id = "sub_container1" onclick="expand(this.id);"> <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container2" onclick="expand(this.id);"> <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container3" onclick="expand(this.id);"> <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container4" onclick="expand(this.id);"> <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
   
 	<div id="footer">
 	<div id="footer-content">
@@ -136,6 +137,17 @@
 			document.getElementById("image-container").style.display= "none";
 			},500);
 		}
+		$(document).ready(function(){
+    		$('.hoverZoom').hover(function() {
+        		$(this).css("cursor", "pointer");
+        		$(this).addClass("scaleUp");
+          		},function(){
+          			$(this).removeClass("scaleUp");
+          		});
+    		
+
+    		
+		}); 
 </script>	
 <script src="preloader.js"></script>
 </html>

@@ -261,3 +261,25 @@ body{
 	z-index:1;
 	cursor:pointer;
 }
+.preview {
+	width : 200px;
+	height : 112px;
+	border : 1px solid white;	
+	overflow : hidden;
+	position : relative;
+	margin-left: 70px;
+	margin-top : 100px;
+}
+.hoverZoom {
+	-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+	position : absolute;
+}
+.scaleUp {
+    -webkit-transform: scale(1.2); 
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    }
