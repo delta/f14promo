@@ -33,10 +33,10 @@
 		 <div class="image" onclick="openImageHolder()"></div>
 		 </div>
 		 
-		 <div id = "sub_container1" onclick="expand(this.id);"> <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
-		 <div id = "sub_container2" onclick="expand(this.id);"> <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
-		 <div id = "sub_container3" onclick="expand(this.id);"> <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
-		 <div id = "sub_container4" onclick="expand(this.id);"> <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container1" > <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container2" > <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container3" > <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container4" > <div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
   
 	<div id="footer">
 	<div id="footer-content">
@@ -56,7 +56,7 @@
 	<div id="center-logo-back">
 			<div id="center-loading-box"></div>
 	</div>
-	<button id="backToHome" onclick="breakOpen()">Home</button>
+	<button id="backToHome" >Home</button>
 	
 	<div id="image-holder">
 	<p onclick="closeImageHolder()">X</p>
@@ -144,7 +144,14 @@
           		},function(){
           			$(this).removeClass("scaleUp");
           		});
-    		
+    		$('.preview').click(function(){
+    			$('.preview').css({"display":"none"});
+    			expand($(this).parent().attr("id"));
+    		});
+    		$('#backToHome').click(function(){
+    			$('.preview').css({'display':'block'});
+    			breakOpen();
+    		});
 
     		
 		}); 
