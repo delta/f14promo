@@ -19,7 +19,22 @@ body{
 	width:98%;
 	height:60%;
 }
-
+.containerText{
+	font-size: 8px;
+	margin-left: 10px;
+	margin-top: 95px;
+	position : absolute;
+	color: white;
+}
+.line{
+	margin-top : 110px;
+	margin-left: 10px;
+	width : 50px;
+	height : 0px;
+	border : 1px solid white;
+	position : absolute;
+	z-index : 1;
+}
 #sub_container1{
 	position:absolute;
 	top:26%;
