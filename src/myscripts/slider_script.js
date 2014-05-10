@@ -8,9 +8,9 @@ var win_bottom=document.getElementById("window-bottom");
 var logo=document.getElementById("center-logo");
 
 
-     win_top.style.cssText    = "position:absolute;top:0%;width:100%;height:49.5%;background-color:#000;opacity:0.85;transition:top ease-in-out 2s;";
-     win_bottom.style.cssText = "position:absolute;top:50.5%;width:100%;height:49.5%;background-color:#fff;opacity:0.85;transition:top ease-in-out 2s;";
-     logo = "position:absolute;width:8%;height:16%;margin-left: 46%;top:42%;border-radius:50%;z-index:3;background-image:URL('light.png');background-size:100% 100%;transition:top ease-in-out 2s;";
+     win_top.style.cssText    = "position:absolute;top:0%;width:100%;height:49.5%;background-color:#000;opacity:0.85;transition:top ease-in-out 1.25s;";
+     win_bottom.style.cssText = "position:absolute;top:50.5%;width:100%;height:49.5%;background-color:#fff;opacity:0.85;transition:top ease-in-out 1.25s;";
+     logo = "position:absolute;width:8%;height:16%;margin-left: 46%;top:42%;border-radius:50%;z-index:3;background-image:URL('light.png');background-size:100% 100%;transition:top ease-in-out 1.25s;";
 
 
 }
@@ -37,14 +37,22 @@ var container=document.getElementById("container");
 };
 
 
+var create_home = function(){
+
+
+
+}
 
 var choose_split_screen = function(name){
 
 		switch (name){
 
-		   case "home"   :{close_screen();
-                           setTimeout(function() {split_screen(7,true);},2000);    // set height in percentage always less than 30
-                           break;} 
+		   case "home"   :{ close_screen();
+                        setTimeout(function() {split_screen(7,true);},2000);    // set height in percentage always less than 30
+                        create_home(); 
+                        break;
+
+                         } 
 
 		   case "gallery":{close_screen();
                             setTimeout(function() {split_screen(10,true);},2000);   // set height in percentage
