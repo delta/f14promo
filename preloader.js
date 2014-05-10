@@ -26,10 +26,17 @@
 	   if(event){
 			document.getElementById("center-loading-line").style.borderLeft = (Math.round((event.loaded*100)).toString()*h/100)+"px solid #CC181E";	
 			if(event.loaded*100 > 45 && event.loaded*100 < 55){
+<<<<<<< HEAD
 			document.getElementById("center-loading-box").style.left = (Math.round(event.loaded*100)-45)*10+"%";
 			}
 			if(event.loaded*100 > 60){		//If loading happens too fast
 			document.getElementById("center-loading-box").style.left= "0%";
+=======
+			document.getElementById("center-loading-box").style.marginLeft = (Math.round(event.loaded*100)-45)*10+"%";
+			}
+			if(event.loaded*100 > 60){		//If loading happens too fast
+			document.getElementById("center-loading-box").style.marginLeft= "0%";
+>>>>>>> 0a49de9872aad66b9b6db2b8623193e9f8787c83
 			}			
 		}
 	}

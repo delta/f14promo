@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<?php header("Access-Control-Allow-Origin: *");
+?>
+>>>>>>> 0a49de9872aad66b9b6db2b8623193e9f8787c83
 <!DOCTYPE html>
 <html>
 
@@ -11,6 +16,7 @@
     <script src="src/preloadjs/TagLoader.js"></script>
     <script src="src/preloadjs/XHRLoader.js"></script>
 
+<<<<<<< HEAD
     <link href="css/normalize.css" type="text/css" rel="stylesheet" />
 	  <link href="css/style.css" type="text/css" rel="stylesheet" />
 	  <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
@@ -27,6 +33,10 @@
     <script src="src/custom_scroll/jquery.mCustomScrollbar.js"></script>
 
 
+=======
+	<link href="css/normalize.css" type="text/css" rel="stylesheet" />
+	<link href="css/style.css" type="text/css" rel="stylesheet" />
+>>>>>>> 0a49de9872aad66b9b6db2b8623193e9f8787c83
 
 </head>
 
@@ -40,6 +50,7 @@
     <div id="hold_container">	<!-- Put page content -->
 	</div>
 	
+<<<<<<< HEAD
 		 <div id = "sub_container1" onclick="expand(this.id);">  
 		  <h3 style="color:#fff;padding:0.75rem;">Sponsors</h3>
           <img id="main_image" src="images/images_0.jpg">
@@ -56,6 +67,18 @@
 		 <div id = "sub_container4" onclick="expand(this.id);"> </div>
   
 
+=======
+		 <div id="gallery">
+		 <div class="image" onclick="openImageHolder()"></div>
+		 <div class="image" onclick="openImageHolder()"></div>
+		 </div>
+		 
+		 <div id = "sub_container1" ><div class = 'containerText'>Gallery</div><div class='line'></div><div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container2" ><div class = 'containerText'>Sponsors</div><div class='line'></div><div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container3" ><div class = 'containerText'>Contacts</div><div class='line'></div><div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container4" ><div class = 'containerText'>Festember'13</div><div class='line'></div><div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+  
+>>>>>>> 0a49de9872aad66b9b6db2b8623193e9f8787c83
 	<div id="footer">
 	<div id="footer-content">
 		<p>POWERED BY <a href="">DELTA</a></p>
@@ -74,6 +97,7 @@
 	<div id="center-logo-back">
 			<div id="center-loading-box"></div>
 	</div>
+<<<<<<< HEAD
 	<button id="backToHome" onclick="breakOpen()">Home</button>
 </body>
 
@@ -84,10 +108,28 @@
 
     function expand(id)
 		{ 
+=======
+	<button id="backToHome" >Home</button>
+	
+	<div id="image-holder">
+	<p onclick="closeImageHolder()">X</p>
+	</div>
+	<div id="image-container"></div>
+	
+</body>
+
+<script type="text/javascript">
+		function expand(id)
+		{ 
+		if(id=="sub_container1"){
+			document.getElementById("gallery").style.display="initial";
+		}
+>>>>>>> 0a49de9872aad66b9b6db2b8623193e9f8787c83
            for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
                           
+<<<<<<< HEAD
               sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease; visibility:hidden";
            }
 		   
@@ -111,27 +153,63 @@
 			document.getElementById("breakToHomeDown").style.opacity = 0.85;
 			document.getElementById("breakToHomeUp").style.top = "-100%";
 			document.getElementById("breakToHomeDown").style.top = "200%";
+=======
+              sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+           }
+		   
+		   sub_container = document.getElementById(id);
+		   sub_container.style.cssText = "transition : width 1s,left 1s;-moz-transition:width 1s,left 1s;-webkit-transition:width 1s ,left 1s;-o-transition: width 1s,left 1s;left:0%; width:100%; height:60%;";
+		   document.getElementById("backToHome").style.display="initial";
+        }
+		
+		function breakOpen(){	
+		   	document.getElementById("hold_container").style.opacity= 0;
+			
+			document.getElementById("backToHome").style.display= "none";
+			
+			document.getElementById("gallery").style.display="none";
+			
+			document.getElementById("breakToHomeUp").style.opacity= 0.85;
+			document.getElementById("breakToHomeDown").style.opacity = 0.85;
+			document.getElementById("breakToHomeUp").style.top = "0%";
+			document.getElementById("breakToHomeDown").style.top = "70%";
+>>>>>>> 0a49de9872aad66b9b6db2b8623193e9f8787c83
 			
 			for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
                           
               sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+<<<<<<< HEAD
            }			
 		
 		   setTimeout(function(){
+=======
+           }	
+		   
+		   setTimeout(function(){		   //make all divs appear	
+>>>>>>> 0a49de9872aad66b9b6db2b8623193e9f8787c83
 			for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
                           
+<<<<<<< HEAD
               sub_container.style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
            }
+=======
+              sub_container.style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 500ms ease;-moz-transition: all 500ms ease;-ms-transition: all 500ms ease;-o-transition: all 500ms ease;transition: all 500ms ease;";
+           }
+		   },300);
+		   
+		   setTimeout(function(){			//To bring back the divs to original position for another transition
+>>>>>>> 0a49de9872aad66b9b6db2b8623193e9f8787c83
 			document.getElementById("breakToHomeUp").style.opacity= 0;
 			document.getElementById("breakToHomeDown").style.opacity = 0;
 			document.getElementById("breakToHomeUp").style.top = "26%";
 			document.getElementById("breakToHomeDown").style.top = "56%";
 		   },1000);
 		}
+<<<<<<< HEAD
 
 
         var generate_sponsor = function(){
@@ -260,5 +338,49 @@
 <button id="backToHome" onclick="breakOpen()">Home</button>
 </body>
 	
+=======
+		
+		function openImageHolder(){
+			document.getElementById("image-container").style.backgroundImage= "URL('css/ironman.jpg')";
+			setTimeout(function(){
+			document.getElementById("image-holder").style.opacity= 0.9;
+			document.getElementById("image-container").style.opacity= 1;
+			},500);
+			document.getElementById("image-holder").style.display= "initial";
+			document.getElementById("image-container").style.display= "initial";
+		}
+		
+		function closeImageHolder(){
+			document.getElementById("image-holder").style.opacity= 0;
+			document.getElementById("image-container").style.opacity= 0;
+			setTimeout(function(){
+			document.getElementById("image-holder").style.display= "none";
+			document.getElementById("image-container").style.display= "none";
+			},500);
+		}
+		$(document).ready(function(){
+    		$('.hoverZoom').hover(function() {
+        		$(this).css("cursor", "pointer");
+        		$(this).addClass("scaleUp");
+          		},function(){
+          			$(this).removeClass("scaleUp");
+          		});
+    		$('.preview').click(function(){
+    			$('.containerText').css({"display":"none"});
+    			$('.line').css({"display":"none"});
+    			$('.preview').css({"display":"none"});
+    			expand($(this).parent().attr("id"));
+    		});
+    		$('#backToHome').click(function(){
+    			$('.containerText').css({"display":"block"});
+    			$('.line').css({"display":"block"});
+    			$('.preview').css({'display':'block'});
+    			breakOpen();
+    		});
+
+    		
+		}); 
+</script>	
+>>>>>>> 0a49de9872aad66b9b6db2b8623193e9f8787c83
 <script src="preloader.js"></script>
 </html>
