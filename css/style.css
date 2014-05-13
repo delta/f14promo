@@ -19,7 +19,24 @@ body{
 	width:98%;
 	height:60%;
 }
-
+/**********Temporary************/
+.containerText{
+	font-size: 8px;
+	margin-left: 10px;
+	margin-top: 95px;
+	position : absolute;
+	color: white;
+}
+.line{
+	margin-top : 110px;
+	margin-left: 10px;
+	width : 50px;
+	height : 0px;
+	border : 1px solid white;
+	position : absolute;
+	z-index : 1;
+}
+/*************END*************/
 #sub_container1{
 	position:absolute;
 	top:26%;
@@ -216,14 +233,14 @@ body{
 }
 
 
-#main_image{
+/*#main_image{
 position: absolute;
 top: 100px;
 left: 25px;
 height:200px; 
 width:250px;
 border-radius: 1rem;
-}	
+}	*/
 
 
 #sponsor_holder{
@@ -245,4 +262,27 @@ border-radius: 0.2rem;
 width: 200px;
 height: 100px;
 }
-
+/**********Temporary************/
+.preview {
+	width : 200px;
+	height : 112px;
+	border : 1px solid white;	
+	overflow : hidden;
+	position : relative;
+	margin-left: 70px;
+	margin-top : 100px;
+}
+.hoverZoom {
+	-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+	position : absolute;
+}
+.scaleUp {
+    -webkit-transform: scale(1.2); 
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    }
+/*************END*************/
