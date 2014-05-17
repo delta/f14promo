@@ -21,90 +21,84 @@ body{
 }
 /**********Temporary************/
 .containerText{
-	font-size: 8px;
-	margin-left: 10px;
-	margin-top: 95px;
 	position : absolute;
-	color: white;
+	color: #CC181E;
+	font-weight:900;
+	font-size:13px;
+	margin:21% 0% 0% 6%;
+	z-index:1;
 }
 .line{
-	margin-top : 110px;
-	margin-left: 10px;
-	width : 50px;
-	height : 0px;
-	border : 1px solid white;
 	position : absolute;
+	margin : 26% 0% 0% 5%;
+	width : 30%;
+	height : 0px;
+	opacity : 0.9;
+	border : 2px solid #CC181E;
 	z-index : 1;
 }
 /*************END*************/
 #sub_container1{
 	position:absolute;
 	top:26%;
-	left:1%;
-	width:23%;
+	left:0.2%;
+	width:24.75%;
 	height:60%;
 	background-color:#000;
 	opacity:0.85;
-	cursor:pointer;
-/*
-    overflow-x: auto;
-    overflow-y:hidden;*/
+	/*cursor:pointer;*/
 }
 
 #sub_container2{
 	position:absolute;
 	top:26%;
-	left:26%;
-	width:23%;
+	left:25.2%;
+	width:24.75%;
 	height:60%;
 	background-color:#000;
 	opacity:0.85;
-	cursor:pointer;
+	/*cursor:pointer;*/
 }
 
 #sub_container3{
 	position:absolute;
 	top:26%;
-	left:51%;
-	width:23%;
+	left:50.2%;
+	width:24.75%;
 	height:60%;
 	background-color:#000;
 	opacity:0.85;
-	cursor:pointer;
+	/*cursor:pointer;*/
 }
 
 #sub_container4{
 	position:absolute;
 	top:26%;
-	left:76%;
-	width:23%;
+	left:75.2%;
+	width:24.75%;
 	height:60%;
 	background-color:#000;
 	opacity:0.85;
-	cursor:pointer;
+	/*cursor:pointer;*/
 }
 
 #breakToHomeUp{
 	position:absolute;
 	top:26%;
-	left:1%;
 	height:30%;
-	width:98%;
+	width:100%;
 	background-color:#000;
-	border-radius: 1rem 1rem 0rem 0rem;
 	opacity:0;
-	transition:top 2s;
+	transition:top 1.5s;
 }
 #breakToHomeDown{
 	position:absolute;
 	top:56%;
-	left:1%;
 	height:30%;
-	width:98%;
+	width:100%;
 	background-color:#000;
-	border-radius: 0rem 0rem 1rem 1rem;
 	opacity:0;
-	transition:top 2s;
+	transition:top 1.5s;
 }
 
 #header{
@@ -271,18 +265,7 @@ width: 200px;
 height: 100px;
 }
 
-.reflect_sp_img{
-position: relative;
-top: -107px;
-left: 55px;
-border-radius: 0.2rem;
-width: 200px;
-height: 100px;
-
-}
-
-
-.image_block { width:200px; margin:0px 10px; float:left; }
+.image-block { width:200px; margin:0px 10px; float:left; }
 .reflection { position:relative; }
 .reflection img {
     -webkit-transform: scaleY(-1);
@@ -303,25 +286,30 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 
 /**********Varun************/
 .preview {
-	width : 200px;
-	height : 112px;
-	border : 1px solid white;	
-	overflow : hidden;
 	position : relative;
-	margin-left: 70px;
-	margin-top : 100px;
+	width: 60%;
+	height : 50%;
+	background-size:100% 100%;
+	margin: 15% 0% 0% 30%;
+	overflow : hidden;
+	z-index:2;
 }
 .hoverZoom {
 	-webkit-transition: all .4s ease-in-out;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
 	-ms-transition: all .4s ease-in-out;
-	position : absolute;
 }
 .scaleUp {
-    -webkit-transform: scale(1.2); 
-    -moz-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2);
-    }
+    -webkit-transform: scale(1); 
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+	}
+.scaleUp:hover {
+    -webkit-transform: scale(1.1); 
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+	}
 /*************Varun*************/

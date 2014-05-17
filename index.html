@@ -40,8 +40,8 @@
     <div id="hold_container">	<!-- Put page content -->
 	</div>
 	
-		 <div id = "sub_container1" onclick="expand(this.id);">  
-      <div class = 'containerText'>Sponsors</div><div class='line'></div><div class = "preview"><img id = "main_image" class = "hoverZoom" src = "./images/images_0.jpg"  style = "width : 200px;height : auto; z-index:5"></img></div>
+		 <div id = "sub_container1">  
+      <div class = 'containerText'>Sponsors</div><div class='line'></div><div id="preview1" class = "preview" onclick="expand(this.id);"><img id = "main_image" class = "hoverZoom scaleUp" src = "./images/images_0.jpg" ></img></div>
 		  <!-- <h3 style="color:#fff;padding:0.75rem;">Sponsors</h3>
           <img id="main_image" src="images/images_0.jpg">
           -->
@@ -55,9 +55,9 @@
            
       </div>
 
-		 <div id = "sub_container2" onclick="expand(this.id);"> <div class = 'containerText'>Gallery</div><div class='line'></div><div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
-		 <div id = "sub_container3" onclick="expand(this.id);"> <div class = 'containerText'>Contacts</div><div class='line'></div><div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
-		 <div id = "sub_container4" onclick="expand(this.id);"> <div class = 'containerText'>Festember'13</div><div class='line'></div><div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg" style = "width : 200px;height : auto;"></img></div></div>
+		 <div id = "sub_container2"> <div class = 'containerText'>Gallery</div><div class='line'></div><div id="preview2" class = "preview" onclick="expand(this.id);"><img class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+		 <div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+		 <div id = "sub_container4"> <div class = 'containerText' style = "font-size:12px;">Festember'13</div><div id="preview4" class='line'></div><div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg"></img></div></div>
   
 
 	<div id="footer">
@@ -84,60 +84,70 @@
 <script type="text/javascript">
 		
 
-    var cur_id = null;
+	var cur_id = null;
 
-    function expand(id)
-		{ 
-           for(var i=1;i<=4;i++)
+  function expand(id)
+		{ 	
+		var k='#'+id;
+		var subId = $(k).parent().attr('id');
+		$(k).removeClass('scaleUp');
+		
+		for(var i=1;i<=4;i++)
            { 
-              var sub_container = document.getElementById("sub_container"+i);
-                          
-              sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease; visibility:hidden";
+			  var sub_container = document.getElementById("sub_container"+i);
+              if(document.getElementById(subId).id != sub_container.id)            
+              sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
            }
 		   
-		   sub_container = document.getElementById(id);
-		   sub_container.style.cssText = "transition : width 1s,left 1s;-moz-transition:width 1s,left 1s;-webkit-transition:width 1s ,left 1s;-o-transition: width 1s,left 1s; left:1%; width:98%; height:60%;visibility:visible;z-index:10;";
+		   setTimeout(function(){
+		   sub_container = document.getElementById(subId);
+		   sub_container.style.cssText = "z-index:2;transition : width 1s,left 1s;-moz-transition:width 1s,left 1s;-webkit-transition:width 1s ,left 1s;-o-transition: width 1s,left 1s;left:0%; width:100%; height:60%;";
+		   document.getElementById("backToHome").style.display="initial";
+		   },300);
    
        document.getElementById("backToHome").style.display="initial";
-       cur_id = id; // initializes tehe current id to global id variable
-       open_content(id); 
+       cur_id = subId; // initializes tehe current id to global id variable
+       open_content(subId); 
    
 		  
     }
 
 		function breakOpen(){	
 
-      close_content(cur_id); // To knw the present container
+			close_content(cur_id); // To knw the present container
 
-		  document.getElementById("hold_container").style.opacity= 0;
+			document.getElementById("hold_container").style.opacity= 0;
+						
 			document.getElementById("backToHome").style.display= "none";
-			
+				
 			document.getElementById("breakToHomeUp").style.opacity= 0.85;
 			document.getElementById("breakToHomeDown").style.opacity = 0.85;
-			document.getElementById("breakToHomeUp").style.top = "-100%";
-			document.getElementById("breakToHomeDown").style.top = "200%";
-			
+			document.getElementById("breakToHomeUp").style.top = "0%";
+			document.getElementById("breakToHomeDown").style.top = "70%";
+
 			for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
                           
-              sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
-           }			
-		
-		   setTimeout(function(){
+              sub_container.style.cssText = "z-index:0;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+           }	
+		   
+		   setTimeout(function(){		   //make all preview windows appear	
 			for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
                           
-              sub_container.style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+              sub_container.style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 500ms ease;-moz-transition: all 500ms ease;-ms-transition: all 500ms ease;-o-transition: all 500ms ease;transition: all 500ms ease;";
            }
+		   },200);
+		   
+		   setTimeout(function(){			//To bring back the divs to original position for another transition
 			document.getElementById("breakToHomeUp").style.opacity= 0;
 			document.getElementById("breakToHomeDown").style.opacity = 0;
 			document.getElementById("breakToHomeUp").style.top = "26%";
 			document.getElementById("breakToHomeDown").style.top = "56%";
 		   },1000);
 		}
-
 
         var generate_sponsor = function(){
 
@@ -167,7 +177,7 @@
                                             
                                                       
                                        title_img.style.cssText = "height:150%;width:250%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
-                                         
+                                      
                                        preview[0].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                       
                                        container_text[0].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
@@ -175,19 +185,19 @@
                                        line[0].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                         
-                                          var reflect_sp_img = document.getElementsByClassName('reflect_sp_img');
+                                         // var reflect_sp_img = document.getElementsByClassName('reflect_sp_img');
                                           var generate_sp_img = document.getElementsByClassName('generate_sp_img');
  
                                           if(!document.getElementById("img_0"))
                                           {
                                            setTimeout(function() {for(var i=0;i<7;i++) {
-                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"px;'><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/images_"+i+".jpg\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/images_"+i+".jpg\"><div class=\"overlay\"></div></div></div>";
+                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute;top:50%;left:"+left*i+"px;'><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/images_"+i+".jpg\"></div>";
                                           }},150);}
                                      
                                         for (var i = generate_sp_img.length - 1; i >= 0; i--) {
                                                 
-                                                 generate_sp_img[i].style.visibility ="visible";
-                                                 reflect_sp_img[i].style.visibility ="visible";
+                                                 generate_sp_img[i].style.display ="initial";
+                                                // reflect_sp_img[i].style.display ="initial";
                                              }
 
                  	                        for(var i=0;i<generate_sp_img.length;i++)
@@ -195,7 +205,7 @@
                                              
                                             //change css here
                                              generate_sp_img[i].style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;";
-                                             reflect_sp_img[i].style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;";
+                                             //reflect_sp_img[i].style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;";
                                            
 
                                             }
@@ -227,30 +237,30 @@
                                             var preview = document.getElementsByClassName("preview");
                                             var container_text = document.getElementsByClassName("containerText");
                                             var line = document.getElementsByClassName("line");
-                                            var reflect_sp_img = document.getElementsByClassName('reflect_sp_img');
+                                            var reflect_sp_img = document.getElementsByClassName('reflection');
                                             var generate_sp_img = document.getElementsByClassName('generate_sp_img');
-                                
+											
                                           for (var i = generate_sp_img.length - 1; i >= 0; i--) {
                                              
-                                             generate_sp_img[i].style.visibility ="hidden";
-                                             reflect_sp_img[i].style.visibility ="hidden";
+                                             generate_sp_img[i].style.display ="none";
+                                            // reflect_sp_img[i].style.display ="none";
                                            }
 
-
+											
                                            for(var j=0;j<generate_sp_img.length;j++) {
                                               
                                                  //change css here
                                             generate_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
 
-                                           reflect_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                          // reflect_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                            
                                             
                                              }
 
 
-                                            title_img.style.cssText =  "border:1px solid white;-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;width : 200px;height : auto;";
+                                            title_img.style.cssText =  "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                          
-                                             preview[0].style.cssText = " border: 1px;-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                             preview[0].style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
                                              container_text[0].style.cssText="-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
@@ -294,17 +304,11 @@
 /**********varun************/
 
 $(document).ready(function(){
-        $('.hoverZoom').hover(function() {
-            $(this).css("cursor", "pointer");
-            $(this).addClass("scaleUp");
-              },function(){
-                $(this).removeClass("scaleUp");
-              });
+     
         $('.preview').click(function(){
           $('.containerText').css({"display":"none"});
           $('.line').css({"display":"none"});
           $('.preview').css({"display":"none"});
-          expand($(this).parent().attr("id"));
         });
         $('#backToHome').click(function(){
           $('.containerText').css({"display":"block"});
@@ -338,9 +342,6 @@ $(document).ready(function(){
     });
   })(jQuery);
 </script>
-
-<button id="backToHome" onclick="breakOpen()">Home</button>
-</body>
 	
 <script src="preloader.js"></script>
 </html>
