@@ -161,6 +161,10 @@
                                     
                                        var left = 300;
                                             
+
+                                            document.getElementById(id).style.overflowX ='auto';
+                                            document.getElementById(id).style.overflowY ='hidden';
+                                            
                                                       
                                        title_img.style.cssText = "height:150%;width:250%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
                                          
@@ -177,12 +181,9 @@
                                           {
                                            setTimeout(function() {for(var i=0;i<7;i++) {
                                             document.getElementById(id).innerHTML+= "<div class=\"image-block\" id=\"img_"+i+"\" style='position: absolute; left:"+left*i+"px;'><img class=\"generate_sp_img\" src=\"images/images_"+i+".jpg\"><div class=\"reflection\"><img class=\"generate_sp_img\" src=\"images/images_"+i+".jpg\"><div class=\"overlay\"></div></div></div>";
-                                          }},500);}
+                                          }},150);}
                                      
-                                        else{
-                                            document.getElementById(id).style.overflowX ='auto';
-                                            document.getElementById(id).style.overflowY ='hidden';
-                                            }
+                                        
  
                  	                        for(var i=0;i<7;i++)
                                             {  var generate_sp_img = document.getElementsByClassName('generate_sp_img');
