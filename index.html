@@ -98,10 +98,11 @@
 		   sub_container = document.getElementById(id);
 		   sub_container.style.cssText = "transition : width 1s,left 1s;-moz-transition:width 1s,left 1s;-webkit-transition:width 1s ,left 1s;-o-transition: width 1s,left 1s; left:1%; width:98%; height:60%;visibility:visible;z-index:10;";
    
+       document.getElementById("backToHome").style.display="initial";
        cur_id = id; // initializes tehe current id to global id variable
        open_content(id); 
    
-		   document.getElementById("backToHome").style.display="initial";
+		  
     }
 
 		function breakOpen(){	
@@ -157,12 +158,10 @@
                                        var preview = document.getElementsByClassName("preview");
                                        var container_text = document.getElementsByClassName("containerText");
                                        var line = document.getElementsByClassName("line");
-
+                                    
                                        var left = 300;
-                                      
-                                     
-                                    /*   sponsor_holder.style.cssText = "webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";*/
-                                                          
+                                            
+                                                      
                                        title_img.style.cssText = "height:150%;width:250%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
                                          
                                        preview[0].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
@@ -171,6 +170,7 @@
 
                                        line[0].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
+                                       
 
  
                                           if(!document.getElementById("img_0"))
@@ -178,23 +178,29 @@
                                            setTimeout(function() {for(var i=0;i<7;i++) {
                                             document.getElementById(id).innerHTML+= "<div class=\"image-block\" id=\"img_"+i+"\" style='position: absolute; left:"+left*i+"px;'><img class=\"generate_sp_img\" src=\"images/images_"+i+".jpg\"><div class=\"reflection\"><img class=\"generate_sp_img\" src=\"images/images_"+i+".jpg\"><div class=\"overlay\"></div></div></div>";
                                           }},500);}
-/*
-                                           <div class="image-block">
-                                                <img src="images/book1.jpg" alt="" />
-                                                <div class="reflection">
-                                                    <img src="images/book1.jpg" alt="" />
-                                                    <div class="overlay"></div>
-                                                </div>
-                                            </div>
-*/
+                                     
+                                        else{
+                                            document.getElementById(id).style.overflowX ='auto';
+                                            document.getElementById(id).style.overflowY ='hidden';
+                                            }
+ 
                  	                        for(var i=0;i<7;i++)
-                                            {
+                                            {  var generate_sp_img = document.getElementsByClassName('generate_sp_img');
+
+                                            /*  for (var i = generate_sp_img.length - 1; i >= 0; i--) {
+                                               generate_sp_img[i].style.visibility ="visible";
+
+                                              };*/
+
                                             var img = document.getElementById("img_"+i);
                                             //change css here
                                             img.style.cssText = "position: absolute; left:"+left*i+"px; z-index:10; -webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;";
 
+                                           
+
                                             }
-   
+
+
                                        break; 
                                      }
 
@@ -222,18 +228,27 @@
                                             var preview = document.getElementsByClassName("preview");
                                             var container_text = document.getElementsByClassName("containerText");
                                             var line = document.getElementsByClassName("line");
-
-
+                                            var generate_sp_img = document.getElementsByClassName('generate_sp_img');
+                                          
+                                
+                                        /*  for (var i = generate_sp_img.length - 1; i >= 0; i--) {
+                                           generate_sp_img[i].style.visibility ="hidden";
+                                          };
+                                           
+                                            document.getElementById(id).style.overflowX ='hidden';
+                                            document.getElementById(id).style.overflowY ='hidden';
+                                           */
                                             title_img.style.cssText =  "border:1px solid white;-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;width : 200px;height : auto;";
-                                                                 
-                                          /*  sponsor_holder.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";*/
-
+                                         
                                              preview[0].style.cssText = " border: 1px;-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
                                              container_text[0].style.cssText="-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                              line[0].style.cssText="-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
+
+                                             
+                                           
 
                                             for(var i=0;i<7;i++) {
                                                 var img = document.getElementById("img_"+i);
@@ -245,6 +260,13 @@
                                                       break; 
 
                                                      }
+
+
+
+
+
+
+
 
                  case "sub_container2" : { var sub_container = document.getElementById(id);
                                                     
