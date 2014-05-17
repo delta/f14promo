@@ -271,7 +271,18 @@ width: 200px;
 height: 100px;
 }
 
-.image-block { width:200px; margin:0px 10px; float:left; }
+.reflect_sp_img{
+position: relative;
+top: -107px;
+left: 55px;
+border-radius: 0.2rem;
+width: 200px;
+height: 100px;
+
+}
+
+
+.image_block { width:200px; margin:0px 10px; float:left; }
 .reflection { position:relative; }
 .reflection img {
     -webkit-transform: scaleY(-1);
