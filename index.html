@@ -83,6 +83,8 @@
 	<div id="image-holder">
 	<p onclick="closeImageHolder()">X</p>
 	</div>
+	<div id="leftArrow"></div>
+	<div id="rightArrow"></div>
 	<div id="image-container"></div>
 	
 </body>
@@ -156,8 +158,11 @@
 
 		function openImageHolder(gallery_id){				//For opening the gallery images
 			document.getElementById("backToHome").style.display="none";
+			
 			document.getElementById("image-container").style.backgroundImage= "url("+document.getElementById(gallery_id.id).src+")";
 			setTimeout(function(){
+			document.getElementById("rightArrow").style.display="initial";
+			document.getElementById("leftArrow").style.display="initial";
 			document.getElementById("image-holder").style.opacity= 0.9;
 			document.getElementById("image-container").style.opacity= 1;
 			},200);
@@ -168,12 +173,30 @@
 		function closeImageHolder(){						//Closing the gallery images
 			document.getElementById("image-holder").style.opacity= 0;
 			document.getElementById("image-container").style.opacity= 0;
+			
+			document.getElementById("rightArrow").style.display="none";
+			document.getElementById("leftArrow").style.display="none";
+			
 			setTimeout(function(){
 			document.getElementById("image-holder").style.display= "none";
 			document.getElementById("image-container").style.display= "none";
 			document.getElementById("backToHome").style.display="initial";
 			},500);
 		}
+		
+		function changeImage(movement){
+		var str = document.getElementById("image-container").style.backgroundImage;
+		var res = str.substr(str.indexOf('_')+1, 1);
+		if(movement == 'left' && res !=0){
+			res--;
+			document.getElementById("image-container").style.backgroundImage ='url("images/images_'+res+'.jpg")';
+		}
+		else{
+			res++;
+			document.getElementById("image-container").style.backgroundImage ='url("images/images_'+res+'.jpg")';		
+		}
+		}
+		
         var generate_sponsor = function(){
 
 
@@ -390,7 +413,13 @@ $(document).ready(function(){
           $('.line').css({"display":"block"});
           $('.preview').css({'display':'block'});
           breakOpen();
-        });        
+        });
+		$('#leftArrow').click(function(){
+			changeImage('left');
+		});
+		$('#rightArrow').click(function(){
+			changeImage('right');
+		});
     }); 
 
 /*************varun*************/

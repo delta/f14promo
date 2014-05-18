@@ -211,7 +211,7 @@ body{
 #backToHome{
 	position:absolute;
 	display:none;
-	top:80%;
+	top:75%;
 	left:47.5%;
 	width:5%;
 	height:5%;
@@ -277,14 +277,14 @@ display: block;
 	width:100%;
 	height:100%;
 	float:left;
-	}
+}
 .generate_gallery_img{
 	position: absolute;
 	top:-30%;
 	width: 20%;
 	height: 50%;
 	cursor: pointer;
-	}
+}
 
 .reflection { position:relative; }
 .reflection img {
@@ -346,8 +346,9 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	transition:opacity 500ms;
 }
 #image-holder p{
-	margin-left:95%;
+	margin-left:96%;
 	color:#fff;
+	padding-left:1%;
 	font-size:25px;	
 	cursor:pointer;
 }
@@ -364,4 +365,26 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	z-index:3;
 	transition:opacity 500ms;
 	display:none;
+}
+
+#leftArrow{
+	display:none;
+	position:absolute;
+	width:5%;
+	height:10%;
+	z-index:5;
+	top:45%;
+	background-color:#fff;
+	left:14%;
+}
+
+#rightArrow{
+	display:none;
+	position:absolute;
+	width:5%;
+	height:10%;
+	z-index:5;
+	top:45%;
+	left:81%;
+	background-color:#fff;
 }
