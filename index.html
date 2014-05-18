@@ -79,6 +79,12 @@
 			<div id="center-loading-box"></div>
 	</div>
 	<button id="backToHome" onclick="breakOpen()">Home</button>
+	
+	<div id="image-holder">
+	<p onclick="closeImageHolder()">X</p>
+	</div>
+	<div id="image-container"></div>
+	
 </body>
 
 <script type="text/javascript">
@@ -148,6 +154,26 @@
 		   },1000);
 		}
 
+		function openImageHolder(gallery_id){				//For opening the gallery images
+			document.getElementById("backToHome").style.display="none";
+			document.getElementById("image-container").style.backgroundImage= "url("+document.getElementById(gallery_id.id).src+")";
+			setTimeout(function(){
+			document.getElementById("image-holder").style.opacity= 0.9;
+			document.getElementById("image-container").style.opacity= 1;
+			},200);
+			document.getElementById("image-holder").style.display= "initial";
+			document.getElementById("image-container").style.display= "initial";
+		}
+		
+		function closeImageHolder(){						//Closing the gallery images
+			document.getElementById("image-holder").style.opacity= 0;
+			document.getElementById("image-container").style.opacity= 0;
+			setTimeout(function(){
+			document.getElementById("image-holder").style.display= "none";
+			document.getElementById("image-container").style.display= "none";
+			document.getElementById("backToHome").style.display="initial";
+			},500);
+		}
         var generate_sponsor = function(){
 
 
@@ -170,7 +196,7 @@
                                     
                                        var left = 300;                                          
                                                       
-                                       title_img.style.cssText = "height:150%;width:250%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
+                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
                                       
                                        preview[0].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                       
@@ -231,7 +257,7 @@
                                           if(!document.getElementById("img_0"))
                                           {
                                            setTimeout(function() {for(var i=0;i<7;i++) {
-                                            document.getElementById(id).innerHTML+= "<div class=\"gallery_block\" style='left:"+((left*i)+3)+"%;'><img class=\"generate_gallery_img\" id=\"gallery_"+i+"\" src=\"images/images_"+i+".jpg\"></div>";
+                                            document.getElementById(id).innerHTML+= "<div class=\"gallery_block\" style='left:"+((left*i)+3)+"%;'><img class=\"generate_gallery_img\" id=\"gallery_"+i+"\" src=\"images/images_"+i+".jpg\" onclick = \"openImageHolder(this);\"></div>";
 											}},150);}
                                      
 											for (var i = generate_gallery_img.length - 1; i >= 0; i--)
