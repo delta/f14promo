@@ -217,7 +217,8 @@
                                        var container_text = document.getElementsByClassName("containerText");
                                        var line = document.getElementsByClassName("line");
                                     
-                                       var left = 300;                                          
+                                       var left = 300;        
+
                                                       
                                        title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
                                       
@@ -227,27 +228,30 @@
 
                                        line[0].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
-                                        
+                                          var reflect_sp_img = document.getElementsByClassName('reflect_sp_img');
                                           var generate_sp_img = document.getElementsByClassName('generate_sp_img');
+                                          var overlay = document.getElementsByClassName('overlay');
  
-                                          if(!document.getElementById("img_0"))
+
+                                             if(!document.getElementById("img_0"))
                                           {
                                            setTimeout(function() {for(var i=0;i<7;i++) {
-                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute;top:50%;left:"+left*i+"px;'><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/images_"+i+".jpg\"></div>";
+                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"px;'><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/images_"+i+".jpg\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/images_"+i+".jpg\"><div class=\"overlay\"></div></div></div>";
                                           }},150);}
                                      
-                                        for (var i = generate_sp_img.length - 1; i >= 0; i--) {
+                                         for (var i = generate_sp_img.length - 1; i >= 0; i--) {
                                                 
-                                                 generate_sp_img[i].style.display ="initial";
-                                                // reflect_sp_img[i].style.display ="initial";
-                                             }
+                                                 generate_sp_img[i].style.visibility ="visible";
+                                                 reflect_sp_img[i].style.visibility ="visible";
+                                                  overlay[i].style.visibility ="visible";
+                                                }
 
-                 	                        for(var i=0;i<generate_sp_img.length;i++)
+                                          for(var i=0;i<generate_sp_img.length;i++)
                                             {   
                                              
                                             //change css here
                                              generate_sp_img[i].style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;";
-                                             //reflect_sp_img[i].style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;";
+                                             reflect_sp_img[i].style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;";
                                            
 
                                             }
@@ -312,13 +316,18 @@
                                             var preview = document.getElementsByClassName("preview");
                                             var container_text = document.getElementsByClassName("containerText");
                                             var line = document.getElementsByClassName("line");
-                                            var reflect_sp_img = document.getElementsByClassName('reflection');
+                                           
+                                            var reflect_sp_img = document.getElementsByClassName('reflect_sp_img');
                                             var generate_sp_img = document.getElementsByClassName('generate_sp_img');
-											
-                                          for (var i = generate_sp_img.length - 1; i >= 0; i--) {
+                                            var overlay = document.getElementsByClassName('overlay');
+ 
+                                          for(var i = generate_sp_img.length - 1; i >= 0; i--)
+                                          {
                                              
-                                             generate_sp_img[i].style.display ="none";
-                                            // reflect_sp_img[i].style.display ="none";
+                                             generate_sp_img[i].style.visibility ="hidden";
+                                             reflect_sp_img[i].style.visibility ="hidden";
+                                             overlay[i].style.visibility ="hidden";
+
                                            }
 
 											
@@ -327,7 +336,7 @@
                                                  //change css here
                                             generate_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
 
-                                          // reflect_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                           reflect_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                            
                                             
                                              }
