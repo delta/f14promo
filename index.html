@@ -55,9 +55,9 @@
            
       </div>
 
-		 <div id = "sub_container2"> <div class = 'containerText'>Gallery</div><div class='line'></div><div id="preview2" class = "preview" onclick="expand(this.id);"><img class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+		 <div id = "sub_container2"> <div class = 'containerText'>Gallery</div><div class='line'></div><div id="preview2" class = "preview" onclick="expand(this.id);"><img id="main_image1"class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
 		 <div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
-		 <div id = "sub_container4"> <div class = 'containerText' style = "font-size:12px;">Festember'13</div><div id="preview4" class='line'></div><div class = "preview"><img class = "hoverZoom" src = "./images/test.jpg"></img></div></div>
+		 <div id = "sub_container4"> <div class = 'containerText' style = "font-size:12px;">Festember'13</div><div id="preview4" class='line'></div><div class = "preview"><img class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
   
 
 	<div id="footer">
@@ -113,7 +113,6 @@
     }
 
 		function breakOpen(){	
-
 			close_content(cur_id); // To knw the present container
 
 			document.getElementById("hold_container").style.opacity= 0;
@@ -128,18 +127,18 @@
 			for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
-                          
+			  $('#sub_container'+i).animate({ scrollLeft: 0}, 0);
               sub_container.style.cssText = "z-index:0;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
-           }	
+		   }	
 		   
 		   setTimeout(function(){		   //make all preview windows appear	
 			for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
                           
-              sub_container.style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 500ms ease;-moz-transition: all 500ms ease;-ms-transition: all 500ms ease;-o-transition: all 500ms ease;transition: all 500ms ease;";
+              sub_container.style.cssText = "overflow:hidden;-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 500ms ease;-moz-transition: all 500ms ease;-ms-transition: all 500ms ease;-o-transition: all 500ms ease;transition: all 500ms ease;";
            }
-		   },200);
+		   },100);
 		   
 		   setTimeout(function(){			//To bring back the divs to original position for another transition
 			document.getElementById("breakToHomeUp").style.opacity= 0;
@@ -162,19 +161,14 @@
 
            switch(id){
 
-             case "sub_container1" :{  var sub_container = document.getElementById(id);
-             	                         var title_img = document.getElementById("main_image");
+             case "sub_container1" :{  var sub_container = document.getElementById(id);			
+									   var title_img = document.getElementById("main_image");
                                       
                                        var preview = document.getElementsByClassName("preview");
                                        var container_text = document.getElementsByClassName("containerText");
                                        var line = document.getElementsByClassName("line");
                                     
-                                       var left = 300;
-                                            
-
-                                            document.getElementById(id).style.overflowX ='auto';
-                                            document.getElementById(id).style.overflowY ='hidden';
-                                            
+                                       var left = 300;                                          
                                                       
                                        title_img.style.cssText = "height:150%;width:250%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
                                       
@@ -185,7 +179,6 @@
                                        line[0].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                         
-                                         // var reflect_sp_img = document.getElementsByClassName('reflect_sp_img');
                                           var generate_sp_img = document.getElementsByClassName('generate_sp_img');
  
                                           if(!document.getElementById("img_0"))
@@ -214,8 +207,41 @@
                                        break; 
                                      }
 
-             case "sub_container2" : { var sub_container = document.getElementById(id);
+             case "sub_container2" : { 
+									   var sub_container = document.getElementById(id);			
+									   var title_img = document.getElementById("main_image1");
+                                      
+                                       var preview = document.getElementsByClassName("preview");
+                                       var container_text = document.getElementsByClassName("containerText");
+                                       var line = document.getElementsByClassName("line");
                                     
+                                       var left = 25;                                   
+                                                      
+                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
+                                      
+                                       preview[1].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                      
+                                       container_text[1].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+
+                                       line[1].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+
+                                        
+                                          var generate_gallery_img = document.getElementsByClassName('generate_gallery_img');
+ 
+                                          if(!document.getElementById("img_0"))
+                                          {
+                                           setTimeout(function() {for(var i=0;i<7;i++) {
+                                            document.getElementById(id).innerHTML+= "<div class=\"gallery_block\" style='left:"+((left*i)+3)+"%;'><img class=\"generate_gallery_img\" id=\"gallery_"+i+"\" src=\"images/images_"+i+".jpg\"></div>";
+											}},150);}
+                                     
+											for (var i = generate_gallery_img.length - 1; i >= 0; i--)
+                                                 generate_gallery_img[i].style.display ="initial";
+
+                 	                        for(var i=0;i<generate_gallery_img.length;i++)
+                                            {  
+                                            //change css here
+                                             generate_gallery_img[i].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;";
+                                            }
 
 
                                        break;
@@ -257,27 +283,48 @@
                                             
                                              }
 
-
                                             title_img.style.cssText =  "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                          
-                                             preview[0].style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                             preview[0].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
-                                             container_text[0].style.cssText="-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+                                             container_text[0].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
-                                             line[0].style.cssText="-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
-
+                                             line[0].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";				 
 
                                                       break; 
 
                                       }
 
-                 case "sub_container2" : { var sub_container = document.getElementById(id);
-                                                    
-                                                       break;
-                                                     
-                                                         } 
+                 case "sub_container2" : {          
+                                            var title_img = document.getElementById("main_image1");
+                                            var preview = document.getElementsByClassName("preview");
+                                            var container_text = document.getElementsByClassName("containerText");
+                                            var line = document.getElementsByClassName("line");
+                                            var generate_gallery_img = document.getElementsByClassName('generate_gallery_img');
+											
+                                          for (var i = generate_gallery_img.length - 1; i >= 0; i--)
+                                             generate_gallery_img[i].style.display ="none";
 
-               }
+											
+                                           for(var j=0;j<generate_gallery_img.length;j++) {
+                                              
+                                            //change css here
+                                            generate_gallery_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                             }
+
+                                            title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                         
+                                             preview[1].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                            
+                                             container_text[1].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+
+                                             line[1].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";				 
+				 
+                                                      break;
+                                                     
+                                             } 
+
+							}
 
 
         }
@@ -306,18 +353,18 @@
 $(document).ready(function(){
      
         $('.preview').click(function(){
-          $('.containerText').css({"display":"none"});
+		  if($(this).parent().attr('id') != 'sub_container4'){	
+		  $('.containerText').css({"display":"none"});
           $('.line').css({"display":"none"});
           $('.preview').css({"display":"none"});
+		  }
         });
         $('#backToHome').click(function(){
           $('.containerText').css({"display":"block"});
           $('.line').css({"display":"block"});
           $('.preview').css({'display':'block'});
           breakOpen();
-        });
-
-        
+        });        
     }); 
 
 /*************varun*************/
@@ -326,7 +373,7 @@ $(document).ready(function(){
 
     <script>
 
-     (function($){
+(function($){
     $(window).load(function(){
       /* $(".content").mCustomScrollbar();       $("div[rel='with-custom-scrollbar']").mCustomScrollbar({
         autoDraggerLength:false
