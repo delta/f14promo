@@ -6,11 +6,20 @@
    	var manifest = [
 		   {src:"images/light.png", id:"image1"},
 		   {src:"images/ironman.jpg", id:"image2"},
+		   {src:"images/images_0.jpg", id:"image3"},
+		   {src:"images/images_1.jpg", id:"image4"},
+		   {src:"images/images_2.jpg", id:"image5"},
+		   {src:"images/images_3.jpg", id:"image6"},
+		   {src:"images/images_4.jpg", id:"image7"},
+		   {src:"images/images_5.jpg", id:"image8"},
+		   {src:"images/images_6.jpg", id:"image9"},
+		   {src:"images/images_7.jpg", id:"image10"},
+		   {src:"images/test.jpg", id:"image11"},
 		   ];
 
     function init(){
         //preload = new createjs.LoadQueue(true, "http://festember.com/your/base/path");
-        preload = new createjs.LoadQueue(true, "http://localhost/festember14/");
+        preload = new createjs.LoadQueue(true, "http://localhost/f14promo/");
 
         preload.addEventListener("progress", preloadHandleProgress);
         preload.addEventListener("complete", preloadHandleComplete);
