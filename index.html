@@ -49,9 +49,9 @@
 
 		 <div id = "sub_container2"> <div class = 'containerText'>Gallery</div><div class='line'></div><div id="preview2" class = "preview" onclick="expand(this.id);"><img id="main_image1" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
 
-     <div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img id="main_image2" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+		<div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img id="main_image2" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
 
-		 <div id = "sub_container4"> <div class = 'containerText'>Festember13'</div><div class='line'></div><div id="preview4" class = "preview" onclick="expand(this.id);"><img id="main_image3" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+		 <div id = "sub_container4"> <div class = 'containerText'>Festember13'</div><div class='line'></div><div id="preview4" class = "preview"><img id="main_image3" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
 
     
 
@@ -89,10 +89,10 @@
 
 	var cur_id = null;
 
-  function expand(id)
+  function expand(id)							//For the expansion of 4 windows in landing page
 		{ 	
-		var k='#'+id;
-		var subId = $(k).parent().attr('id');
+		var k='#'+id;							//Get Id  of preview clicked
+		var subId = $(k).parent().attr('id');	//Get Id of sub_container to be loaded
 		$(k).removeClass('scaleUp');
 		
 		for(var i=1;i<=4;i++)
@@ -104,17 +104,15 @@
 		   
 		   setTimeout(function(){
 		   sub_container = document.getElementById(subId);
-		   sub_container.style.cssText = "z-index:2; transition : width 500ms,left 500ms ease;-moz-transition:width 500ms,left 500ms ease;-webkit-transition:width 500ms,left 500ms ease;-o-transition: width 500ms,left 500ms ease;left:0%; width:100%; height:60%;";
+		   sub_container.style.cssText = "z-index:2; transition : width 1s,left 1s ease;-moz-transition:width 1s,left 1s ease;-webkit-transition:width 1s,left 1s ease;-o-transition: width 1s,left 1s ease;left:0%; width:100%; height:60%;";
 		   },400);
    
-       cur_id = subId; // initializes tehe current id to global id variable
-       open_content(subId); 
-   
-		  
+       cur_id = subId; 							// initializes the current subid to global id variable
+       open_content(subId); 		  
     }
 
-		function breakOpen(){	
-			close_content(cur_id); // To knw the present container
+		function breakOpen(){					// To get back to initial page
+			close_content(cur_id); 				// To knw the present container
 
 			document.getElementById("hold_container").style.opacity= 0;
 						
@@ -125,14 +123,14 @@
 			document.getElementById("breakToHomeUp").style.top = "0%";
 			document.getElementById("breakToHomeDown").style.top = "70%";
 
-			for(var i=1;i<=4;i++)
+			for(var i=1;i<=4;i++)				//Scroll everything to left before shrinking
            { 
               var sub_container = document.getElementById("sub_container"+i);
 			  $('#sub_container'+i).animate({ scrollLeft: 0}, 0);
               sub_container.style.cssText = "z-index:0;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
 		   }	
 		   
-		   setTimeout(function(){		   //make all preview windows appear	
+		   setTimeout(function(){		 	    //make all preview windows appear	
 			for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
@@ -141,19 +139,23 @@
            }
 		   },100);
 		   
-		   setTimeout(function(){			//To bring back the divs to original position for another transition
-			document.getElementById("breakToHomeUp").style.opacity= 0;
-			document.getElementById("breakToHomeDown").style.opacity = 0;
+		   $("#breakToHomeUp").fadeTo(1000,0);	//Fade the windows out
+		   $("#breakToHomeDown").fadeTo(1000,0);
+		   
+		   setTimeout(function(){				//To bring back the divs to original position for another transition
 			document.getElementById("breakToHomeUp").style.top = "26%";
 			document.getElementById("breakToHomeDown").style.top = "56%";
 		   },1200);
 		}
 
-		function openImageHolder(gallery_id){				//For opening the gallery images
+		function openImageHolder(gallery_id){	//For opening the gallery images
+			
 			document.getElementById("backToHome").style.display="none";
 			
+			//get id of image clicked which is the name of the image file
 			document.getElementById("image-container").style.backgroundImage= "url("+document.getElementById(gallery_id.id).src+")";
-			setTimeout(function(){
+			
+			setTimeout(function(){				//for a sort of lightroom effect
 			document.getElementById("rightArrow").style.display="initial";
 			document.getElementById("leftArrow").style.display="initial";
 			document.getElementById("image-holder").style.opacity= 0.9;
@@ -163,7 +165,7 @@
 			document.getElementById("image-container").style.display= "initial";
 		}
 		
-		function closeImageHolder(){						//Closing the gallery images
+		function closeImageHolder(){			//Closing the gallery images
 			document.getElementById("image-holder").style.opacity= 0;
 			document.getElementById("image-container").style.opacity= 0;
 			
@@ -177,7 +179,8 @@
 			},500);
 		}
 		
-		function changeImage(movement){
+		function changeImage(movement){			//For moving between images in the image-container (need a designer)
+		
 		var str = document.getElementById("image-container").style.backgroundImage;
 		var res = str.substr(str.indexOf('_')+1, 1);
 		if(movement == 'left' && res !=0){
@@ -203,7 +206,9 @@
 
            switch(id){
 
-             case "sub_container1" :{  var sub_container = document.getElementById(id);			
+             case "sub_container1" :{  
+									//Get rqd Id's
+									   var sub_container = document.getElementById(id);			
 									   var title_img = document.getElementById("main_image");
                                       
                                        var preview = document.getElementsByClassName("preview");
@@ -212,20 +217,24 @@
                                     
                                        var left = 300;        
 
-                                                      
-                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
+                                       //Make elements in  preview div invisible               
+                                       /*title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
                                       
-                                       preview[0].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                       preview[0].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                       
                                        container_text[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
-                                       line[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+                                       line[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";*/
+									   title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+                                       preview[0].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+                                       container_text[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+                                       line[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
 
                                           var reflect_sp_img = document.getElementsByClassName('reflect_sp_img');
                                           var generate_sp_img = document.getElementsByClassName('generate_sp_img');
                                           var overlay = document.getElementsByClassName('overlay');
  
-
+										//Generate div's  if not already generated
                                           if(!document.getElementById("img_0"))
                                           {
                                           for(var i=0;i<7;i++) {
@@ -240,6 +249,7 @@
                                                  overlay[i].style.visibility ="visible";
 											}
 										 */
+										 //Fadein div's after the container has expanded
                                           setTimeout(function(){
 										  for(var i=0;i<generate_sp_img.length;i++)
                                             {   
@@ -265,8 +275,8 @@
                                     
                                        var left = 25;                                   
                                                       
-                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";                                    
-                                       preview[1].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+                                       preview[1].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                        container_text[1].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                        line[1].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
 
@@ -290,7 +300,7 @@
 												generate_gallery_img[i].style.cssText = "-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
 												}
 												document.getElementById("backToHome").style.display="initial";
-											},600);
+											},1200);
 
                                        break;
                                           }
@@ -309,13 +319,17 @@
                                        var top = 23;     
                                        var k;
 
-                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
+                                       /*title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
                                       
                                        preview[2].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                       
                                        container_text[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
-                                       line[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+                                       line[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";*/
+									   title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+                                       preview[2].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+                                       container_text[2].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+                                       line[2].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
 
                                        for(var i=0;i<2;i++){
 
@@ -338,7 +352,7 @@
                                        }   
 
              case "sub_container4" :{
-                                       var sub_container = document.getElementById(id);     
+                                       /*var sub_container = document.getElementById(id);     
                                        var title_img = document.getElementById("main_image3");
                                        
                                        var preview = document.getElementsByClassName("preview");
@@ -355,8 +369,9 @@
                                        container_text[3].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                        line[3].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
-										document.getElementById("backToHome").style.display="initial";
-                                        break;
+									   document.getElementById("backToHome").style.display="initial";
+									   */
+									   break;
                                        }                                        
 
            }//switch
@@ -477,7 +492,7 @@
                                         break;
                                        }                            
                  
-              case "sub_container4" :{      var title_img = document.getElementById("main_image3");
+              case "sub_container4" :{      /*var title_img = document.getElementById("main_image3");
                                             var preview = document.getElementsByClassName("preview");
                                             var container_text = document.getElementsByClassName("containerText");
                                             var line = document.getElementsByClassName("line");
@@ -490,7 +505,7 @@
                                              container_text[3].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                              line[3].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";        
-
+										*/
                                         break;
                                        }                            
                 
@@ -531,7 +546,7 @@ $(document).ready(function(){
 		  }
         });
         $('#backToHome').click(function(){
-          $('.containerText').css({"display":"block"});
+		  $('.containerText').css({"display":"block"});
           $('.line').css({"display":"block"});
           $('.preview').css({'display':'block'});
           breakOpen();
@@ -541,6 +556,13 @@ $(document).ready(function(){
 		});
 		$('#rightArrow').click(function(){
 			changeImage('right');
+		});
+		$('#sub_container4').click(function(){
+			$('html').fadeTo(1000,0.3);
+			setTimeout(
+				function(){
+				window.location.replace("http://facebook.com/");
+			},1000);
 		});
     }); 
 

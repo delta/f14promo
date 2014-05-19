@@ -386,6 +386,7 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	top:45%;
 	background-color:#fff;
 	left:14%;
+	cursor:pointer;
 }
 
 #rightArrow{
@@ -397,6 +398,7 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	top:45%;
 	left:81%;
 	background-color:#fff;
+	cursor:pointer;
 }
 
 /* contacts properties*/ 
