@@ -17,7 +17,7 @@
 	 
 
    <!-- Get Google CDN's jQuery and jQuery UI with fallback to local -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="src/custom_scroll//jquery-1.7.2.min.js"%3E%3C/script%3E'))</script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> 
     <script>!window.jQuery.ui && document.write(unescape('%3Cscript src="src/custom_scroll//jquery-ui-1.8.21.custom.min.js"%3E%3C/script%3E'))</script>
@@ -99,16 +99,14 @@
            { 
 			  var sub_container = document.getElementById("sub_container"+i);
               if(document.getElementById(subId).id != sub_container.id)            
-              sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+              sub_container.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 500ms ease;-moz-transition: all 500ms ease;-ms-transition: all 500ms ease;-o-transition: all 500ms ease;transition: all 500ms ease;";
            }
 		   
 		   setTimeout(function(){
 		   sub_container = document.getElementById(subId);
-		   sub_container.style.cssText = "z-index:2; transition : width 1s,left 1s ease;-moz-transition:width 1s,left 1s ease;-webkit-transition:width 1s,left 1s ease;-o-transition: width 1s,left 1s ease;left:0%; width:100%; height:60%;";
-		   document.getElementById("backToHome").style.display="initial";
-		   },300);
+		   sub_container.style.cssText = "z-index:2; transition : width 500ms,left 500ms ease;-moz-transition:width 500ms,left 500ms ease;-webkit-transition:width 500ms,left 500ms ease;-o-transition: width 500ms,left 500ms ease;left:0%; width:100%; height:60%;";
+		   },400);
    
-       document.getElementById("backToHome").style.display="initial";
        cur_id = subId; // initializes tehe current id to global id variable
        open_content(subId); 
    
@@ -148,7 +146,7 @@
 			document.getElementById("breakToHomeDown").style.opacity = 0;
 			document.getElementById("breakToHomeUp").style.top = "26%";
 			document.getElementById("breakToHomeDown").style.top = "56%";
-		   },1000);
+		   },1200);
 		}
 
 		function openImageHolder(gallery_id){				//For opening the gallery images
@@ -206,7 +204,7 @@
            switch(id){
 
              case "sub_container1" :{  var sub_container = document.getElementById(id);			
-									                     var title_img = document.getElementById("main_image");
+									   var title_img = document.getElementById("main_image");
                                       
                                        var preview = document.getElementsByClassName("preview");
                                        var container_text = document.getElementsByClassName("containerText");
@@ -217,40 +215,42 @@
                                                       
                                        title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
                                       
-                                       preview[0].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                       preview[0].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                       
-                                       container_text[0].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+                                       container_text[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
-                                       line[0].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+                                       line[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                           var reflect_sp_img = document.getElementsByClassName('reflect_sp_img');
                                           var generate_sp_img = document.getElementsByClassName('generate_sp_img');
                                           var overlay = document.getElementsByClassName('overlay');
  
 
-                                             if(!document.getElementById("img_0"))
+                                          if(!document.getElementById("img_0"))
                                           {
-                                           setTimeout(function() {for(var i=0;i<7;i++) {
-                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"px;'><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/images_"+i+".jpg\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/images_"+i+".jpg\"><div class=\"overlay\"></div></div></div>";
-                                          }},150);}
+                                          for(var i=0;i<7;i++) {
+                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"px;'><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/images_"+i+".jpg\" style=\"opacity:0;\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/images_"+i+".jpg\" style=\"opacity:0;\"><div class=\"overlay\"></div></div></div>";
+											}
+										  }
                                      
-                                         for (var i = generate_sp_img.length - 1; i >= 0; i--) {
+                                         /*for (var i = generate_sp_img.length - 1; i >= 0; i--) {
                                                 
                                                  generate_sp_img[i].style.visibility ="visible";
                                                  reflect_sp_img[i].style.visibility ="visible";
-                                                  overlay[i].style.visibility ="visible";
-                                                }
-
-                                          for(var i=0;i<generate_sp_img.length;i++)
+                                                 overlay[i].style.visibility ="visible";
+											}
+										 */
+                                          setTimeout(function(){
+										  for(var i=0;i<generate_sp_img.length;i++)
                                             {   
                                              
                                             //change css here
-                                             generate_sp_img[i].style.cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;";
-                                             reflect_sp_img[i].style.cssText = "-webkit-opacity: 0.2;-moz-opacity: 0.2;opacity: 0.2;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;";
+                                             generate_sp_img[i].style.cssText = "-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;";
+                                             reflect_sp_img[i].style.cssText = "-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;-webkit-opacity: 0.2;-moz-opacity: 0.2;opacity: 0.2;";
                                            
-
+											 document.getElementById("backToHome").style.display="initial";
                                             }
-
+											},800);
 
                                        break; 
                                      }
@@ -287,9 +287,10 @@
 												for(var i=0;i < generate_gallery_img.length;i++)
 												{
 												//change css here
-												generate_gallery_img[i].style.cssText = "-webkit-transition: all 500ms ease;-moz-transition: all 500ms ease;-ms-transition: all 500ms ease;-o-transition: all 500ms ease;transition: all 500ms ease;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
+												generate_gallery_img[i].style.cssText = "-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
 												}
-											},750);
+												document.getElementById("backToHome").style.display="initial";
+											},600);
 
                                        break;
                                           }
@@ -332,7 +333,7 @@
                                             k++;}
 
                                           }
-
+										document.getElementById("backToHome").style.display="initial";
                                         break;
                                        }   
 
@@ -354,7 +355,7 @@
                                        container_text[3].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                        line[3].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
-
+										document.getElementById("backToHome").style.display="initial";
                                         break;
                                        }                                        
 
@@ -392,7 +393,7 @@
                                            for(var j=0;j<generate_sp_img.length;j++) {
                                               
                                                  //change css here
-                                            generate_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                           generate_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
 
                                            reflect_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                            
@@ -418,17 +419,12 @@
                                             var line = document.getElementsByClassName("line");
                                             var generate_gallery_img = document.getElementsByClassName('generate_gallery_img');
 											
-                                          for (var i = generate_gallery_img.length - 1; i >= 0; i--)
-                                             generate_gallery_img[i].style.display ="none";
-
-											
-                                           for(var j=0;j<generate_gallery_img.length;j++) {
-                                              
-                                            //change css here
-                                            generate_gallery_img[j].style.cssText = "display: none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
-                                             }
-
-                                            title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+											for (var i = generate_gallery_img.length - 1; i >= 0; i--){
+                                             generate_gallery_img[i].style.display = "none";
+											 generate_gallery_img[i].style.opacity = 0;
+											}
+											 
+											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                          
                                              preview[1].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
