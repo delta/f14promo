@@ -42,23 +42,18 @@
 	
 		 <div id = "sub_container1">  
       <div class = 'containerText'>Sponsors</div><div class='line'></div><div id="preview1" class = "preview" onclick="expand(this.id);"><img id = "main_image" class = "hoverZoom scaleUp" src = "./images/images_0.jpg" ></img></div>
-		  <!-- <h3 style="color:#fff;padding:0.75rem;">Sponsors</h3>
-          <img id="main_image" src="images/images_0.jpg">
-          -->
           <div id="sponsor_holder">
-       
           <!-- your long content here... -->
-
-         
-          </div>
-         
-           
+          </div>   
       </div>
 
 		 <div id = "sub_container2"> <div class = 'containerText'>Gallery</div><div class='line'></div><div id="preview2" class = "preview" onclick="expand(this.id);"><img id="main_image1" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
-		 <div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
-		 <div id = "sub_container4"> <div class = 'containerText' style = "font-size:12px;">Festember'13</div><div id="preview4" class='line'></div><div class = "preview"><img class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
-  
+
+     <div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img id="main_image2" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+
+		 <div id = "sub_container4"> <div class = 'containerText'>Festember13'</div><div class='line'></div><div id="preview4" class = "preview" onclick="expand(this.id);"><img id="main_image3" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+
+    
 
 	<div id="footer">
 	<div id="footer-content">
@@ -211,7 +206,7 @@
            switch(id){
 
              case "sub_container1" :{  var sub_container = document.getElementById(id);			
-									   var title_img = document.getElementById("main_image");
+									                     var title_img = document.getElementById("main_image");
                                       
                                        var preview = document.getElementsByClassName("preview");
                                        var container_text = document.getElementsByClassName("containerText");
@@ -297,7 +292,71 @@
 											},750);
 
                                        break;
-                                          } 
+                                          }
+
+
+
+             case "sub_container3" :{
+                                       var sub_container = document.getElementById(id);     
+                                       var title_img = document.getElementById("main_image2");
+                                       
+                                       var preview = document.getElementsByClassName("preview");
+                                       var container_text = document.getElementsByClassName("containerText");
+                                       var line = document.getElementsByClassName("line");
+                                       
+                                       var left = 9;   
+                                       var top = 23;     
+                                       var k;
+
+                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
+                                      
+                                       preview[2].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                      
+                                       container_text[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+
+                                       line[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+
+                                       for(var i=0;i<2;i++){
+
+                                          k = 0;
+
+                                          if(i==0)
+                                                for (var j=0;j<8;j++){
+                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" style='left:"+((left*k)+3)+"%;'><img class=\"generate_contact_img\" id=\"contact_"+j+"\" src=\"images/contacts/contact_"+j+".jpg\" style='top:"+((-top)*i)+"%;'></div>";
+                                            k++;}
+                                          
+
+                                          if(i==1)
+                                                for (var j=8;j<17;j++){
+                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" style='left:"+((left*k)+3)+"%;'><img class=\"generate_contact_img\" id=\"contact_"+j+"\" src=\"images/contacts/contact_"+j+".jpg\" style='top:"+((-top)*i)+"%;'></div>";
+                                            k++;}
+
+                                          }
+
+                                        break;
+                                       }   
+
+             case "sub_container4" :{
+                                       var sub_container = document.getElementById(id);     
+                                       var title_img = document.getElementById("main_image3");
+                                       
+                                       var preview = document.getElementsByClassName("preview");
+                                       var container_text = document.getElementsByClassName("containerText");
+                                       var line = document.getElementsByClassName("line");
+                                       
+                                       var left = 25;        
+                                       
+                                                        
+                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
+                                      
+                                       preview[3].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                      
+                                       container_text[3].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+
+                                       line[3].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+
+                                        break;
+                                       }                                        
 
            }//switch
 
@@ -381,8 +440,67 @@
                                                      
                                              } 
 
-							}
+                case "sub_container3" :{    var title_img = document.getElementById("main_image2");
+                                            var preview = document.getElementsByClassName("preview");
+                                            var container_text = document.getElementsByClassName("containerText");
+                                            var line = document.getElementsByClassName("line");
+                                           
+                                            var generate_contact_img = document.getElementsByClassName('generate_contact_img');
 
+                                  
+                                          for(var i = generate_contact_img.length - 1; i >= 0; i--)
+                                          {
+                                             
+                                             generate_contact_img[i].style.visibility ="hidden";
+                                           /*  reflect_sp_img[i].style.visibility ="hidden";
+                                              overlay[i].style.visibility ="hidden";
+
+                                           */
+                                           }
+
+
+                                             title_img.style.cssText =  "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                                                                   
+                                             preview[2].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                            
+                                             container_text[2].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+
+                                             line[2].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";  
+                                            
+                                             
+                                           for(var j=0;j<generate_contact_img.length;j++) {
+                                              
+                                                 //change css here
+                                            generate_contact_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+
+                                         /*  reflect_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";*/
+                                           
+                                          
+                                          }      
+
+                                        break;
+                                       }                            
+                 
+              case "sub_container4" :{      var title_img = document.getElementById("main_image3");
+                                            var preview = document.getElementsByClassName("preview");
+                                            var container_text = document.getElementsByClassName("containerText");
+                                            var line = document.getElementsByClassName("line");
+                                           
+
+                                             title_img.style.cssText =  "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                                                                   
+                                             preview[3].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                            
+                                             container_text[3].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+
+                                             line[3].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";        
+
+                                        break;
+                                       }                            
+                
+
+						          	}
+             
 
         }
 
