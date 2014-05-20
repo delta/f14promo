@@ -400,12 +400,12 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	background-color:#fff;
 	cursor:pointer;
 }
-
 /* contacts properties*/ 
 .generate_contact_img
 {   position: absolute;
 	width: 8%;
 	height: 20%;
+	z-index:10;
 	cursor: pointer;
 }
 
@@ -417,7 +417,37 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	float:left;
 }
 
+#overlay {
+    display: none; /* ensures it’s invisible until it’s called */
+    position: absolute; /* makes the div go into a position that’s absolute to the browser viewing area */
+    left: 25%; /* positions the div half way horizontally */
+    top: 25%; /* positions the div half way vertically */
+    padding: 25px; 
+    border: 2px solid black;
+    background-color: #000000;
+    opacity: 0.8;
+    width: 50%;
+    height: 50%;
+    z-index: 100; /* makes the div the top layer, so it’ll lay on top of the other content */
+}
+#fade {
+    display: none;  /* ensures it’s invisible until it’s called */
+    position: absolute;  /* makes the div go into a position that’s absolute to the browser viewing area */
+    left: 0%; /* makes the div span all the way across the viewing area */
+    top: 0%; /* makes the div span all the way across the viewing area */
+    background-color: black;
+    -moz-opacity: 0.7; /* makes the div transparent, so you have a cool overlay effect */
+    opacity: .70;
+    filter: alpha(opacity=70);
+    width: 100%;
+    height: 100%;
+    z-index: 90; /* makes the div the second most top layer, so it’ll lay on top of everything else EXCEPT for divs with a higher z-index (meaning the #overlay ruleset) */
+}
+.overlay_images{
+   padding: 2rem;
+   position: absolute;
+   width: 50%;
+   height: 100%;
 
-
-
+}
 /* contacts properties*/ 

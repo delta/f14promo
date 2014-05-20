@@ -49,9 +49,15 @@
 
 		 <div id = "sub_container2"> <div class = 'containerText'>Gallery</div><div class='line'></div><div id="preview2" class = "preview" onclick="expand(this.id);"><img id="main_image1" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
 
-		<div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img id="main_image2" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+     <div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img id="main_image2" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img>
 
-		 <div id = "sub_container4"> <div class = 'containerText'>Festember13'</div><div class='line'></div><div id="preview4" class = "preview"><img id="main_image3" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+    </div></div>
+
+     <div id = "overlay"></div>
+     <div id="fade"></div>
+
+
+     <div id = "sub_container4"> <div class = 'containerText'>Festember13'</div><div class='line'></div><div id="preview4" class = "preview" onclick="expand(this.id);"><img id="main_image3" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
 
     
 
@@ -193,12 +199,22 @@
 		}
 		}
 		
-        var generate_sponsor = function(){
+    var contact_pop = function(id){
+     var overlay =  document.getElementById('overlay');
+     
+     overlay.innerHTML = '<img class="overlay_images" src="images/contacts/'+id+'.jpg"/><a onclick = "contact_close();" style="position:absolute;left:95%;color:#fff;size:12px;cursor:pointer;">X</a>';
 
+     overlay.style.display='block';
+     document.getElementById('fade').style.display='block';
 
+     } 
 
-        } 
+    var contact_close = function(){
 
+      document.getElementById('overlay').style.display='none';
+      document.getElementById('fade').style.display='none';
+
+    } 
 
 //open all the container contents here .... 
 //put the gallery function to the corresponding container call this function at expand()
@@ -225,7 +241,8 @@
                                        container_text[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                        line[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";*/
-									   title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+									                     
+                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                        preview[0].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                        container_text[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                        line[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
@@ -234,7 +251,7 @@
                                           var generate_sp_img = document.getElementsByClassName('generate_sp_img');
                                           var overlay = document.getElementsByClassName('overlay');
  
-										//Generate div's  if not already generated
+									                     	//Generate div's  if not already generated
                                           if(!document.getElementById("img_0"))
                                           {
                                           for(var i=0;i<7;i++) {
@@ -257,7 +274,7 @@
                                             //change css here
                                              generate_sp_img[i].style.cssText = "-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;";
                                              reflect_sp_img[i].style.cssText = "-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;-webkit-opacity: 0.2;-moz-opacity: 0.2;opacity: 0.2;";
-                                           
+                                            overlay[i].style.visibility ="visible";
 											 document.getElementById("backToHome").style.display="initial";
                                             }
 											},800);
@@ -326,28 +343,31 @@
                                        container_text[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                        line[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";*/
-									   title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+									                    
+                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                        preview[2].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                        container_text[2].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                        line[2].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
 
+                                          sub_container.style.align="center";
+
+                                       
                                        for(var i=0;i<2;i++){
 
                                           k = 0;
 
                                           if(i==0)
                                                 for (var j=0;j<8;j++){
-                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" style='left:"+((left*k)+3)+"%;'><img class=\"generate_contact_img\" id=\"contact_"+j+"\" src=\"images/contacts/contact_"+j+".jpg\" style='top:"+((-top)*i)+"%;'></div>";
+                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" style='left:"+((left*k)+3)+"%;'><img class=\"generate_contact_img\" id=\"contact_"+j+"\" src=\"images/contacts/contact_"+j+".jpg\" style='top:"+((-top)*i)+"%;' onclick='contact_pop(\"contact_"+j+"\");'></div>";
                                             k++;}
                                           
-
                                           if(i==1)
                                                 for (var j=8;j<17;j++){
-                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" style='left:"+((left*k)+3)+"%;'><img class=\"generate_contact_img\" id=\"contact_"+j+"\" src=\"images/contacts/contact_"+j+".jpg\" style='top:"+((-top)*i)+"%;'></div>";
+                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" style='left:"+((left*k)+3)+"%;'><img class=\"generate_contact_img\" id=\"contact_"+j+"\" src=\"images/contacts/contact_"+j+".jpg\" style='top:"+((-top)*i)+"%;' onclick='contact_pop(\"contact_"+j+"\");'></div>";
                                             k++;}
 
                                           }
-										document.getElementById("backToHome").style.display="initial";
+                                        document.getElementById("backToHome").style.display="initial";
                                         break;
                                        }   
 
