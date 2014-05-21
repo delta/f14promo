@@ -86,7 +86,14 @@
 	</div>
 	<div id="leftArrow"></div>
 	<div id="rightArrow"></div>
-	<div id="image-container"></div>
+	<div id="image-container">
+		<div id="smallDiv1" class="smaller-div"></div>
+		<div id="smallDiv2" class="smaller-div"></div>
+		<div id="smallDiv3" class="smaller-div"></div>
+		<div id="smallDiv4" class="smaller-div"></div>
+		<div id="smallDiv5" class="smaller-div"></div>
+		<div id="smallDiv6" class="smaller-div"></div>
+	</div>
 	
 </body>
 
@@ -154,6 +161,27 @@
 		   },1200);
 		}
 
+		function changeSmallDivOpacity(opacity){
+				setTimeout(function(){
+					$("#smallDiv1").fadeTo(500,opacity);
+				},100+Math.random()*500);
+				setTimeout(function(){
+					$("#smallDiv2").fadeTo(500,opacity);
+				},100+Math.random()*500);
+				setTimeout(function(){
+					$("#smallDiv3").fadeTo(500,opacity);
+				},100+Math.random()*500);
+				setTimeout(function(){
+					$("#smallDiv4").fadeTo(500,opacity);
+				},100+Math.random()*500);
+				setTimeout(function(){
+					$("#smallDiv5").fadeTo(500,opacity);
+				},100+Math.random()*500);
+				setTimeout(function(){
+					$("#smallDiv6").fadeTo(500,opacity);
+				},100+Math.random()*500);
+		}
+		
 		function openImageHolder(gallery_id){	//For opening the gallery images
 			
 			document.getElementById("backToHome").style.display="none";
@@ -169,7 +197,9 @@
 			},200);
 			document.getElementById("image-holder").style.display= "initial";
 			document.getElementById("image-container").style.display= "initial";
-		}
+			
+			changeSmallDivOpacity(0);
+			}
 		
 		function closeImageHolder(){			//Closing the gallery images
 			document.getElementById("image-holder").style.opacity= 0;
@@ -183,12 +213,15 @@
 			document.getElementById("image-container").style.display= "none";
 			document.getElementById("backToHome").style.display="initial";
 			},500);
+			changeSmallDivOpacity(1);
 		}
 		
 		function changeImage(movement){			//For moving between images in the image-container (need a designer)
-		
+	
+		changeSmallDivOpacity(1);
 		var str = document.getElementById("image-container").style.backgroundImage;
 		var res = str.substr(str.indexOf('_')+1, 1);
+		setTimeout(function(){
 		if(movement == 'left' && res !=0){
 			res--;
 			document.getElementById("image-container").style.backgroundImage ='url("images/images_'+res+'.jpg")';
@@ -197,6 +230,8 @@
 			res++;
 			document.getElementById("image-container").style.backgroundImage ='url("images/images_'+res+'.jpg")';		
 		}
+		changeSmallDivOpacity(0);
+		},1100);
 		}
 		
     var contact_pop = function(id){
