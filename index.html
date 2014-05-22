@@ -47,19 +47,18 @@
           </div>   
       </div>
 
-		 <div id = "sub_container2"> <div class = 'containerText'>Gallery</div><div class='line'></div><div id="preview2" class = "preview" onclick="expand(this.id);"><img id="main_image1" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+	 <div id = "sub_container2"> <div class = 'containerText'>Gallery</div><div class='line'></div><div id="preview2" class = "preview" onclick="expand(this.id);"><img id="main_image1" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
 
+	 
      <div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img id="main_image2" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img>
 
     </div></div>
 
      <div id = "overlay"></div>
      <div id="fade"></div>
-
+	 
 
      <div id = "sub_container4"> <div class = 'containerText'>Festember13'</div><div class='line'></div><div id="preview4" class = "preview"><img id="main_image3" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
-
-    
 
 	<div id="footer">
 	<div id="footer-content">
@@ -81,12 +80,9 @@
 	</div>
 	<button id="backToHome" onclick="breakOpen()">Home</button>
 	
-	<div id="image-holder">
-	<p onclick="closeImageHolder()">X</p>
+	<div id="image-container">
 	<div id="leftArrow"></div>
 	<div id="rightArrow"></div>
-	</div>
-	<div id="image-container">
 		<div id="smallDiv1" class="smaller-div"></div>
 		<div id="smallDiv2" class="smaller-div"></div>
 		<div id="smallDiv3" class="smaller-div"></div>
@@ -154,7 +150,15 @@
 		   
 		   $("#breakToHomeUp").fadeTo(1000,0);	//Fade the windows out
 		   $("#breakToHomeDown").fadeTo(1000,0);
+		   $("#image-container").fadeTo(200,0);
+		   $("#thumbnailContainer").fadeTo(200,0);
 		   
+		   setTimeout(function(){
+				document.getElementById("image-container").style.display = "none";
+				document.getElementById("thumbnailContainer").style.display = "none";
+		   }
+		   );
+		  
 		   setTimeout(function(){				//To bring back the divs to original position for another transition
 			document.getElementById("breakToHomeUp").style.top = "26%";
 			document.getElementById("breakToHomeDown").style.top = "56%";
@@ -183,47 +187,41 @@
 		}
 		
 		function openImageHolder(gallery_id){	//For opening the gallery images
-			document.getElementById("backToHome").style.display="none";
-			
 			changeSmallDivOpacity(1);
 			
 			if(document.getElementById("thumbnailContainer").style.display == "" ||document.getElementById("thumbnailContainer").style.display == "none"){
 				document.getElementById("thumbnailContainer").style.opacity = 0;
 				document.getElementById("thumbnailContainer").style.display = "initial";
-				$("#thumbnailContainer").fadeTo(1000,1);
+				$("#thumbnailContainer").fadeTo(1000,0.6);
 			}
 			setTimeout(function(){				//for a sort of lightroom effect
 			document.getElementById("rightArrow").style.display="initial";
 			document.getElementById("leftArrow").style.display="initial";
-			document.getElementById("image-holder").style.opacity= 0.9;
 			document.getElementById("image-container").style.opacity= 1;
 			},200);
 			
-			document.getElementById("image-holder").style.display= "initial";
 			document.getElementById("image-container").style.display= "initial";
 			
 			setTimeout(function(){
 				changeSmallDivOpacity(0);
-				document.getElementById("image-container").style.backgroundImage= "url("+document.getElementById(gallery_id.id).src+")";
+				document.getElementById("image-container").style.backgroundImage= document.getElementById(gallery_id.id).style.backgroundImage;
 				},1200);
 			}
 		
-		function closeImageHolder(){			//Closing the gallery images
+		/*function closeImageHolder(){			//Closing the gallery images
 			document.getElementById("thumbnailContainer").style.display="none";
 			
-			document.getElementById("image-holder").style.opacity= 0;
 			document.getElementById("image-container").style.opacity= 0;
 			
 			document.getElementById("rightArrow").style.display="none";
 			document.getElementById("leftArrow").style.display="none";
 			
 			setTimeout(function(){
-			document.getElementById("image-holder").style.display= "none";
 			document.getElementById("image-container").style.display= "none";
 			document.getElementById("backToHome").style.display="initial";
 			},500);
 			changeSmallDivOpacity(1);
-		}
+		}*/
 		
 		function changeImage(movement){			//For moving between images in the image-container (need a designer)
 	
@@ -361,12 +359,11 @@
                                           if(!document.getElementById("gallery_0"))
                                           {
                                            for(var i=0;i<8;i++) {
-                                            document.getElementById(id).innerHTML+= "<div class=\"gallery_block\" style='left:"+((left*i)+3)+"%;'><img class=\"generate_gallery_img\" id=\"gallery_"+i+"\" src=\"images/images_"+i+".jpg\" onclick = \"openImageHolder(this);\" style=\"opacity:0;\"></div>";
-                                          
+											/*  document.getElementById(id).innerHTML+= "<div class=\"gallery_block\" style='left:"+((left*i)+3)+"%;'><img class=\"generate_gallery_img\" id=\"gallery_"+i+"\" src=\"images/images_"+i+".jpg\" onclick = \"openImageHolder(this);\" style=\"opacity:0;\"></div>";
+											*/
 											document.getElementById("thumbnailContainer").innerHTML+= "<div class=\"generate_thumbnail\" style=\"background-image:URL('"+'images/images_'+i+'.jpg'+"');\" id=\"gallery_"+i+"\" onclick = \"openImageHolder(this);\"></div>";
 											}
 											}
-                                     
 											for (var i = generate_gallery_img.length - 1; i >= 0; i--)
                                                  generate_gallery_img[i].style.display ="initial";
 
@@ -378,7 +375,7 @@
 												}
 												document.getElementById("backToHome").style.display="initial";
 											},1200);
-
+									   openImageHolder(document.getElementById("gallery_0"));
                                        break;
                                           }
 

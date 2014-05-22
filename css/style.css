@@ -124,10 +124,11 @@ body{
 	opacity:0;
 }
 
-#footer-content{
-	font-size:10px;
+#footer-content p{
+	font-size:11px;
+	color:#000;
 	width:120px;
-	margin:0 auto;
+	margin:1% auto 0;
 }
 
 #footer-content a{
@@ -344,31 +345,12 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
     transform: scale(1.2);
 	}
 /*************Varun*************/
-
-#image-holder{
-	position:absolute;
-	width:100%;
-	height:100%;
-	background-color:#000;
-	opacity:0;
-	z-index:3;
-	display:none;
-	transition:opacity 500ms;
-}
-#image-holder p{
-	margin-left:96%;
-	color:#fff;
-	padding-right:1.5%;
-	font-size:25px;	
-	cursor:pointer;
-}
-
 #image-container{
 	position:absolute;
-	top:10%;
+	top:26%;
 	left:20%;
 	width:60%;
-	height:70%;
+	height:60%;
 	opacity:0;
 	background-size:100% 100%;
 	z-index:3;
@@ -382,9 +364,9 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	width:5%;
 	height:10%;
 	z-index:5;
-	top:40%;
+	top:45%;
 	background-color:#fff;
-	left:14%;
+	left:-7%;
 	cursor:pointer;
 }
 
@@ -394,10 +376,39 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	width:5%;
 	height:10%;
 	z-index:5;
-	top:40%;
-	left:81%;
+	top:45%;
+	left:102%;
 	background-color:#fff;
 	cursor:pointer;
+}
+
+#thumbnailContainer{
+	display:none;
+	position:absolute;
+	z-index:3;
+	top:76%;
+	width:100%;
+	height:10%;
+	background-color:#000;
+	overflow-x:auto;
+	overflow-y:hidden;
+}
+
+.generate_thumbnail{
+	position:relative;
+	float:left;
+	width:5%;
+	height:100%;
+	margin-left:0.5%;
+	height: 100%;
+	background-size:100% 100%;
+	opacity:0.5;
+	cursor: pointer;
+}
+
+.generate_thumbnail:hover{
+	transition:opacity 1s;
+	opacity:1;
 }
 /* contacts properties*/ 
 .generate_contact_img
@@ -485,32 +496,3 @@ left:60%;
 
 
 /* contacts properties*/ 
-
-#thumbnailContainer{
-	display:none;
-	position:absolute;
-	z-index:3;
-	top:85%;
-	width:100%;
-	height:10%;
-	background-color:#000;
-	overflow-x:auto;
-	overflow-y:hidden;
-}
-
-.generate_thumbnail{
-	position:relative;
-	float:left;
-	width:5%;
-	height:100%;
-	margin-left:0.5%;
-	height: 100%;
-	background-size:100% 100%;
-	opacity:0.5;
-	cursor: pointer;
-}
-
-.generate_thumbnail:hover{
-	transition:opacity 1s;
-	opacity:1;
-}
