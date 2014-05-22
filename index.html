@@ -83,9 +83,9 @@
 	
 	<div id="image-holder">
 	<p onclick="closeImageHolder()">X</p>
-	</div>
 	<div id="leftArrow"></div>
 	<div id="rightArrow"></div>
+	</div>
 	<div id="image-container">
 		<div id="smallDiv1" class="smaller-div"></div>
 		<div id="smallDiv2" class="smaller-div"></div>
@@ -94,7 +94,7 @@
 		<div id="smallDiv5" class="smaller-div"></div>
 		<div id="smallDiv6" class="smaller-div"></div>
 	</div>
-	
+	<div id="thumbnailContainer"></div>
 </body>
 
 <script type="text/javascript">
@@ -353,7 +353,9 @@
                                           {
                                            for(var i=0;i<7;i++) {
                                             document.getElementById(id).innerHTML+= "<div class=\"gallery_block\" style='left:"+((left*i)+3)+"%;'><img class=\"generate_gallery_img\" id=\"gallery_"+i+"\" src=\"images/images_"+i+".jpg\" onclick = \"openImageHolder(this);\" style=\"opacity:0;\"></div>";
-												}
+                                          
+											document.getElementById("thumbnailContainer").innerHTML+= "<div style='width:10%;height:10%;background:#f00;	left:"+((left*i)+3)+"%;'><img id=\"gallery_"+i+"\" src=\"images/images_"+i+".jpg\" onclick = \"openImageHolder(this);\"></div>";
+											}
 											}
                                      
 											for (var i = generate_gallery_img.length - 1; i >= 0; i--)

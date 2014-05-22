@@ -365,7 +365,7 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 
 #image-container{
 	position:absolute;
-	top:15%;
+	top:10%;
 	left:20%;
 	width:60%;
 	height:70%;
@@ -382,7 +382,7 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	width:5%;
 	height:10%;
 	z-index:5;
-	top:45%;
+	top:40%;
 	background-color:#fff;
 	left:14%;
 	cursor:pointer;
@@ -394,7 +394,7 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	width:5%;
 	height:10%;
 	z-index:5;
-	top:45%;
+	top:40%;
 	left:81%;
 	background-color:#fff;
 	cursor:pointer;
