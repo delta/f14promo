@@ -358,7 +358,7 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 #image-holder p{
 	margin-left:96%;
 	color:#fff;
-	padding-left:1%;
+	padding-right:1.5%;
 	font-size:25px;	
 	cursor:pointer;
 }
@@ -485,3 +485,32 @@ left:60%;
 
 
 /* contacts properties*/ 
+
+#thumbnailContainer{
+	display:none;
+	position:absolute;
+	z-index:3;
+	top:85%;
+	width:100%;
+	height:10%;
+	background-color:#000;
+	overflow-x:auto;
+	overflow-y:hidden;
+}
+
+.generate_thumbnail{
+	position:relative;
+	float:left;
+	width:5%;
+	height:100%;
+	margin-left:0.5%;
+	height: 100%;
+	background-size:100% 100%;
+	opacity:0.5;
+	cursor: pointer;
+}
+
+.generate_thumbnail:hover{
+	transition:opacity 1s;
+	opacity:1;
+}
