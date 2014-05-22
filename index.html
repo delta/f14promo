@@ -234,10 +234,24 @@
 		},1100);
 		}
 		
-    var contact_pop = function(id){
+
+   var contact_pop = function(id){
+
      var overlay =  document.getElementById('overlay');
-     
-     overlay.innerHTML = '<img class="overlay_images" src="images/contacts/'+id+'.jpg"/><a onclick = "contact_close();" style="position:absolute;left:95%;color:#fff;size:12px;cursor:pointer;">X</a>';
+     var index = id.split('_')[1];
+
+     name_core = ["Cibi Pranav","Deepak Venkatesh","Gautham Vasan","Alex Kurian","Pahal Patangia","Pranay Mohata","Adhithyan","Jivitesh Kumar","Suraj Majee","Varun Sekar","Prasanna","Sri Ram","Aravindan","Vignesh","Parthasarathy","Nithyashree"];
+
+     phone = ["+91 9487673096","+91 7598122303","+91 9566061172","+91 9940122172","+91 7418377159","+91 9840530299","+91 9952443448","+91 8939419506","+91 8056250429","+91 9677266772","+91 9487675994","+91 9884283056","+91 9629444179","+91 9962107646","+91 9445483394","+91 9677220770"];
+
+     email = ["cibi@festember.com","deepak@festember.com","gautham@festember.com","alex@festember.com","pahal@festember.com","pranay@festember.com","adhi@festember.com","jivitesh@festember.com","suraj@festember.com","varun@festember.com","prasanna@festember.com","sriram@festember.com","aravindan@festember.com","vignesh@festember.com","partha@festember.com","nithya@festember.com"];
+
+
+     designation = ["Chairman","Overall Co-Ordinator","Treasurer","Cultural Secretary","Head - Marketing", "Head - Marketing", "Head - Events", "Head - Media","Head - Publicity", "Head - Computer Support Group", "Head - Quality Management","Head - Design", "Head - Organizing","Head - Hospitality","Head - Public Relations","Head - Workshop"];
+
+     overlay.innerHTML = '<div><h4 id="designation">'+designation[index]+'</h4></div>';
+     overlay.innerHTML += '<img class="overlay_images" src="images/contacts/'+id+'.jpg"/><a onclick = "contact_close();" style="position:absolute;top:8%;left:95%;color:#fff;size:12px;cursor:pointer;">X</a>';
+     overlay.innerHTML += '<div id="overlay_contents"><p>'+name_core[index]+'</p><p>'+phone[index]+'</p><p>'+email[index]+'</p></div>';
 
      overlay.style.display='block';
      document.getElementById('fade').style.display='block';
