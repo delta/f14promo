@@ -153,11 +153,9 @@
 		   $("#image-container").fadeTo(200,0);
 		   $("#thumbnailContainer").fadeTo(200,0);
 		   
-		   setTimeout(function(){
+		   //For gallery container's
 				document.getElementById("image-container").style.display = "none";
 				document.getElementById("thumbnailContainer").style.display = "none";
-		   }
-		   );
 		  
 		   setTimeout(function(){				//To bring back the divs to original position for another transition
 			document.getElementById("breakToHomeUp").style.top = "26%";
@@ -188,24 +186,33 @@
 		
 		function openImageHolder(gallery_id){	//For opening the gallery images
 			changeSmallDivOpacity(1);
-			
+
 			if(document.getElementById("thumbnailContainer").style.display == "" ||document.getElementById("thumbnailContainer").style.display == "none"){
-				document.getElementById("thumbnailContainer").style.opacity = 0;
-				document.getElementById("thumbnailContainer").style.display = "initial";
-				$("#thumbnailContainer").fadeTo(1000,0.85);
+				document.getElementById("image-container").style.opacity = 0;
+				document.getElementById("thumbnailContainer").style.display = "initial";	
+				document.getElementById("rightArrow").style.opacity=0;
+				document.getElementById("leftArrow").style.opacity=0;
+				document.getElementById("rightArrow").style.display="initial";
+				document.getElementById("leftArrow").style.display="initial";
 			}
+			setTimeout(function(){
+			$('#image-container').fadeTo(500,1);
+			},1100);
+			
 			setTimeout(function(){				//for a sort of lightroom effect
-			document.getElementById("rightArrow").style.display="initial";
-			document.getElementById("leftArrow").style.display="initial";
-			document.getElementById("image-container").style.opacity= 1;
-			},200);
+			document.getElementById("backToHome").style.display="initial";
+			$('#thumbnailContainer').fadeTo(500,0.85);
+			$('#leftArrow').fadeTo(500,1);
+			$('#rightArrow').fadeTo(500,1);
+
+			},2200);
 			
 			document.getElementById("image-container").style.display= "initial";
 			
 			setTimeout(function(){
 				changeSmallDivOpacity(0);
 				document.getElementById("image-container").style.backgroundImage= document.getElementById(gallery_id.id).style.backgroundImage;
-				},1200);
+				},2000);
 			}
 		
 		/*function closeImageHolder(){			//Closing the gallery images
@@ -374,11 +381,8 @@
 												//change css here
 												generate_gallery_img[i].style.cssText = "-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
 												}
-												document.getElementById("backToHome").style.display="initial";
 											},1200);
 										openImageHolder(document.getElementById("gallery_0"));
-										document.getElementById("image-container").style.display="initial";
-										document.getElementById("thumbnailContainer").style.display="initial";
                                        break;
 										}
 
