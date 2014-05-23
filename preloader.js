@@ -49,8 +49,8 @@
 		// Move two windows
 		$("#center-loading-line").fadeOut(500,"swing");
 		document.getElementById("window-top").style.top = "-50%";
-		document.getElementById("center-logo-back").style.top = "1%";
-		document.getElementById("center-logo").style.top = "3%";
+		document.getElementById("center-logo-back").style.top = "0.5%";
+		document.getElementById("center-logo").style.top = "1.5%";
 		document.getElementById("window-bottom").style.top = "100%";
 	
 		// Use preloaded images

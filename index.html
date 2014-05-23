@@ -11,7 +11,7 @@
     <script src="src/preloadjs/TagLoader.js"></script>
     <script src="src/preloadjs/XHRLoader.js"></script>
 
-    <link href="css/normalize.css" type="text/css" rel="stylesheet" />
+	  <link href="css/normalize.css" type="text/css" rel="stylesheet" />
 	  <link href="css/style.css" type="text/css" rel="stylesheet" />
 	  <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
 	 
@@ -113,7 +113,7 @@
 		   
 		   setTimeout(function(){
 		   sub_container = document.getElementById(subId);
-		   sub_container.style.cssText = "z-index:2; transition : width 1s,left 1s ease;-moz-transition:width 1s,left 1s ease;-webkit-transition:width 1s,left 1s ease;-o-transition: width 1s,left 1s ease;left:0%; width:100%; height:60%;";
+		   sub_container.style.cssText = "z-index:2; transition : width 1s,left 1s ease;-moz-transition:width 1s,left 1s ease;-webkit-transition:width 1s,left 1s ease;-o-transition: width 1s,left 1s ease;left:0%; width:100%; height:70%;";
 		   },400);
    
        cur_id = subId; 							// initializes the current subid to global id variable
@@ -192,7 +192,7 @@
 			if(document.getElementById("thumbnailContainer").style.display == "" ||document.getElementById("thumbnailContainer").style.display == "none"){
 				document.getElementById("thumbnailContainer").style.opacity = 0;
 				document.getElementById("thumbnailContainer").style.display = "initial";
-				$("#thumbnailContainer").fadeTo(1000,0.6);
+				$("#thumbnailContainer").fadeTo(1000,0.85);
 			}
 			setTimeout(function(){				//for a sort of lightroom effect
 			document.getElementById("rightArrow").style.display="initial";
@@ -363,6 +363,7 @@
 											*/
 											document.getElementById("thumbnailContainer").innerHTML+= "<div class=\"generate_thumbnail\" style=\"background-image:URL('"+'images/images_'+i+'.jpg'+"');\" id=\"gallery_"+i+"\" onclick = \"openImageHolder(this);\"></div>";
 											}
+											openImageHolder(document.getElementById("gallery_0"));
 											}
 											for (var i = generate_gallery_img.length - 1; i >= 0; i--)
                                                  generate_gallery_img[i].style.display ="initial";
@@ -375,9 +376,11 @@
 												}
 												document.getElementById("backToHome").style.display="initial";
 											},1200);
-									   openImageHolder(document.getElementById("gallery_0"));
+										openImageHolder(document.getElementById("gallery_0"));
+										document.getElementById("image-container").style.display="initial";
+										document.getElementById("thumbnailContainer").style.display="initial";
                                        break;
-                                          }
+										}
 
 
 
