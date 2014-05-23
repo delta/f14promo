@@ -384,6 +384,7 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 
 #thumbnailContainer{
 	display:none;
+	opacity:0;
 	position:absolute;
 	z-index:3;
 	top:77%;
