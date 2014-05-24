@@ -494,6 +494,26 @@ top:33%;
 left:60%;
 
 }
-
-
 /* contacts properties*/ 
+
+.social{
+	position:absolute;
+	top:0%;
+	width:10%;
+	height:100%;
+	left:64%;
+}
+
+.social-links{
+	position:relative;
+	float:left;
+	width:23%;
+	height:30%;	
+	margin:25% 0% 35% 2%;
+	background-size:100% 100%;
+	opacity:0.5;
+}
+.social-links:hover{
+	opacity:1;
+	cursor:pointer;
+}

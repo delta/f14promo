@@ -31,9 +31,38 @@
 </head>
 
 <body>
+
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=348335611967651&version=v2.0";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+
 	<div id="container">		<!-- Put content within -->
-	<div id="header"></div>
-    
+	
+	<div id="header">
+		
+		<div style="position:relative;padding-top:2%;width:10%;height:100%;left:76%;">
+		<a href="https://twitter.com/festember" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @twitterapi</a>
+		<a href="https://twitter.com/intent/tweet?button_hashtag=festember14" class="twitter-hashtag-button" data-align="right">Tweet</a>
+		</div>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		
+		<div class="social">
+		<a href="http://facebook.com/festember" target="_blank"><div class="social-links" style="background-image:URL('images/fb.png');"></div></a>
+		<a href="http://twitter.com/festember" target="_blank"><div class="social-links" style="background-image:URL('images/twitter.png');"></div></a>
+		<a href="https://plus.google.com/109827905254261136398" target="_blank"><div class="social-links" style="background-image:URL('images/google.png');"></div></a>
+		<a href="http://www.youtube.com/channel/UCHQB_7nQA9A4X4kq12iyVww" target="_blank"><div class="social-links" style="background-image:URL('images/youtube.png');"></div></a>
+		</div>
+		
+		<div class="fb-like-box" style="position:absolute;left:87%;margin-top:-6%;width:15%;height:10%;" data-href="https://www.facebook.com/festember" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
+	</div>
+	
 	<div id="breakToHomeUp"></div>
 	<div id="breakToHomeDown"></div>
 	
@@ -58,8 +87,8 @@
      <div id="fade"></div>
 	 
 
-     <div id = "sub_container4"> <div class = 'containerText'>Festember13'</div><div class='line'></div><div id="preview4" class = "preview"><img id="main_image3" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
-
+     <div id = "sub_container4"> <div class = 'containerText'>Festember13'</div><div class='line'></div><div id="preview4" class = "preview" onclick="expand(this.id);"><img id="main_image3" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+	
 	<div id="footer">
 	<div id="footer-content">
 		<p>POWERED BY <a href="">DELTA</a></p>
@@ -93,8 +122,7 @@
 	<div id="thumbnailContainer"></div>
 </body>
 
-<script type="text/javascript">
-		
+<script type="text/javascript">	
 
 	var cur_id = null;
 
