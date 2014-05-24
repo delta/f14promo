@@ -56,7 +56,7 @@
 		<div class="social">
 		<a href="http://facebook.com/festember" target="_blank"><div class="social-links" style="background-image:URL('images/fb.png');"></div></a>
 		<a href="http://twitter.com/festember" target="_blank"><div class="social-links" style="background-image:URL('images/twitter.png');"></div></a>
-		<a href="https://plus.google.com/109827905254261136398" target="_blank"><div class="social-links" style="background-image:URL('images/google.png');"></div></a>
+		<a href="https://plus.google.com/102307812826051886408/" target="_blank"><div class="social-links" style="background-image:URL('images/google.png');"></div></a>
 		<a href="http://www.youtube.com/channel/UCHQB_7nQA9A4X4kq12iyVww" target="_blank"><div class="social-links" style="background-image:URL('images/youtube.png');"></div></a>
 		</div>
 		
@@ -87,7 +87,18 @@
      <div id="fade"></div>
 	 
 
-     <div id = "sub_container4"> <div class = 'containerText'>Festember13'</div><div class='line'></div><div id="preview4" class = "preview" onclick="expand(this.id);"><img id="main_image3" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+     <div id = "sub_container4"> <div class = 'containerText'>About</div><div class='line'></div><div id="preview4" class = "preview" onclick="expand(this.id);"><img id="main_image3" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div>
+	 <div id="about">
+	 <h1>About</h1>
+		<p><b>Festember</b>, a fest to remember, is the annual cultural extravaganza of NIT Trichy organized in month of September.
+		Since its inception in 1975, it has established itself as the best in South India winning the state best cultural festival award. 
+		A 4-day run course of Festember hosts more than 50 breathtaking events and electrifying pro-show performances by artists of international fame.</p>
+		
+	 <h3>Archives</h3>
+	 <a href="http://festember.com/13" target="_blank"><div class="linkToFestember"></div></a>
+	 <a href="http://festember.com/12" target="_blank"><div class="linkToFestember"></div></a>
+	 </div>
+	 </div>
 	
 	<div id="footer">
 	<div id="footer-content">
@@ -178,12 +189,6 @@
 		   
 		   $("#breakToHomeUp").fadeTo(1000,0);	//Fade the windows out
 		   $("#breakToHomeDown").fadeTo(1000,0);
-		   $("#image-container").fadeTo(200,0);
-		   $("#thumbnailContainer").fadeTo(200,0);
-		   
-		   //For gallery container's
-				document.getElementById("image-container").style.display = "none";
-				document.getElementById("thumbnailContainer").style.display = "none";
 		  
 		   setTimeout(function(){				//To bring back the divs to original position for another transition
 			document.getElementById("breakToHomeUp").style.top = "26%";
@@ -464,16 +469,13 @@
                                        }   
 
              case "sub_container4" :{
-                                       /*var sub_container = document.getElementById(id);     
+                                       var sub_container = document.getElementById(id);     
                                        var title_img = document.getElementById("main_image3");
                                        
                                        var preview = document.getElementsByClassName("preview");
                                        var container_text = document.getElementsByClassName("containerText");
                                        var line = document.getElementsByClassName("line");
                                        
-                                       var left = 25;        
-                                       
-                                                        
                                        title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
                                       
                                        preview[3].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
@@ -481,8 +483,14 @@
                                        container_text[3].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                        line[3].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
-									   document.getElementById("backToHome").style.display="initial";
-									   */
+									   
+									   document.getElementById("about").style.opacity = 0;
+									   document.getElementById("about").style.display = "initial";									   
+									  
+									   setTimeout(function(){
+										document.getElementById("backToHome").style.display="initial";
+										$("#about").fadeTo(1000,1);
+									   },1000);
 									   break;
                                        }                                        
 
@@ -559,7 +567,12 @@
 
                                              line[1].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";				 
 				 
-                                                      break;
+											$("#image-container").fadeTo(200,0);
+											$("#thumbnailContainer").fadeTo(200,0);
+		   
+											document.getElementById("image-container").style.display = "none";
+											document.getElementById("thumbnailContainer").style.display = "none";
+												break;
                                                      
                                              } 
 
@@ -604,20 +617,21 @@
                                         break;
                                        }                            
                  
-              case "sub_container4" :{      /*var title_img = document.getElementById("main_image3");
+              case "sub_container4" :{      var title_img = document.getElementById("main_image3");
                                             var preview = document.getElementsByClassName("preview");
                                             var container_text = document.getElementsByClassName("containerText");
                                             var line = document.getElementsByClassName("line");
                                            
-
-                                             title_img.style.cssText =  "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+											document.getElementById("about").style.display = "none";
+                                            
+											 title_img.style.cssText =  "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                                                                    
                                              preview[3].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
                                              container_text[3].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                              line[3].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";        
-										*/
+			
                                         break;
                                        }                            
                 
@@ -650,12 +664,10 @@
 
 $(document).ready(function(){
      
-        $('.preview').click(function(){
-		  if($(this).parent().attr('id') != 'sub_container4'){	
+        $('.preview').click(function(){	
 		  $('.containerText').css({"display":"none"});
           $('.line').css({"display":"none"});
           $('.preview').css({"display":"none"});
-		  }
         });
         $('#backToHome').click(function(){
 		  $('.containerText').css({"display":"block"});
@@ -668,13 +680,6 @@ $(document).ready(function(){
 		});
 		$('#rightArrow').click(function(){
 			changeImage('right');
-		});
-		$('#sub_container4').click(function(){
-			$('html').fadeTo(1000,0.3);
-			setTimeout(
-				function(){
-				window.location.replace("http://facebook.com/");
-			},1000);
 		});
     }); 
 
