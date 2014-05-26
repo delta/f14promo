@@ -4,7 +4,6 @@
 
     ///////////////  ADD THE IMAGE ASSETS AS OBJECTS AS SHOWN BELOW  /////////////////////    
    	var manifest = [
-		   {src:"images/light.png", id:"image1"},
 		   {src:"images/ironman.jpg", id:"image2"},
 		   {src:"images/images_0.jpg", id:"image3"},
 		   {src:"images/images_1.jpg", id:"image4"},
@@ -33,7 +32,7 @@
 	
     function preloadHandleProgress(event) {
 	   if(event){
-			document.getElementById("center-loading-line").style.borderLeft = (Math.round((event.loaded*100)).toString()*h/100)+"px solid #CC181E";	
+			document.getElementById("center-loading-line").style.borderLeft = (Math.round((event.loaded*100)).toString()*h/100)+"px solid #df9d0a";	
 			if(event.loaded*100 > 45 && event.loaded*100 < 55){
 			document.getElementById("center-loading-box").style.left = (Math.round(event.loaded*100)-45)*10+"%";
 			}
