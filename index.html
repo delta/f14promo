@@ -61,7 +61,7 @@
 	</div>
 	
 	<div id = "sub_container1">  
-    <!--div class = 'containerText'>Sponsors</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview1" class = "preview" onclick="expand(this.id);"><div id = "main_image0" class = "hoverZoom scaleUp" style="background-image:URL('./images/temp/Preview/preview1.svg');"></div></div>
+	<div class="preview_tab"></div><div class="preview_content"></div><div id="preview1" class = "preview" onclick="expand(this.id);"><div id = "main_image0" class = "hoverZoom scaleUp" style="background-image:URL('./images/temp/Preview/preview1.svg');"></div></div>
           <div id="sponsor_holder">
           <!-- your long content here... -->
           </div>
@@ -89,13 +89,13 @@
 	 </div>
 	
 	<div id="footer">
-		<div style="position:relative;padding-top:1%;width:10%;height:100%;left:86%;">
+		<div style="position:absolute;padding-top:1%;width:10%;height:100%;left:86%;">
 			<a href="https://twitter.com/festember" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @twitterapi</a>
 			<a href="https://twitter.com/intent/tweet?button_hashtag=festember14" class="twitter-hashtag-button" data-align="right">Tweet</a>
 		</div>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	
-		<div class="fb-like-box" style="position:absolute;left:3%;margin-top:-6%;width:15%;height:10%;" data-href="https://www.facebook.com/festember" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
+		<div class="fb-like-box" style="position:absolute;left:3%;width:15%;height:10%;" data-href="https://www.facebook.com/festember" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
 		<div id="footer-content">
 			<p>POWERED BY <a href="">DELTA</a></p>
 		</div>
@@ -444,8 +444,8 @@
                                             {   
                                              
                                             //change css here
-                                             generate_sp_img[i].style.cssText = "-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;";
-                                             reflect_sp_img[i].style.cssText = "-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;-webkit-opacity: 0.2;-moz-opacity: 0.2;opacity: 0.2;";
+                                             generate_sp_img[i].style.cssText = "display:initial;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;";
+                                             reflect_sp_img[i].style.cssText = "display:initial;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;-webkit-opacity: 0.2;-moz-opacity: 0.2;opacity: 0.2;";
                                             overlay[i].style.visibility ="visible";
 											 document.getElementById("backToHome").style.display="initial";
                                             }
@@ -613,13 +613,11 @@
 											
                                            for(var j=0;j<generate_sp_img.length;j++) {
                                               
-                                                 //change css here
-                                           generate_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                           //change css here
+                                           generate_sp_img[j].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
 
-                                           reflect_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
-                                           
-                                            
-                                             }
+                                           reflect_sp_img[j].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
+                                           }
 
 											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                          
