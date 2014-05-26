@@ -79,11 +79,8 @@
 	 <div id = "sub_container2"> <div class = 'containerText'>Gallery</div><div class='line'></div><div id="preview2" class = "preview" onclick="expand(this.id);"><img id="main_image1" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
 
 	 
-     <div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img id="main_image2" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img>
-
-    </div></div>
-
-     <div id = "overlay"></div>
+     <div id = "sub_container3"> <div class = 'containerText'>Contacts</div><div class='line'></div><div id="preview3" class = "preview" onclick="expand(this.id);"><img id="main_image2" class = "hoverZoom scaleUp" src = "./images/test.jpg"></img></div></div>
+	 <div id = "overlay"></div>
      <div id="fade"></div>
 	 
 
@@ -136,6 +133,9 @@
 <script type="text/javascript">	
 
 	var cur_id = null;
+	var contact_id = null;
+	var contact_left = null;
+	var contact_top = null;
 
   function expand(id)							//For the expansion of 4 windows in landing page
 		{ 	
@@ -263,7 +263,7 @@
 			changeSmallDivOpacity(1);
 		}*/
 		
-		function changeImage(movement){			//For moving between images in the image-container (need a designer)
+		function changeImage(movement){ //For moving between images in the image-container (need a designer)
 	
 		changeSmallDivOpacity(1);
 		var str = document.getElementById("image-container").style.backgroundImage;
@@ -281,7 +281,7 @@
 		},1100);
 		}
 		
-
+/*
    var contact_pop = function(id){
 
      var overlay =  document.getElementById('overlay');
@@ -305,12 +305,69 @@
 
      } 
 
+*/
+
+
     var contact_close = function(){
+      
 
-      document.getElementById('overlay').style.display='none';
-      document.getElementById('fade').style.display='none';
 
+      	contact_block = document.getElementsByClassName('contact_block');
+
+		  for(var i = contact_block.length - 1; i >= 0; i--)
+			document.getElementsByClassName('contact_block')[i].style.pointerEvents = 'auto';
+
+ 
+
+ 		   contact_block = document.getElementById(contact_id);
+		   contact_block.style.cssText = "z-index:20; transition:width 1s,left 1s,top 1s ease;-moz-transition:width 1s,left 1s,top 1s ease;-webkit-transition:width 1s,left 1s,top 1s ease;-o-transition: width 1s,left 1s,top 1s ease;left:"+contact_left+"%;top:"+contact_top+"%;width:10%; height:20%;"
+
+		   contact_block.innerHTML  = "<img class=\"generate_contact_img\" src=\"images/contacts/"+contact_id+".jpg\"  onclick='contact_zoom_scale(\""+contact_id+"\");'>";
+
+		     generate_contact_img.style.zIndex = 20;
+		     document.getElementById('fade').style.display='none';
+			
+
+		
     } 
+
+    var contact_zoom_scale = function(id){
+     
+     contact_block = document.getElementById(id);
+     generate_contact_img = document.getElementById(index);
+
+     contact_id = id;
+     contact_left = contact_block.style.left;
+     contact_top = contact_block.style.top;
+     var index = id.split('_')[1];
+
+     name_core = ["Cibi Pranav","Deepak Venkatesh","Gautham Vasan","Alex Kurian","Pahal Patangia","Pranay Mohata","Adhithyan","Jivitesh Kumar","Suraj Majee","Varun Sekar","Prasanna","Sri Ram","Aravindan","Vignesh","Parthasarathy","Nithyashree"];
+
+     phone = ["+91 9487673096","+91 7598122303","+91 9566061172","+91 9940122172","+91 7418377159","+91 9840530299","+91 9952443448","+91 8939419506","+91 8056250429","+91 9677266772","+91 9487675994","+91 9884283056","+91 9629444179","+91 9962107646","+91 9445483394","+91 9677220770"];
+
+     email = ["cibi@festember.com","deepak@festember.com","gautham@festember.com","alex@festember.com","pahal@festember.com","pranay@festember.com","adhi@festember.com","jivitesh@festember.com","suraj@festember.com","varun@festember.com","prasanna@festember.com","sriram@festember.com","aravindan@festember.com","vignesh@festember.com","partha@festember.com","nithya@festember.com"];
+
+
+     designation = ["Chairman","Overall Co-Ordinator","Treasurer","Cultural Secretary","Head - Marketing", "Head - Marketing", "Head - Events", "Head - Media","Head - Publicity", "Head - Computer Support Group", "Head - Quality Management","Head - Design", "Head - Organizing","Head - Hospitality","Head - Public Relations","Head - Workshop"];
+
+ 		    
+		   
+		   contact_block.style.cssText = "transition:width 1s,left 1s,top 1s ease;-moz-transition:width 1s,left 1s,top 1s ease;-webkit-transition:width 1s,left 1s,top 1s ease;-o-transition: width 1s,left 1s,top 1s ease;left:29%; top:28%; width:40%; height:60%; background-color:#000;";
+		
+           contact_block.innerHTML = '<div style="padding:1.25em;"><h4 id="designation">'+designation[index]+'</h4></div><img class="contact_inner_img" src="images/contacts/'+id+'.jpg" style="position:absolute; width:40%; height:70%;"/><div id="overlay_contents"><p>'+name_core[index]+'</p><p>'+phone[index]+'</p><p>'+email[index]+'</p></div><a onclick = "contact_close();" style="position:absolute;top:8%;left:95%;color:#ddd;size:12px;cursor:pointer;">X</a>';
+		    
+		    contact_block.style.zIndex=100;
+
+     contact_block = document.getElementsByClassName('contact_block');
+
+	   for(var i = contact_block.length - 1; i >= 0; i--)
+	   	if(i!=index)
+	      document.getElementsByClassName('contact_block')[i].style.pointerEvents = 'none';
+
+
+    }
+   
+
 
 //open all the container contents here .... 
 //put the gallery function to the corresponding container call this function at expand()
@@ -363,6 +420,7 @@
 											}
 										 */
 										 //Fadein div's after the container has expanded
+
                                           setTimeout(function(){
 										  for(var i=0;i<generate_sp_img.length;i++)
                                             {   
@@ -429,41 +487,51 @@
                                        var container_text = document.getElementsByClassName("containerText");
                                        var line = document.getElementsByClassName("line");
                                        
-                                       var left = 9;   
-                                       var top = 23;     
+                                       var left = 10;   
+                                       var top = 20;     
                                        var k;
+									 
 
-                                       /*title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
-                                      
+									   title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
+									                                      
                                        preview[2].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                       
                                        container_text[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
-                                       line[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";*/
-									                    
-                                       title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
-                                       preview[2].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
-                                       container_text[2].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
-                                       line[2].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
-
-                                          sub_container.style.align="center";
-
+                                       line[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
+									   
                                        
+
+                                      if(!document.getElementById("contact_0")){
                                        for(var i=0;i<2;i++){
 
                                           k = 0;
 
                                           if(i==0)
                                                 for (var j=0;j<8;j++){
-                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" style='left:"+((left*k)+3)+"%;'><img class=\"generate_contact_img\" id=\"contact_"+j+"\" src=\"images/contacts/contact_"+j+".jpg\" style='top:"+((-top)*i)+"%;' onclick='contact_pop(\"contact_"+j+"\");'></div>";
+                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" id=\"contact_"+j+"\" style='left:"+((left*k)+3)+"%; top:22%;'><img class=\"generate_contact_img\" src=\"images/contacts/contact_"+j+".jpg\"  onclick='contact_zoom_scale(\"contact_"+j+"\");'></div>";
                                             k++;}
                                           
                                           if(i==1)
                                                 for (var j=8;j<17;j++){
-                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" style='left:"+((left*k)+3)+"%;'><img class=\"generate_contact_img\" id=\"contact_"+j+"\" src=\"images/contacts/contact_"+j+".jpg\" style='top:"+((-top)*i)+"%;' onclick='contact_pop(\"contact_"+j+"\");'></div>";
+                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" id=\"contact_"+j+"\" style='left:"+((left*k)+3)+"%; top:47%;'><img class=\"generate_contact_img\" src=\"images/contacts/contact_"+j+".jpg\" onclick='contact_zoom_scale(\"contact_"+j+"\");'></div>";
                                             k++;}
 
                                           }
+                                      }
+									else{
+                                            var generate_contact_img = document.getElementsByClassName('generate_contact_img');
+                                            var contact_block = document.getElementsByClassName('contact_block');
+
+                                  
+                                          for(var i = generate_contact_img.length - 1; i >= 0; i--)
+                                          {  
+                                             generate_contact_img[i].style.display ="initial";
+                                             contact_block[i].style.display ="initial";
+ 
+                                           } 
+                                     
+                                         }
                                         document.getElementById("backToHome").style.display="initial";
                                         break;
                                        }   
@@ -582,16 +650,15 @@
                                             var line = document.getElementsByClassName("line");
                                            
                                             var generate_contact_img = document.getElementsByClassName('generate_contact_img');
+                                            var contact_block = document.getElementsByClassName('contact_block');
 
                                   
                                           for(var i = generate_contact_img.length - 1; i >= 0; i--)
                                           {
                                              
-                                             generate_contact_img[i].style.visibility ="hidden";
-                                           /*  reflect_sp_img[i].style.visibility ="hidden";
-                                              overlay[i].style.visibility ="hidden";
-
-                                           */
+                                             generate_contact_img[i].style.display ="none";
+                                             contact_block[i].style.display ="none";
+ 
                                            }
 
 
@@ -602,17 +669,7 @@
                                              container_text[2].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
                                              line[2].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";  
-                                            
-                                             
-                                           for(var j=0;j<generate_contact_img.length;j++) {
-                                              
-                                                 //change css here
-                                            generate_contact_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
-
-                                         /*  reflect_sp_img[j].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";*/
-                                           
-                                          
-                                          }      
+                                         
 
                                         break;
                                        }                            

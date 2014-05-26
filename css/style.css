@@ -411,21 +411,46 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	transition:opacity 1s;
 	opacity:1;
 }
+
 /* contacts properties*/ 
+
 .generate_contact_img
 {   position: absolute;
-	width: 8%;
-	height: 20%;
-	z-index:10;
+	width: 70%;
+	height: 100%;
+	z-index:21;
+    margin-left: auto;
+    margin-right: auto;
 	cursor: pointer;
+	 -webkit-transform: scale(1,1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1,1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+}
+
+.generate_contact_img:hover {
+    opacity: .7;
+    -webkit-transform: scale(1.1,1.12);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1.1,1.12);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+    position: absolute;
+    z-index: 21;
 }
 
 .contact_block {
 	position:absolute;
-	top:50%;
-	width:100%;
-	height:100%;
+	width: 10%;
+	height: 20%;
 	float:left;
+
+	padding: 0.25rem;
+	/*text-align:center;
+    text-indent:center;*/
 }
 
 #overlay {
@@ -494,6 +519,7 @@ top:33%;
 left:60%;
 
 }
+
 /* contacts properties*/ 
 
 #about{
