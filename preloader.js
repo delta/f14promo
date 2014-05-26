@@ -56,8 +56,8 @@
 		document.getElementById("container").style.backgroundImage = "URL('images/ironman.jpg')";
 		document.getElementById("container").style.opacity = 1;
 		setTimeout(function(){
-		$("#header").fadeTo(1000,0.9);
-		$("#footer").fadeTo(1000,0.9);},1500);
+		$("#header").fadeTo(1000,1);
+		$("#footer").fadeTo(1000,1);},1500);
 	}
 
     init();

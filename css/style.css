@@ -47,7 +47,7 @@ body{
 	overflow-x:auto;
 	overflow-y:hidden;
 	background-color:#000;
-	opacity:0.85;
+	opacity:1;
 	/*cursor:pointer;*/
 }
 
@@ -60,7 +60,7 @@ body{
 	overflow-x:auto;
 	overflow-y:hidden;
 	background-color:#000;
-	opacity:0.85;
+	opacity:1;
 	/*cursor:pointer;*/
 }
 
@@ -71,7 +71,7 @@ body{
 	width:24.75%;
 	height:70%;
 	background-color:#000;
-	opacity:0.85;
+	opacity:1;
 	/*cursor:pointer;*/
 }
 
@@ -82,7 +82,7 @@ body{
 	width:24.75%;
 	height:70%;
 	background-color:#000;
-	opacity:0.85;
+	opacity:1;
 	/*cursor:pointer;*/
 }
 
