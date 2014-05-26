@@ -220,13 +220,13 @@ body{
 	z-index:20;
 	border:none;
 	background:#000;
-	color:#cc181e;
+	color:#df9d0a;
 	opacity:0.85;
 	font-size:13px;
 }
 #backToHome:hover{
 	transition:background 1s,color 1s;
-	background:#cc181e;
+	background:#df9d0a;
 	color:#000;
 }
 
@@ -516,7 +516,7 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 .smaller-div{
 	position:relative;
 	width:33.33%;
-	height:50%;
+	height:50.1%;
 	float:left;
 	background-color:#000;
 }
