@@ -4,19 +4,19 @@
 
     ///////////////  ADD THE IMAGE ASSETS AS OBJECTS AS SHOWN BELOW  /////////////////////    
    	var manifest = [
-		   {src:"images/images_0.jpg", id:"image0"},
-		   {src:"images/images_1.jpg", id:"image1"},
-		   {src:"images/images_2.jpg", id:"image2"},
-		   {src:"images/images_3.jpg", id:"image3"},
-		   {src:"images/images_4.jpg", id:"image4"},
-		   {src:"images/images_5.jpg", id:"image5"},
-		   {src:"images/images_6.jpg", id:"image6"},
-		   {src:"images/images_7.jpg", id:"image7"},
+		   {src:"./images/images_0.jpg", id:"image0"},
+		   {src:"./images/images_1.jpg", id:"image1"},
+		   {src:"./images/images_2.jpg", id:"image2"},
+		   {src:"./images/images_3.jpg", id:"image3"},
+		   {src:"./images/images_4.jpg", id:"image4"},
+		   {src:"./images/images_5.jpg", id:"image5"},
+		   {src:"./images/images_6.jpg", id:"image6"},
+		   {src:"./images/images_7.jpg", id:"image7"},
 		   
-		   {src:"images/temp/Preview/preview1.png", id:"preview_1"},
-		   {src:"images/temp/Preview/preview2.png", id:"preview_2"},
-		   {src:"images/temp/Preview/preview3.png", id:"preview_3"},
-		   {src:"images/temp/Preview/preview4.png", id:"preview_4"},
+		   {src:"./images/temp/Preview/preview1.png", id:"preview_1"},
+		   {src:"./images/temp/Preview/preview2.png", id:"preview_2"},
+		   {src:"./images/temp/Preview/preview3.png", id:"preview_3"},
+		   {src:"./images/temp/Preview/preview4.png", id:"preview_4"},
 		   ];
 
     function init(){
