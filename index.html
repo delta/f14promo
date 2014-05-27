@@ -47,35 +47,35 @@
 	
 	<div id="header">		
 		<div class="social">
-		<a href="http://facebook.com/festember" target="_blank"><div class="social-links" style="background-image:URL('images/temp/Social media/fb.svg');"></div></a>
-		<a href="http://twitter.com/festember" target="_blank"><div class="social-links" style="background-image:URL('images/temp/Social media/twitter.svg');"></div></a>
-		<a href="https://plus.google.com/102307812826051886408/" target="_blank"><div class="social-links" style="background-image:URL('images/temp/Social media/g+.svg');"></div></a>
-		<a href="http://www.youtube.com/channel/UCHQB_7nQA9A4X4kq12iyVww" target="_blank"><div class="social-links" style="background-image:URL('images/temp/Social media/youtube.svg');"></div></a>
+		<a href="http://facebook.com/festember" target="_blank"><div class="social-links"></div></a>
+		<a href="http://twitter.com/festember" target="_blank"><div class="social-links"></div></a>
+		<a href="https://plus.google.com/102307812826051886408/" target="_blank"><div class="social-links"></div></a>
+		<a href="http://www.youtube.com/channel/UCHQB_7nQA9A4X4kq12iyVww" target="_blank"><div class="social-links"></div></a>
 		</div>
 	</div>
 	
-	<div id="breakToHomeUp"></div>
+	<div id="breakToHomeUp"></div>	<!--For animation back to home -->
 	<div id="breakToHomeDown"></div>
 	
-    <div id="hold_container">	<!-- Put page content -->
+    <div id="hold_container">		<!-- Put page content -->
 	</div>
 	
 	<div id = "sub_container1">  
-	<div class="preview_tab"></div><div class="preview_content"></div><div id="preview1" class = "preview" onclick="expand(this.id);"><div id = "main_image0" class = "hoverZoom scaleUp" style="background-image:URL('./images/temp/Preview/preview1.svg');"></div></div>
+	<div class="preview_tab"></div><div class="preview_content"></div><div id="preview1" class = "preview" onclick="expand(this.id);"><div id = "main_image0" class = "hoverZoom scaleUp"></div></div>
           <div id="sponsor_holder">
           <!-- your long content here... -->
           </div>
       </div>
 
-	 <div id = "sub_container2"> <!--div class = 'containerText'>Gallery</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview2" class = "preview" onclick="expand(this.id);"><div id="main_image1" class = "hoverZoom scaleUp" style="background-image:URL('./images/temp/Preview/preview2.svg');"></div></div></div>
+	 <div id = "sub_container2"> <!--div class = 'containerText'>Gallery</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview2" class = "preview" onclick="expand(this.id);"><div id="main_image1" class = "hoverZoom scaleUp"></div></div></div>
 
 	 
-     <div id = "sub_container3"> <!--div class = 'containerText'>Contacts</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview3" class = "preview" onclick="expand(this.id);"><div id="main_image2" class = "hoverZoom scaleUp" style="background-image:URL('./images/temp/Preview/preview3.svg');"></div></div></div>
+     <div id = "sub_container3"> <!--div class = 'containerText'>Contacts</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview3" class = "preview" onclick="expand(this.id);"><div id="main_image2" class = "hoverZoom scaleUp"></div></div></div>
 	 <div id = "overlay"></div>
      <div id="fade"></div>
 	 
 
-     <div id = "sub_container4"> <!--div class = 'containerText'>About</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview4" class = "preview" onclick="expand(this.id);"><div id="main_image3" class = "hoverZoom scaleUp" style="background-image:URL('./images/temp/Preview/preview4.svg');"></div></div>
+     <div id = "sub_container4"> <!--div class = 'containerText'>About</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview4" class = "preview" onclick="expand(this.id);"><div id="main_image3" class = "hoverZoom scaleUp"></div></div>
 	 <div id="about">
 	 <h1>About</h1>
 		<p><b>Festember</b>, a fest to remember, is the annual cultural extravaganza of NIT Trichy organized in month of September.
@@ -129,6 +129,8 @@
 	
 	<div id="thumbnailContainer"></div>
 </body>
+
+<script src="preloader.js"></script>
 
 <script type="text/javascript">	
 
@@ -201,7 +203,7 @@
 		   for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
-              document.getElementById("main_image"+(i-1)).style.backgroundImage = "URL('images/Temp/Preview/preview"+i+".svg')";
+              document.getElementById("main_image"+(i-1)).style.backgroundImage = "URL('images/Temp/Preview/preview"+i+".png')";
               sub_container.style.cssText = "overflow:hidden;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
            }
 		   },200);
@@ -778,6 +780,5 @@ $(document).ready(function(){
     });
   })(jQuery);
 </script>
-	
-<script src="preloader.js"></script>
+
 </html>

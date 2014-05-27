@@ -110,7 +110,8 @@ body{
 	top:0%;	
 	height:15%;
 	width:100%;
-	background-image:URL('../images/Temp/Header/header.svg');
+	background-image:URL('../images/Temp/Header/header.png');
+	background-size:100% 100%;
 	background-repeat:no-repeat;
 	opacity:0;
 }
@@ -173,7 +174,7 @@ body{
 	top:44%;
 	border-radius:50%;
 	z-index:3;
-	background-image:URL('../images/temp/Header/logo.svg');
+	background-image:URL('../images/temp/Header/logo.png');
 	background-size:100% 100%;
 	transition:top ease-in-out 2s;
 }
@@ -518,7 +519,7 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	width:33.33%;
 	height:50.1%;
 	float:left;
-	background-color:#000;
+	background-color:#080808;
 }
 
 p{
