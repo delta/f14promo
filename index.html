@@ -237,6 +237,29 @@
 					$("#smallDiv6").fadeTo(500,opacity);
 				},100+Math.random()*300);
 		}
+				
+		function setAspectRatio(){
+				var str = document.getElementById("image-container").style.backgroundImage;
+				var res = str.substr(str.indexOf('_')+1, 1);
+				var img = $('<img>')
+				.attr('src','images/images_'+res+'.jpg')
+				.appendTo('body');
+
+				var ratioContainer = $("#image-container").width()/$("#image-container").height();
+				var width = img.width();
+				var height = img.height()*ratioContainer;
+				
+				if(width > height){
+					height = (height/width)*100;
+					width = 100;
+				}
+				else{
+					width = (width/height)*100;
+					height = 100;
+				}
+				document.getElementById("image-container").style.backgroundSize = width+"% "+height+"%";
+				img.remove();
+		}
 		
 		function openImageHolder(gallery_id){	//For opening the gallery images
 			changeSmallDivOpacity(1);
@@ -266,6 +289,7 @@
 			setTimeout(function(){
 				changeSmallDivOpacity(0);
 				document.getElementById("image-container").style.backgroundImage= document.getElementById(gallery_id.id).style.backgroundImage;
+				setAspectRatio();
 				},1500);
 			}
 		
@@ -298,6 +322,7 @@
 			res++;
 			document.getElementById("image-container").style.backgroundImage ='url("images/images_'+res+'.jpg")';		
 		}
+		setAspectRatio();
 		changeSmallDivOpacity(0);
 		},1100);
 		}
@@ -337,8 +362,6 @@
 
 		  for(var i = contact_block.length - 1; i >= 0; i--)
 			document.getElementsByClassName('contact_block')[i].style.pointerEvents = 'auto';
-
- 
 
  		   contact_block = document.getElementById(contact_id);
 		   contact_block.style.cssText = "z-index:20; transition:width 1s,left 1s,top 1s ease;-moz-transition:width 1s,left 1s,top 1s ease;-webkit-transition:width 1s,left 1s,top 1s ease;-o-transition: width 1s,left 1s,top 1s ease;left:"+contact_left+"%;top:"+contact_top+"%;width:10%; height:20%;"
@@ -477,7 +500,7 @@
  
                                           if(!document.getElementById("gallery_0"))
                                           {
-                                           for(var i=0;i<8;i++) {
+                                           for(var i=0;i<9;i++) {
 											/*  document.getElementById(id).innerHTML+= "<div class=\"gallery_block\" style='left:"+((left*i)+3)+"%;'><img class=\"generate_gallery_img\" id=\"gallery_"+i+"\" src=\"images/images_"+i+".jpg\" onclick = \"openImageHolder(this);\" style=\"opacity:0;\"></div>";
 											*/
 											document.getElementById("thumbnailContainer").innerHTML+= "<div class=\"generate_thumbnail\" style=\"background-image:URL('"+'images/images_'+i+'.jpg'+"');\" id=\"gallery_"+i+"\" onclick = \"openImageHolder(this);\"></div>";
