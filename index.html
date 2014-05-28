@@ -138,6 +138,8 @@
 	var contact_id = null;
 	var contact_left = null;
 	var contact_top = null;
+	
+	var res=0 ; //stores id of previous gallery image
 
   function expand(id)							//For the expansion of 4 windows in landing page
 		{ 	
@@ -240,9 +242,13 @@
 				
 		function setAspectRatio(){
 				var str = document.getElementById("image-container").style.backgroundImage;
-				var res = str.substr(str.indexOf('_')+1, 1);
+				res = str.substr(str.indexOf('_')+1, 2);
+
+				if(str.substr(str.indexOf('_')+2, 1) == '.')
+					res = str.substr(str.indexOf('_')+1, 1);
+					
 				var img = $('<img>')
-				.attr('src','images/images_'+res+'.jpg')
+				.attr('src','images/gallery/gallery_'+res+'.jpg')
 				.appendTo('body');
 
 				var ratioContainer = $("#image-container").width()/$("#image-container").height();
@@ -312,15 +318,19 @@
 	
 		changeSmallDivOpacity(1);
 		var str = document.getElementById("image-container").style.backgroundImage;
-		var res = str.substr(str.indexOf('_')+1, 1);
+		res = str.substr(str.indexOf('_')+1, 2);
+
+		if(str.substr(str.indexOf('_')+2, 1) == '.')
+			res = str.substr(str.indexOf('_')+1, 1);
+			
 		setTimeout(function(){
 		if(movement == 'left' && res !=0){
 			res--;
-			document.getElementById("image-container").style.backgroundImage ='url("images/images_'+res+'.jpg")';
+			document.getElementById("image-container").style.backgroundImage ='url("images/gallery/gallery_'+res+'.jpg")';
 		}
 		else if(movement == 'right'){
 			res++;
-			document.getElementById("image-container").style.backgroundImage ='url("images/images_'+res+'.jpg")';		
+			document.getElementById("image-container").style.backgroundImage ='url("images/gallery/gallery_'+res+'.jpg")';		
 		}
 		setAspectRatio();
 		changeSmallDivOpacity(0);
@@ -500,10 +510,10 @@
  
                                           if(!document.getElementById("gallery_0"))
                                           {
-                                           for(var i=0;i<9;i++) {
+                                           for(var i=0;i<59;i++) {
 											/*  document.getElementById(id).innerHTML+= "<div class=\"gallery_block\" style='left:"+((left*i)+3)+"%;'><img class=\"generate_gallery_img\" id=\"gallery_"+i+"\" src=\"images/images_"+i+".jpg\" onclick = \"openImageHolder(this);\" style=\"opacity:0;\"></div>";
 											*/
-											document.getElementById("thumbnailContainer").innerHTML+= "<div class=\"generate_thumbnail\" style=\"background-image:URL('"+'images/images_'+i+'.jpg'+"');\" id=\"gallery_"+i+"\" onclick = \"openImageHolder(this);\"></div>";
+											document.getElementById("thumbnailContainer").innerHTML+= "<div class=\"generate_thumbnail\" style=\"left:"+5.5*i+"%;background-image:URL('"+'images/gallery/gallery_'+i+'.jpg'+"');\" id=\"gallery_"+i+"\" onclick = \"openImageHolder(this);\"></div>";
 											}
 											openImageHolder(document.getElementById("gallery_0"));
 											}
@@ -517,7 +527,7 @@
 												generate_gallery_img[i].style.cssText = "-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
 												}
 											},1200);
-										openImageHolder(document.getElementById("gallery_0"));
+										openImageHolder(document.getElementById("gallery_"+res));
                                        break;
 										}
 

@@ -110,7 +110,7 @@ body{
 	top:0%;	
 	height:15%;
 	width:100%;
-	background-image:URL('../images/Temp/Header/header.png');
+	background-image:URL('../images/temp/Header/header.png');
 	background-size:100% 100%;
 	background-repeat:no-repeat;
 	opacity:0;
@@ -414,15 +414,12 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	height:9%;
 	background-color:#000;
 	overflow-x:auto;
-	overflow-y:hidden;
 }
 
 .generate_thumbnail{
-	position:relative;
-	float:left;
+	position:absolute;
 	width:5%;
 	height:100%;
-	margin-left:0.5%;
 	height: 100%;
 	background-size:100% 100%;
 	opacity:0.5;
