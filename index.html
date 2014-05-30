@@ -135,9 +135,7 @@
 <script type="text/javascript">	
 
 	var cur_id = null;
-	var contact_id = null;
-	var contact_left = null;
-	var contact_top = null;
+	var pre_contact_id = 0;
 	
 	var res=0 ; //stores id of previous gallery image
 
@@ -384,7 +382,7 @@
 
 		
     } 
-
+/*
     var contact_zoom_scale = function(id){
      
      contact_block = document.getElementById(id);
@@ -420,8 +418,38 @@
 
 
     }
-   
+  */
 
+
+	var contact_display_details = function(id){
+
+     var index = id.split('_')[1];
+
+
+  	    name_core = ["Cibi Pranav","Deepak Venkatesh","Gautham Vasan","Alex Kurian","Pahal Patangia","Pranay Mohata","Adhithyan","Jivitesh Kumar","Suraj Majee","Varun Sekar","Prasanna","Sri Ram","Aravindan","Vignesh","Parthasarathy","Nithyashree"];
+
+	     phone = ["+91 9487673096","+91 7598122303","+91 9566061172","+91 9940122172","+91 7418377159","+91 9840530299","+91 9952443448","+91 8939419506","+91 8056250429","+91 9677266772","+91 9487675994","+91 9884283056","+91 9629444179","+91 9962107646","+91 9445483394","+91 9677220770"];
+
+	     email = ["cibi@festember.com","deepak@festember.com","gautham@festember.com","alex@festember.com","pahal@festember.com","pranay@festember.com","adhi@festember.com","jivitesh@festember.com","suraj@festember.com","varun@festember.com","prasanna@festember.com","sriram@festember.com","aravindan@festember.com","vignesh@festember.com","partha@festember.com","nithya@festember.com"];
+
+
+	     designation = ["Chairman","Overall Co-Ordinator","Treasurer","Cultural Secretary","Head - Marketing", "Head - Marketing", "Head - Events", "Head - Media","Head - Publicity", "Head - Computer Support Group", "Head - Quality Management","Head - Design", "Head - Organizing","Head - Hospitality","Head - Public Relations","Head - Workshop"];
+
+	
+	     if(document.getElementById('prev_contact_id'))
+          { document.getElementById('pre_contact_id').cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
+          }
+         
+ 	
+
+           contact_display.innerHTML = '<div id="'+id+'" style="padding:1.25em;"><h4 id="designation">'+designation[index]+'</h4></div><img class="contact_inner_img" src="images/contacts/'+id+'.jpg" style="position:absolute; width:40%; height:70%;"/><div id="overlay_contents"><p>'+name_core[index]+'</p><p>'+phone[index]+'</p><p>'+email[index]+'</p></div>';
+		    		
+    
+          document.getElementById(id).cssText = "-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
+                      	
+           prev_contact_id = id;
+
+	}
 
 //open all the container contents here .... 
 //put the gallery function to the corresponding container call this function at expand()
@@ -466,13 +494,6 @@
 											}
 										  }
                                      
-                                         /*for (var i = generate_sp_img.length - 1; i >= 0; i--) {
-                                                
-                                                 generate_sp_img[i].style.visibility ="visible";
-                                                 reflect_sp_img[i].style.visibility ="visible";
-                                                 overlay[i].style.visibility ="visible";
-											}
-										 */
 										 //Fadein div's after the container has expanded
 
                                           setTimeout(function(){
@@ -554,25 +575,33 @@
 
                                        //line[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 									   
-                                       
+                                    
+                                      if(!document.getElementById("contact_list")){
+                                      
+                                      document.getElementById(id).innerHTML+="<div id=\"contact_list\"style='position:absolute; top:0%; width:50%;height:100%;'></div>";
+                                        
 
-                                      if(!document.getElementById("contact_0")){
+                                      document.getElementById(id).innerHTML+="<div id=\"contact_display\" style ='position:absolute; top:0%;left:50.5%; width:49.5%; padding-left:2em; height:100%;'></div>";
+                                
+                                    
                                        for(var i=0;i<2;i++){
 
                                           k = 0;
 
                                           if(i==0)
                                                 for (var j=0;j<8;j++){
-                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" id=\"contact_"+j+"\" style='left:"+((left*k)+3)+"%; top:22%;'><img class=\"generate_contact_img\" src=\"images/contacts/contact_"+j+".jpg\"  onclick='contact_zoom_scale(\"contact_"+j+"\");'></div>";
+                                                     document.getElementById('contact_list').innerHTML+= "<div class=\"contact_block\" id=\"contact_"+j+"\" style='left:"+((left*k)+3)+"%; top:22%;'><img class=\"generate_contact_img\" src=\"images/contacts/contact_"+j+".jpg\"  onclick='contact_display_details(\"contact_"+j+"\");'></div>";
                                             k++;}
                                           
                                           if(i==1)
                                                 for (var j=8;j<17;j++){
-                                              document.getElementById(id).innerHTML+= "<div class=\"contact_block\" id=\"contact_"+j+"\" style='left:"+((left*k)+3)+"%; top:47%;'><img class=\"generate_contact_img\" src=\"images/contacts/contact_"+j+".jpg\" onclick='contact_zoom_scale(\"contact_"+j+"\");'></div>";
+                                                    document.getElementById('contact_list').innerHTML+= "<div class=\"contact_block\" id=\"contact_"+j+"\" style='left:"+((left*k)+3)+"%; top:47%;'><img class=\"generate_contact_img\" src=\"images/contacts/contact_"+j+".jpg\" onclick='contact_display_details(\"contact_"+j+"\");'></div>";
                                             k++;}
 
                                           }
+                                      
                                       }
+
 									else{
                                             var generate_contact_img = document.getElementsByClassName('generate_contact_img');
                                             var contact_block = document.getElementsByClassName('contact_block');
@@ -584,10 +613,14 @@
                                              contact_block[i].style.display ="initial";
  
                                            } 
-                                     
+
+                                             contact_display.style.display ="initial";
+                                             contact_list.style.display ="initial";
+                                            
                                          }
                                         document.getElementById("backToHome").style.display="initial";
                                         break;
+
                                        }   
 
              case "sub_container4" :{
@@ -607,8 +640,7 @@
                                        //line[3].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 									   
 									   document.getElementById("about").style.opacity = 0;
-									   document.getElementById("about").style.display = "initial";									   
-									  
+									   document.getElementById("about").style.display = "initial";									  
 									   setTimeout(function(){
 										document.getElementById("backToHome").style.display="initial";
 										$("#about").fadeTo(1000,1);
@@ -710,18 +742,17 @@
                                              
                                              generate_contact_img[i].style.display ="none";
                                              contact_block[i].style.display ="none";
- 
+                                            
                                            }
 
+ 											 contact_display.style.display ="none";
+                                             contact_list.style.display ="none";
+                                            
 
                                              title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                                                                    
                                              preview[2].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
-                                            
-                                             //container_text[2].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
-
-                                             //line[2].style.cssText="-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";  
-                                         
+                                           
 
                                         break;
                                        }                            
