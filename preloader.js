@@ -13,10 +13,14 @@
 		   {src:"./images/images_6.jpg", id:"image6"},
 		   {src:"./images/images_7.jpg", id:"image7"},
 		   
-		   {src:"./images/temp/Preview/preview1.png", id:"preview_1"},
-		   {src:"./images/temp/Preview/preview2.png", id:"preview_2"},
-		   {src:"./images/temp/Preview/preview3.png", id:"preview_3"},
-		   {src:"./images/temp/Preview/preview4.png", id:"preview_4"},
+		   {src:"./images/temp/Preview/preview1.svg", id:"preview_1"},
+		   {src:"./images/temp/Preview/preview2.svg", id:"preview_2"},
+		   {src:"./images/temp/Preview/preview3.svg", id:"preview_3"},
+		   {src:"./images/temp/Preview/preview4.svg", id:"preview_4"},
+		   {src:"./images/temp/Preview/preview1 h.svg", id:"preview_5"},
+		   {src:"./images/temp/Preview/preview2 h.svg", id:"preview_6"},
+		   {src:"./images/temp/Preview/preview3 h.svg", id:"preview_7"},
+		   {src:"./images/temp/Preview/preview4 h.svg", id:"preview_8"},
 		   
 		   {src:"./images/gallery/gallery_0.jpg", id:"gallery0"},
 		   {src:"./images/gallery/gallery_1.jpg", id:"gallery1"},
@@ -121,10 +125,10 @@
 		document.getElementById("container").style.opacity = 1;
 		
 		//For preview-containers
-		document.getElementById("main_image0").style.backgroundImage = "URL('./images/temp/Preview/preview1.png')";
-		document.getElementById("main_image1").style.backgroundImage = "URL('./images/temp/Preview/preview2.png')";
-		document.getElementById("main_image2").style.backgroundImage = "URL('./images/temp/Preview/preview3.png')";
-		document.getElementById("main_image3").style.backgroundImage = "URL('./images/temp/Preview/preview4.png')";
+		document.getElementById("main_image0").style.backgroundImage = "URL('./images/temp/Preview/preview1.svg')";
+		document.getElementById("main_image1").style.backgroundImage = "URL('./images/temp/Preview/preview2.svg')";
+		document.getElementById("main_image2").style.backgroundImage = "URL('./images/temp/Preview/preview3.svg')";
+		document.getElementById("main_image3").style.backgroundImage = "URL('./images/temp/Preview/preview4.svg')";
 		
 		//For social links
 		var social = document.getElementsByClassName("social-links");

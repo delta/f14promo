@@ -6,30 +6,30 @@
 <rect fill="#FFB000" width="480" height="480"/>
 <g>
 	<g>
-		<polygon fill="#FFB000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" points="179.098,450.718 174.636,247.523 
-			240,234.946 240,450.917 		"/>
-		<polygon fill="#FFB000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" points="304.346,451.588 308.586,248.393 
-			243,235.816 243,451.787 		"/>
+		<polygon fill="#FFB000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" points="177.487,460.724 173.025,257.529 
+			238.389,244.952 238.389,460.923 		"/>
+		<polygon fill="#FFB000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" points="302.735,461.594 306.975,258.399 
+			241.389,245.822 241.389,461.793 		"/>
 	</g>
 	<g>
-		<polygon fill="#FFB000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" points="170.385,366 165.789,162.547 
-			231.02,149.841 240.264,192.218 251.024,149.744 316.406,162.563 311.962,366 		"/>
+		<polygon fill="#FFB000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" points="169.287,376.006 164.691,172.553 
+			229.923,159.847 239.167,202.224 249.926,159.75 315.309,172.569 310.865,376.006 		"/>
 		
-			<line fill="#FFB000" stroke="#000000" stroke-width="2.3501" stroke-miterlimit="10" x1="234.667" y1="166.496" x2="227.065" y2="365.426"/>
+			<line fill="none" stroke="#000000" stroke-width="2.3501" stroke-miterlimit="10" x1="233.57" y1="176.502" x2="225.967" y2="375.432"/>
 		
-			<line fill="#FFB000" stroke="#000000" stroke-width="2.3501" stroke-miterlimit="10" x1="248.216" y1="166.496" x2="255.819" y2="365.426"/>
+			<line fill="none" stroke="#000000" stroke-width="2.3501" stroke-miterlimit="10" x1="247.118" y1="176.502" x2="254.721" y2="375.432"/>
 	</g>
 	<g>
-		<ellipse fill="#FFFFFF" cx="241.578" cy="86.531" rx="53.101" ry="57.6"/>
-		<circle fill="none" stroke="#000000" stroke-width="2.3501" stroke-miterlimit="10" cx="241.584" cy="86.335" r="53.095"/>
+		<ellipse fill="#FFFFFF" cx="242" cy="96.537" rx="53.101" ry="57.6"/>
+		<circle fill="none" stroke="#000000" stroke-width="2.3501" stroke-miterlimit="10" cx="242.006" cy="96.341" r="53.095"/>
 	</g>
-	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="1.1751" stroke-miterlimit="10" points="240.511,195.988 240.502,184.822 
-		239.99,190.354 239.479,184.822 239.469,195.988 227.065,330.071 239.99,346.28 252.915,330.071 	"/>
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="1.1751" stroke-miterlimit="10" points="240.934,205.994 240.924,194.828 
+		240.413,200.36 239.902,194.828 239.891,205.994 227.488,340.077 240.413,356.286 253.337,340.077 	"/>
 	<g>
-		<polygon fill="none" stroke="#000000" stroke-width="2.3501" stroke-miterlimit="10" points="164.34,162.381 133.357,193.144 
-			148.848,296.737 167.189,288.407 		"/>
-		<polygon fill="none" stroke="#000000" stroke-width="2.3501" stroke-miterlimit="10" points="314.815,162.381 345.798,193.144 
-			330.307,296.737 311.966,288.407 		"/>
+		<polygon fill="none" stroke="#000000" stroke-width="2.3501" stroke-miterlimit="10" points="164.762,172.387 133.779,203.15 
+			149.271,306.743 167.611,298.413 		"/>
+		<polygon fill="none" stroke="#000000" stroke-width="2.3501" stroke-miterlimit="10" points="315.237,172.387 346.221,203.15 
+			330.729,306.743 312.388,298.413 		"/>
 	</g>
 </g>
 </svg>

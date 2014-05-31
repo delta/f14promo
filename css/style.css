@@ -214,7 +214,7 @@ body{
 #backToHome{
 	position:absolute;
 	display:none;
-	top:75%;
+	top:80%;
 	left:47.5%;
 	width:5%;
 	height:5%;
@@ -230,7 +230,6 @@ body{
 	background:#df9d0a;
 	color:#000;
 }
-
 
 /*#main_image{
 position: absolute;
@@ -435,22 +434,15 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 
 .generate_contact_img
 {   position: absolute;
-	width: 70%;
+	width: 40%;
 	height: 100%;
-	z-index:21;
+	z-index:3;
     margin-left: auto;
     margin-right: auto;
-	cursor: pointer;
-	 -webkit-transform: scale(1,1);
-    -webkit-transition-timing-function: ease-out;
-    -webkit-transition-duration: 250ms;
-    -moz-transform: scale(1,1);
-    -moz-transition-timing-function: ease-out;
-    -moz-transition-duration: 250ms;
 }
 
 .generate_contact_img:hover {
-    opacity: .7;
+/*    opacity: .7;
     -webkit-transform: scale(1.1,1.12);
     -webkit-transition-timing-function: ease-out;
     -webkit-transition-duration: 250ms;
@@ -458,18 +450,25 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
     -moz-transition-timing-function: ease-out;
     -moz-transition-duration: 250ms;
     position: absolute;
-    z-index: 21;
+    z-index: 21;*/
 }
 
 .contact_block {
-	position:absolute;
-	width: 10%;
-	height: 20%;
+	position:relative;
 	float:left;
+	width: 40%;
+	height: 20%;
+	background-color:#080808;
+	margin:5% 0% 0% 6.5%;
+	cursor:pointer;
+}
 
-	padding: 0.25rem;
-	/*text-align:center;
-    text-indent:center;*/
+.contact_info{
+	float:left;
+	width:50%;
+	height:100%;
+	margin-left:50%;
+	text-align:left;
 }
 
 #overlay {
@@ -521,21 +520,20 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 }
 
 p{
-text-align: right;
-font-size: 14px;
-color: #fff;
+	text-align: left;
+	font-size: 14px;
+	color: #fff;
 }
 
 #designation{
-color: #fff;
-top: 0%;
+	color: #fff;
+	top: 0%;
 }
 
 #overlay_contents{
-
-position: absolute;
-top:33%;
-left:60%;
+	position: absolute;
+	top:20%;
+	left:55%;
 
 }
 
