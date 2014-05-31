@@ -13,20 +13,13 @@
 
 	  <link href="css/normalize.css" type="text/css" rel="stylesheet" />
 	  <link href="css/style.css" type="text/css" rel="stylesheet" />
-	  <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
 	 
 
    <!-- Get Google CDN's jQuery and jQuery UI with fallback to local -->
     <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="src/custom_scroll//jquery-1.7.2.min.js"%3E%3C/script%3E'))</script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> 
-    <script>!window.jQuery.ui && document.write(unescape('%3Cscript src="src/custom_scroll//jquery-ui-1.8.21.custom.min.js"%3E%3C/script%3E'))</script>
-    <!-- mousewheel plugin -->
-    <script src="src/custom_scroll/jquery.mousewheel.min.js"></script>
-    <!-- custom scrollbars plugin -->
-    <script src="src/custom_scroll/jquery.mCustomScrollbar.js"></script>
-
-
+    <script>!window.jQuery.ui && document.write(unescape('%3Cscript src="src/custom_scroll//jquery-ui-1.8.21.custom.min.js"%3E%3C/script%3E'))</script-->
 
 </head>
 
@@ -99,6 +92,8 @@
 		<div id="footer-content">
 			<p>POWERED BY <a href="">DELTA</a></p>
 		</div>
+		<p style="width:215px;">For feedback and opinions write to us at</p>
+		<p style="width:135px;">feedback@festember.com</p>
 	</div>
 	
 	</div>
@@ -182,14 +177,6 @@
 			document.getElementById("breakToHomeUp").style.top = "0%";
 			document.getElementById("breakToHomeDown").style.top = "70%";
 			
-			//Display preview tab and content
-			var preview_tab = document.getElementsByClassName("preview_tab");
-			var preview_content = document.getElementsByClassName("preview_content");
-			for (i = 0; i < 4; ++i) {
-            preview_tab[i].style.display = "initial";
-			preview_content[i].style.display = "initial";
-			}
-			
 			setTimeout(function(){
 			for(var i=1;i<=4;i++)				//Scroll everything to left before shrinking
 			{ 
@@ -200,12 +187,17 @@
 			},100);
 			
 		   setTimeout(function(){		 	    //make all preview windows appear	
+		   //Display preview tab and content
+			var preview_tab = document.getElementsByClassName("preview_tab");
+			var preview_content = document.getElementsByClassName("preview_content");
 		   for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
               document.getElementById("main_image"+(i-1)).style.backgroundImage = "URL('images/temp/Preview/preview"+i+".svg')";
               sub_container.style.cssText = "overflow:hidden;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
-           }
+              preview_tab[i-1].style.display = "initial";
+			  preview_content[i-1].style.display = "initial";
+		   }
 		   },200);
 		   
 		   $("#breakToHomeUp").fadeTo(1200,0);	//Fade the windows out
@@ -613,9 +605,8 @@
 										setTimeout(function(){ 
 											$("#contact_list").fadeTo(1000,1);
 											$("#contact_display").fadeTo(1000,1);
-										},1000);
-										
-										document.getElementById("backToHome").style.display="initial";
+											document.getElementById("backToHome").style.display="initial";
+										},1500);
                                         break;
 
                                        }   
@@ -630,7 +621,7 @@
                                        
                                        title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
                                       
-                                       preview[3].style.cssText = " border: 0px;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                       preview[3].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                       
                                        //container_text[3].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
 
@@ -823,23 +814,5 @@ $(document).ready(function(){
 /*************varun*************/
 
 </script>	
-
-<script>
-	(function($){
-    $(window).load(function(){
-      /* $(".content").mCustomScrollbar();       $("div[rel='with-custom-scrollbar']").mCustomScrollbar({
-        autoDraggerLength:false
-      });  */
-
-      $(".content").mCustomScrollbar({
-      	horizontalScroll:true,
-        mouseWheel:true,
-        scrollButtons:{
-          enable:false
-        }
-      });
-    });
-  })(jQuery);
-</script>
 
 </html>

@@ -81,7 +81,13 @@
 		   {src:"./images/gallery/gallery_56.jpg", id:"gallery56"},
 		   {src:"./images/gallery/gallery_57.jpg", id:"gallery57"},
 		   {src:"./images/gallery/gallery_58.jpg", id:"gallery58"},
+
+		   {src:"./images/temp/Social media/fb.svg", id:"social1"},
+		   {src:"./images/temp/Social media/g+.svg", id:"social2"},
+		   {src:"./images/temp/Social media/twitter.svg", id:"social3"},
+		   {src:"./images/temp/Social media/youtube.svg", id:"social4"},
 		   
+		   {src:"./images/temp/Header/header.png", id:"header"},		   
 		   ];
 
     function init(){
@@ -130,16 +136,19 @@
 		document.getElementById("main_image2").style.backgroundImage = "URL('./images/temp/Preview/preview3.svg')";
 		document.getElementById("main_image3").style.backgroundImage = "URL('./images/temp/Preview/preview4.svg')";
 		
+		document.getElementById("header").style.backgroundImage = "URL('./images/temp/Header/header.png')";
+		
 		//For social links
 		var social = document.getElementsByClassName("social-links");
-		social[0].style.backgroundImage = "URL('./images/temp/Social media/fb.png')";
-		social[1].style.backgroundImage = "URL('./images/temp/Social media/twitter.png')";
-		social[2].style.backgroundImage = "URL('./images/temp/Social media/g+.png')";
-		social[3].style.backgroundImage = "URL('./images/temp/Social media/youtube.png')";
+		social[0].style.backgroundImage = "URL('./images/temp/Social media/fb.svg')";
+		social[1].style.backgroundImage = "URL('./images/temp/Social media/twitter.svg')";
+		social[2].style.backgroundImage = "URL('./images/temp/Social media/g+.svg')";
+		social[3].style.backgroundImage = "URL('./images/temp/Social media/youtube.svg')";
 		
 		setTimeout(function(){
 			$("#header").fadeTo(1000,1);
 			$("#footer").fadeTo(1000,1);
+			document.getElementById("window-bottom").style.display = "none";
 		},1500);
 		}
 
