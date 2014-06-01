@@ -394,6 +394,8 @@
 
 
 	     designation = ["Chairman","Overall Co-Ordinator","Treasurer","Cultural Secretary","Head - Marketing", "Head - Marketing", "Head - Events", "Head - Media","Head - Publicity", "Head - Computer Support Group", "Head - Quality Management","Head - Design", "Head - Organizing","Head - Hospitality","Head - Public Relations","Head - Workshop"];
+
+	     fblink = ["https://www.facebook.com/pranavcibi?fref=ts","https://www.facebook.com/rdeepakvenkatesh?ref=tn_tnmn","https://www.facebook.com/gautham.vasan?fref=ts","https://www.facebook.com/alex.kurian.96?fref=ts","https://www.facebook.com/pahal2007?fref=ts","https://www.facebook.com/pranay.mohata","https://www.facebook.com/adhi.starwars?fref=ts","https://www.facebook.com/jivitesh.kumar.7?fref=ts","https://www.facebook.com/MajEj?fref=ts","https://www.facebook.com/n3ocon?fref=ts","https://www.facebook.com/prasanna.vasudevan.58","https://www.facebook.com/SriRam8?fref=ts&ref=br_tf","https://www.facebook.com/aravindhan.manivannan.9?fref=ts","https://www.facebook.com/vignesh.srikanth?fref=ts","https://www.facebook.com/parthasarathy.subburaj?fref=ts","https://www.facebook.com/nithya.shr?fref=ts"];
 	
 		 var contact_display = document.getElementById("contact_display");
 		 contact_display.style.opacity = 0 ;
@@ -404,7 +406,7 @@
 		  document.getElementById('pre_contact_id').cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease, width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
 		  }
  
-          contact_display.innerHTML = '<div id="'+id+'"><h4 id="designation">'+designation[index]+'</h4></div><img class="contact_inner_img" src="images/contacts/'+id+'.jpg" style="position:absolute; width:30%; height:50%;"/><div id="overlay_contents"><p>'+name_core[index]+'</p><p>'+phone[index]+'</p><p>'+email[index]+'</p></div>';		 
+          contact_display.innerHTML = '<div id="'+id+'"><h4 id="designation">'+designation[index]+'</h4></div><img class="contact_inner_img" src="images/contacts/'+id+'.jpg" style="position:absolute; width:30%; height:50%;"/><div id="overlay_contents"><p>'+name_core[index]+'</p><p>'+phone[index]+'</p><p>'+email[index]+'</p><p><a href="'+fblink[index]+'" target="_blank">FbLink</a></p></div>';		 
 		  
 		  contact_display.style.opacity = 1;
 		  prev_contact_id = id;
