@@ -369,7 +369,6 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	left:-7%;
 	overflow:display;
 	cursor:pointer;
-	opacity:0.7;
 }
 
 #rightArrow{
@@ -384,7 +383,6 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	left:102%;
 	background-color:#000;
 	cursor:pointer;
-	opacity:0.7;
 }
 
 #thumbnailContainer{
