@@ -452,7 +452,13 @@
                                           if(!document.getElementById("img_0"))
                                           {
                                           for(var i=0;i<111;i++) {
-                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"%;'><p class='title_sponsors' style='position:absolute; top:-75%; font-size:13px; left:25%; color:#fff;'>"+sponsors_list[i]+"</p><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"overlay\"></div></div></div>";
+
+                                          /*	if(sponsors_list[i] == "Coupons Sponsor") 
+                                          		document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"%;'><p class='title_sponsors' style='position:absolute; top:-75%; font-size:15px; left:25%; color:#fff;'>"+sponsors_list[i]+"</p><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"overlay\"></div></div></div>";
+
+*/
+
+                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"%;'><p class='title_sponsors' style='position:absolute; top:-75%; font-size:15px; left:25%; color:#fff;'><b>"+sponsors_list[i]+"</b></p><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"overlay\"></div></div></div>";
 											}
 										  }
 
