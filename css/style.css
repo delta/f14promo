@@ -612,3 +612,46 @@ p{
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: #f1f1f1; 
 }
+
+.demo-info {
+	padding: 0.4rem;
+	font-size: 14px;
+	line-height: 100%;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+	color: #fff;
+	
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background 0.1s ease-in-out;
+	-webkit-transition: background 0.1s ease-in-out;
+	-moz-transition: background 0.1s ease-in-out;
+	-ms-transition: background 0.1s ease-in-out;
+	-o-transition: background 0.1s ease-in-out;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	color: #fff;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border-radius: 10px;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+.demo-info:active {
+	padding-top: 15px;
+}
+.demo-info, .demo-info:hover, .demo-info:active {
+	outline: 0 none;
+	text-decoration: none;
+        color: #fff;
+}
+.demo-info-1 {
+	background-color: #fdc058;
+	box-shadow: 0px 3px 0px 0px #e29003;
+}
+.demo-info-1:hover {
+	background-color: #fdb53a;
+	color: #000;
+}
+.demo-info-1:active {
+	box-shadow: 0px 1px 0px 0px #e29003;
+}
