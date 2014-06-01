@@ -54,21 +54,21 @@
 	</div>
 	
 	<div id = "sub_container1">  
-	<div class="preview_tab"></div><div class="preview_content"></div><div id="preview1" class = "preview" onclick="expand(this.id);"><div id = "main_image0" class = "hoverZoom scaleUp" onmouseover="scale(this);" onmouseleave="descale(this);"></div></div>
+	<div class="preview_tab"></div><div class="preview_content"></div><div id="preview1" class = "preview" onclick="expand(this.id);"><div id = "main_image0" class = "hoverZoom scaleUp"></div></div>
           <div id="sponsor_holder">
           <!-- your long content here... -->
           </div>
       </div>
 
-	 <div id = "sub_container2"> <!--div class = 'containerText'>Gallery</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview2" class = "preview" onclick="expand(this.id);"><div id="main_image1" class = "hoverZoom scaleUp" onmouseover="scale(this);" onmouseleave="descale(this);"></div></div></div>
+	 <div id = "sub_container2"> <!--div class = 'containerText'>Gallery</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview2" class = "preview" onclick="expand(this.id);"><div id="main_image1" class = "hoverZoom scaleUp"></div></div></div>
 
 	 
-     <div id = "sub_container3"> <!--div class = 'containerText'>Contacts</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview3" class = "preview" onclick="expand(this.id);"><div id="main_image2" class = "hoverZoom scaleUp" onmouseover="scale(this);" onmouseleave="descale(this);"></div></div></div>
+     <div id = "sub_container3"> <!--div class = 'containerText'>Contacts</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview3" class = "preview" onclick="expand(this.id);"><div id="main_image2" class = "hoverZoom scaleUp"></div></div></div>
 	 <div id = "overlay"></div>
      <div id="fade"></div>
 	 
 
-     <div id = "sub_container4"> <!--div class = 'containerText'>About</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview4" class = "preview" onclick="expand(this.id);"><div id="main_image3" class = "hoverZoom scaleUp" onmouseover="scale(this);" onmouseleave="descale(this);"></div></div>
+     <div id = "sub_container4"> <!--div class = 'containerText'>About</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview4" class = "preview" onclick="expand(this.id);"><div id="main_image3" class = "hoverZoom scaleUp"></div></div>
 	 <div id="about">
 	 <h1>About</h1>
 		<p><b>Festember</b>, a fest to remember, is the annual cultural extravaganza of NIT Trichy organized in month of September.
@@ -92,8 +92,8 @@
 		<div id="footer-content">
 			<p>POWERED BY <a href="">DELTA</a></p>
 		</div>
-		<p style="width:200px;">For feedback and opinions write to us at</p>
-		<p style="width:130px;">feedback@festember.com</p>
+		<p style="width:215px;">For feedback and opinions write to us at</p>
+		<p style="width:135px;">feedback@festember.com</p>
 	</div>
 	
 	</div>
@@ -134,16 +134,7 @@
 	
 	var res=0 ; //stores id of previous gallery image
 
-	function scale(id){
-			var id_num = Number((id.id).substr((id.id).indexOf('e')+1, 1))+1;
-			id.style.backgroundImage = "URL('images/temp/Preview/preview"+id_num+" h.svg')";
-	}
-	function descale(id){
-			var id_num = Number((id.id).substr((id.id).indexOf('e')+1, 1))+1;
-			id.style.backgroundImage = "URL('images/temp/Preview/preview"+id_num+".svg')";
-	}	
-	
-	function expand(id)							//For the expansion of 4 windows in landing page
+  function expand(id)							//For the expansion of 4 windows in landing page
 		{ 	
 		var k='#'+id;							//Get Id  of preview clicked
 		var subId = $(k).parent().attr('id');	//Get Id of sub_container to be loaded
@@ -196,19 +187,17 @@
 			},100);
 			
 		   setTimeout(function(){		 	    //make all preview windows appear	
+		   //Display preview tab and content
+			var preview_tab = document.getElementsByClassName("preview_tab");
+			var preview_content = document.getElementsByClassName("preview_content");
 		   for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
               document.getElementById("main_image"+(i-1)).style.backgroundImage = "URL('images/temp/Preview/preview"+i+".svg')";
               sub_container.style.cssText = "overflow:hidden;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
-           }
-		   	//Display preview tab and content
-			var preview_tab = document.getElementsByClassName("preview_tab");
-			var preview_content = document.getElementsByClassName("preview_content");
-			for (i = 0; i < 4; ++i) {
-            preview_tab[i].style.display = "initial";
-			preview_content[i].style.display = "initial";
-			}
+              preview_tab[i-1].style.display = "initial";
+			  preview_content[i-1].style.display = "initial";
+		   }
 		   },200);
 		   
 		   $("#breakToHomeUp").fadeTo(1200,0);	//Fade the windows out
@@ -368,7 +357,9 @@
 
 
     var contact_close = function(){
-	
+      
+
+
       	contact_block = document.getElementsByClassName('contact_block');
 
 		  for(var i = contact_block.length - 1; i >= 0; i--)
@@ -457,7 +448,9 @@
 
            switch(id){
 
-             case "sub_container1" :{  
+             case "sub_container1" :{   	
+             	                      var sponsors_list = ["Title sponsor","Powered by","Powered by","Technology Partner","Brought to you by partners","in association with","Cosponsored by","Rock Night Presenting Partner","Informals Partner","Inagural Day Sponsor","E-Commerce Partner","E-Commerce Partner","Education Partner","Collegiate Merchandise Partners","Hospitality Partner","Refreshment partner","Music Partners","Laptop Partners","Logistics Partner","Official partner","Proshow Management Partners","Lits Partner","Education parenters","Silver Sponsors","Event sponsors for Tarangini","Water Partners","Exclusive Online Music Partners","Adventure partner","Multiplex partners","Memento Partner","Digital Media Partner","Knowledge partners","Hunger Partner","Student Internship Partner","Tamil Lits Partner","Notebook Partners","Notebook Partners","Tamil Lits Partner","Notebook Partners","Notebook Partners","Coupons Sponsor","Coupons Sponsor","Coupons Sponsor","Coupons Sponsor","Coupons Sponsor","Coupons Sponsor","Coupons Sponsor","SMS Partner ","Water Can Partner","Grafitti Sponsor","Online metal Partner","Merchandise Partner","Kinds Partner","Style Partner","Organising Partner","Hospitality Partners","Social Media Partners","Fashion Accessories Partner","Certificate partners","Beauty and Spa Partner","Gift Sponsors ","Rock Music Partners","Home for Everyone Partners","Motrole T Shirt Partners","Gaming Partner","Notebook and Coupons Partner","Sounds and Light Partners ","Tourism Partner","Dental Care Partner","Eye camp Partner","Internship and Learning Partners","Style Partner","Digital Signage Network","Online Education Partner","Magazine Partner ","Magazine Partner","Magazine Partner","Partners for Cause","Partners for Cause","Partners for Cause","Partners for Cause","Partners for Cause","Partners for Cause","Online Media Partner","Online Media Partner","Online Media Partner","Online Media Partner","Online Media Partner","Online Media Partner","Online Media Partner","Online Media Partner","Online Media Partner","Amuzement Park Partners","Gifting Partners","Travel & Visa Partners","Aqua Partners","Fashionista Sponsors","Theatrix Partners","Banking Partners","GSHOE","Airlines Partners","PACIFIC Partners","Silver Sponsor","PACIFIC Partners ","Radio Partners","CANARA BANK","Coffee Partners","Telecom Partners","Radio partners","Banking Partners","Official Online Media Partner","Online Media Partner","Online Media Partner","Footwear Partner"];
+
 									//Get rqd Id's
 									   var sub_container = document.getElementById(id);			
 									   var title_img = document.getElementById("main_image0");
@@ -467,15 +460,6 @@
                                        //var line = document.getElementsByClassName("line");
                                     
                                        var left = 20;        
-
-                                       //Make elements in  preview div invisible               
-                                       /*title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
-                                      
-                                       preview[0].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
-                                      
-                                       container_text[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
-
-                                       line[0].style.cssText="-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";*/
 									                     
                                        title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                        preview[0].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
@@ -490,7 +474,7 @@
                                           if(!document.getElementById("img_0"))
                                           {
                                           for(var i=0;i<111;i++) {
-                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"%;'><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"overlay\"></div></div></div>";
+                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"%;'><h5 class='title_sponsors' style='position:absolute; top:-80%; left:20%'>"+sponsors_list[i]+"</h5><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"overlay\"></div></div></div>";
 											}
 										  }
                                      
@@ -684,7 +668,7 @@
                                            reflect_sp_img[j].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                            }
 
-											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: opacity 1s ease;-moz-transition: opacity 1s ease;-ms-transition: opacity 1s ease;-o-transition: opacity 1s ease;transition: opacity 1s ease;-webkit-transition: -webkit-transform 0.4s ease-in;-moz-transition: -moz-transform 0.4s ease-in;-o-transition: -o-transform 0.4s ease-in;transition: transform 0.4s ease-in;";
+											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                          
                                              preview[0].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
@@ -708,7 +692,7 @@
 											 generate_gallery_img[i].style.opacity = 0;
 											}
 											 
-											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: opacity 1s ease;-moz-transition: opacity 1s ease;-ms-transition: opacity 1s ease;-o-transition: opacity 1s ease;transition: opacity 1s ease;-webkit-transition: -webkit-transform 0.4s ease-in;-moz-transition: -moz-transform 0.4s ease-in;-o-transition: -o-transform 0.4s ease-in;transition: transform 0.4s ease-in;";
+											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                          
                                              preview[1].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
@@ -747,9 +731,9 @@
                                              contact_list.style.display ="none";
                                             
 
-                                             title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: opacity 1s ease;-moz-transition: opacity 1s ease;-ms-transition: opacity 1s ease;-o-transition: opacity 1s ease;transition: opacity 1s ease;-webkit-transition: -webkit-transform 0.4s ease-in;-moz-transition: -moz-transform 0.4s ease-in;-o-transition: -o-transform 0.4s ease-in;transition: transform 0.4s ease-in;";
+                                             title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                                                                    
-                                             preview[2].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease,transform 0s;";
+                                             preview[2].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                            
 
                                         break;
@@ -762,7 +746,7 @@
                                            
 											document.getElementById("about").style.display = "none";
                                             
-											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: opacity 1s ease;-moz-transition: opacity 1s ease;-ms-transition: opacity 1s ease;-o-transition: opacity 1s ease;transition: opacity 1s ease;-webkit-transition: -webkit-transform 0.4s ease-in;-moz-transition: -moz-transform 0.4s ease-in;-o-transition: -o-transform 0.4s ease-in;transition: transform 0.4s ease-in;";
+											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                                                                    
                                              preview[3].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
@@ -818,7 +802,7 @@ $(document).ready(function(){
 		$('#rightArrow').click(function(){
 			changeImage('right');
 		});
-}); 
+    }); 
 
 /*************varun*************/
 
