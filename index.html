@@ -457,7 +457,7 @@
                                        //var container_text = document.getElementsByClassName("containerText");
                                        //var line = document.getElementsByClassName("line");
                                     
-                                       var left = 300;        
+                                       var left = 20;        
 
                                        //Make elements in  preview div invisible               
                                        /*title_img.style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s,height 1s;-moz-transition: all 1s ease,width 1s,height 1s;-ms-transition: all 1s ease,width 1s,height 1s;-o-transition: all 1s ease,width 1s,height 1s;transition: all 1s ease,width 1s,height 1s;";
@@ -477,11 +477,11 @@
                                           var generate_sp_img = document.getElementsByClassName('generate_sp_img');
                                           var overlay = document.getElementsByClassName('overlay');
  
-									                     	//Generate div's  if not already generated
+									       //Generate div's  if not already generated
                                           if(!document.getElementById("img_0"))
                                           {
-                                          for(var i=0;i<7;i++) {
-                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"px;'><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/images_"+i+".jpg\" style=\"opacity:0;\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/images_"+i+".jpg\" style=\"opacity:0;\"><div class=\"overlay\"></div></div></div>";
+                                          for(var i=0;i<111;i++) {
+                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"%;'><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"overlay\"></div></div></div>";
 											}
 										  }
                                      

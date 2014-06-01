@@ -265,7 +265,9 @@ z-index: 10;
 padding: 2rem;
 display: block;
 }
-*/
+*/                               
+                                     
+                     
 .generate_sp_img{	
 	position: relative;
 	top: -107px;
@@ -276,16 +278,15 @@ display: block;
 }
 
 .reflect_sp_img{
-position: relative;
-top: -107px;
-left: 55px;
-border-radius: 0.2rem;
-width: 200px;
-height: 100px;
-
+	position: relative;
+	top: -107px;
+	left: 55px;
+	border-radius: 0.2rem;
+	width: 200px;
+	height: 100px;
 }
 
-.image_block { top:170px; width:200px; margin:0px 10px; float:left; }
+.image_block { top:55%; width:17.5%; margin:0% 1%; float:left; }
 
 .gallery_block {
 	position:absolute;
@@ -294,6 +295,7 @@ height: 100px;
 	height:100%;
 	float:left;
 }
+
 .generate_gallery_img{
 	position: absolute;
 	top:-30%;
@@ -312,13 +314,28 @@ height: 100px;
     filter: flipv; opacity:0.20;
     filter: alpha(opacity='20');
 }
+
 .overlay { position:absolute; top: -105px; left:0px; margin-left: 55px; width:200px; height:100px;
 background-image: -moz-linear-gradient( center bottom, rgb(0,0,0) 60%, rgba(0,0,0,0) 75%);
 background-image: -o-linear-gradient( rgba(0,0,0,0) 25%, rgb(0,0,0) 40%);
 background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.60, rgb(0,0,0)), color-stop(0.75, rgba(0,0,0,0)));
 filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0, EndColorStr=#000000);
 }
-
+          
+.gallery_block {
+	position:absolute;
+	top:50%;
+	width:100%;
+	height:100%;
+	float:left;
+}
+.generate_gallery_img{
+	position: absolute;
+	top:-30%;
+	width: 20%;
+	height: 50%;
+	cursor: pointer;
+}
 
 /**********Varun************/
 .preview {
