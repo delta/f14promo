@@ -10,17 +10,21 @@
     <script src="src/preloadjs/LoadQueue.js"></script>
     <script src="src/preloadjs/TagLoader.js"></script>
     <script src="src/preloadjs/XHRLoader.js"></script>
+    <script type="text/javascript" src="src/jquery.tinyscrollbar.js"></script>
+
 
 	  <link href="css/normalize.css" type="text/css" rel="stylesheet" />
 	  <link href="css/style.css" type="text/css" rel="stylesheet" />
 	 
 
-   <!-- Get Google CDN's jQuery and jQuery UI with fallback to local -->
+   <!-- Get Google CDN's jQuery and jQuery UI with fallback to local              <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      -->
     <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="src/custom_scroll//jquery-1.7.2.min.js"%3E%3C/script%3E'))</script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> 
-    <script>!window.jQuery.ui && document.write(unescape('%3Cscript src="src/custom_scroll//jquery-ui-1.8.21.custom.min.js"%3E%3C/script%3E'))</script-->
+    <script>!window.jQuery.ui && document.write(unescape('%3Cscript src="src/custom_scroll//jquery-ui-1.8.21.custom.min.js"%3E%3C/script%3E'))</script--> <link rel="stylesheet" href="css/tinyscrollbar.css" type="text/css" media="screen"/>
 
+        
 </head>
 
 <body>
@@ -59,6 +63,8 @@
           <!-- your long content here... -->
           </div>
       </div>
+
+
 
 	 <div id = "sub_container2"> <!--div class = 'containerText'>Gallery</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview2" class = "preview" onclick="expand(this.id);"><div id="main_image1" class = "hoverZoom scaleUp"></div></div></div>
 
@@ -432,15 +438,18 @@
                                           var reflect_sp_img = document.getElementsByClassName('reflect_sp_img');
                                           var generate_sp_img = document.getElementsByClassName('generate_sp_img');
                                           var overlay = document.getElementsByClassName('overlay');
+                                          var title_sponsor = document.getElementsByClassName('title_sponsors');
+                                     
  
 									       //Generate div's  if not already generated
                                           if(!document.getElementById("img_0"))
                                           {
                                           for(var i=0;i<111;i++) {
-                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"%;'><h5 class='title_sponsors' style='position:absolute; top:-80%; left:20%'>"+sponsors_list[i]+"</h5><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"overlay\"></div></div></div>";
+                                            document.getElementById(id).innerHTML+= "<div class=\"image_block\" style='position: absolute; left:"+left*i+"%;'><h5 class='title_sponsors' style='position:absolute; top:-80%; left:20%; color:#fff;'>"+sponsors_list[i]+"</h5><img class=\"generate_sp_img\" id=\"img_"+i+"\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"reflection\"><img class=\"reflect_sp_img\" src=\"images/sponsors/image_"+i+".jpg\" style=\"opacity:0;\"><div class=\"overlay\"></div></div></div>";
 											}
 										  }
-                                     
+
+									
 										 //Fadein div's after the container has expanded
 
                                           setTimeout(function(){
@@ -451,7 +460,9 @@
                                              generate_sp_img[i].style.cssText = "display:initial;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;-webkit-opacity: 0.85;-moz-opacity: 0.85;opacity: 0.85;";
                                              reflect_sp_img[i].style.cssText = "display:initial;-webkit-transition: all 2s ease;-moz-transition: all 2s ease;-ms-transition: all 2s ease;-o-transition: all 2s ease;transition: all 2s ease;-webkit-opacity: 0.2;-moz-opacity: 0.2;opacity: 0.2;";
                                             overlay[i].style.visibility ="visible";
+                                            title_sponsor[i].style.display ="initial";
 											 document.getElementById("backToHome").style.display="initial";
+
                                             }
 											},800);
 
@@ -533,7 +544,7 @@
                                       document.getElementById(id).innerHTML+="<div id=\"contact_display\" style ='position:absolute; opacity:0; padding-left:10%; top:10%; left:50%; width:50%; height:80%; transition:opacity 1s;'></div>"; 
 
                                       k = 0;
-                                      for (var j=0;j<17;j++){
+                                      for (var j=0;j<16;j++){
                                                      document.getElementById('contact_list').innerHTML+= "<div class=\"contact_block\" id=\"contact_"+j+"\" onclick='contact_display_details(\"contact_"+j+"\");'><img class=\"generate_contact_img\" src=\"images/contacts/contact_"+j+".jpg\"><div class=\"contact_info\"><p>"+name_core[j]+"</p><p>"+designation[j]+"</p> </div> </div>";
                                             k++;}
 									setTimeout(function(){
@@ -615,13 +626,16 @@
                                             var reflect_sp_img = document.getElementsByClassName('reflect_sp_img');
                                             var generate_sp_img = document.getElementsByClassName('generate_sp_img');
                                             var overlay = document.getElementsByClassName('overlay');
- 
+                                            var title_sponsor = document.getElementsByClassName('title_sponsors');
+   
                                           for(var i = generate_sp_img.length - 1; i >= 0; i--)
                                           {
                                              
                                              generate_sp_img[i].style.visibility ="hidden";
                                              reflect_sp_img[i].style.visibility ="hidden";
-                                             overlay[i].style.visibility ="hidden";
+                                             overlay[i].style.visibility ="hidden";                       
+                                             title_sponsor[i].style.display ="none";
+ 
 
                                            }
 
@@ -770,6 +784,16 @@ $(document).ready(function(){
 		});
     }); 
 
+     $(document).ready(function()
+{
+    // The axis option is for setting the dimension in
+    // which the scrollbar should operate.
+    //
+    $("#scrollbar1").tinyscrollbar({ axis: "x"});
+});
+                
+
+       
 /*************varun*************/
 
 </script>	
