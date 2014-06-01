@@ -508,6 +508,12 @@
                                        var preview = document.getElementsByClassName("preview");
                                        //var container_text = document.getElementsByClassName("containerText");
                                        //var line = document.getElementsByClassName("line");
+
+                                        name_core = ["Cibi Pranav","Deepak Venkatesh","Gautham Vasan","Alex Kurian","Pahal Patangia","Pranay Mohata","Adhithyan","Jivitesh Kumar","Suraj Majee","Varun Sekar","Prasanna","Sri Ram","Aravindan","Vignesh","Parthasarathy","Nithyashree"];
+
+
+									    designation = ["Chairman","Overall Co-Ordinator","Treasurer","Cultural Secretary","Head - Marketing", "Head - Marketing", "Head - Events", "Head - Media","Head - Publicity", "Head - Computer Support Group", "Head - Quality Management","Head - Design", "Head - Organizing","Head - Hospitality","Head - Public Relations","Head - Workshop"];
+									
                                        
                                        var left = 10;   
                                        var top = 20;     
@@ -518,10 +524,7 @@
 									                                      
                                        preview[2].style.cssText = "-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                       
-                                       //container_text[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
-
-                                       //line[2].style.cssText="width:50%;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;-webkit-transition: all 1s ease,width 1s;-moz-transition: all 1s ease,width 1s;-ms-transition: all 1s ease,width 1s;-o-transition: all 1s ease,width 1s;transition: all 1s ease,width 1s;";
-									   								   
+                                     	   
                                       if(!document.getElementById("contact_list")){
                                       
                                       document.getElementById(id).innerHTML+="<div id=\"contact_list\" style='position:absolute; opacity:0; top:10%; width:50%; height:80%; overflow-y:scroll;'></div>";
@@ -531,7 +534,7 @@
 
                                       k = 0;
                                       for (var j=0;j<17;j++){
-                                                     document.getElementById('contact_list').innerHTML+= "<div class=\"contact_block\" id=\"contact_"+j+"\" onclick='contact_display_details(\"contact_"+j+"\");'><img class=\"generate_contact_img\" src=\"images/contacts/contact_"+j+".jpg\"><div class=\"contact_info\"> <p>NAME</p><p>DESIGNATION</p> </div> </div>";
+                                                     document.getElementById('contact_list').innerHTML+= "<div class=\"contact_block\" id=\"contact_"+j+"\" onclick='contact_display_details(\"contact_"+j+"\");'><img class=\"generate_contact_img\" src=\"images/contacts/contact_"+j+".jpg\"><div class=\"contact_info\"><p>"+name_core[j]+"</p><p>"+designation[j]+"</p> </div> </div>";
                                             k++;}
 									setTimeout(function(){
 										contact_display_details("contact_0");
