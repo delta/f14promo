@@ -234,40 +234,9 @@ body{
 	background:#df9d0a;
 	color:#000;
 }
+                                  
+/*Sponsors*/           
 
-/*#main_image{
-position: absolute;
-top: 100px;
-left: 25px;
-height:200px; 
-width:250px;
-
-}	*/
-
-/*
-#sponsor_holder{
-	
-position: absolute;
-width: 90%;
-height: 50%;
-z-index: 4;
-background-color: blue;
-
-top: 33%;
-left:4%;
-
-}*/
-
-/*
-.img_placer{
-position: fixed;
-z-index: 10;
-padding: 2rem;
-display: block;
-}
-*/                               
-                                     
-                     
 .generate_sp_img{	
 	position: relative;
 	top: -107px;
@@ -288,23 +257,8 @@ display: block;
 
 .image_block { top:55%; width:17.5%; margin:0% 1%; float:left; }
 
-.gallery_block {
-	position:absolute;
-	top:50%;
-	width:100%;
-	height:100%;
-	float:left;
-}
+.reflection { position:relative;}
 
-.generate_gallery_img{
-	position: absolute;
-	top:-30%;
-	width: 20%;
-	height: 50%;
-	cursor: pointer;
-}
-
-.reflection { position:relative; }
 .reflection img {
     -webkit-transform: scaleY(-1);
     -moz-transform: scaleY(-1);
@@ -320,21 +274,6 @@ background-image: -moz-linear-gradient( center bottom, rgb(0,0,0) 60%, rgba(0,0,
 background-image: -o-linear-gradient( rgba(0,0,0,0) 25%, rgb(0,0,0) 40%);
 background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.60, rgb(0,0,0)), color-stop(0.75, rgba(0,0,0,0)));
 filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0, EndColorStr=#000000);
-}
-          
-.gallery_block {
-	position:absolute;
-	top:50%;
-	width:100%;
-	height:100%;
-	float:left;
-}
-.generate_gallery_img{
-	position: absolute;
-	top:-30%;
-	width: 20%;
-	height: 50%;
-	cursor: pointer;
 }
 
 /**********Varun************/
@@ -386,6 +325,23 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
     transform: scale(1.1);
 	}
 /*************Varun*************/
+.gallery_block {
+	position:absolute;
+	top:50%;
+	width:100%;
+	height:100%;
+	float:left;
+}
+
+.generate_gallery_img{
+	position: absolute;
+	top:-30%;
+	width: 20%;
+	height: 50%;
+	cursor: pointer;
+}
+
+
 #image-container{
 	position:absolute;
 	top:18%;
@@ -450,6 +406,10 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	transition:opacity 1s;
 	opacity:1;
 }
+
+
+
+
 
 /* contacts properties*/ 
 
