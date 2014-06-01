@@ -84,7 +84,7 @@
 
 //sponsor image addition manifest in for loop
 		   for (var i=0; i<111; i++)
-		   	 manifest.push({src:"./images/sponors/image_"+i+".jpg", id:"img_"+i});
+		   	 manifest.push({src:"./images/sponsors/image_"+i+".jpg", id:"img_"+i});
 
 
     function init(){

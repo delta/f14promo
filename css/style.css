@@ -386,9 +386,6 @@ filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0
 	cursor:pointer;
 	opacity:0.7;
 }
-#rightArrow:hover,#leftArrow:hover{
-	opacity:1;
-}
 
 #thumbnailContainer{
 	display:none;
