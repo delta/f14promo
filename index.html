@@ -307,22 +307,7 @@
 				setAspectRatio();
 				},1500);
 			}
-		
-		/*function closeImageHolder(){			//Closing the gallery images
-			document.getElementById("thumbnailContainer").style.display="none";
 			
-			document.getElementById("image-container").style.opacity= 0;
-			
-			document.getElementById("rightArrow").style.display="none";
-			document.getElementById("leftArrow").style.display="none";
-			
-			setTimeout(function(){
-			document.getElementById("image-container").style.display= "none";
-			document.getElementById("backToHome").style.display="initial";
-			},500);
-			changeSmallDivOpacity(1);
-		}*/
-		
 		function changeImage(movement){ //For moving between images in the image-container (need a designer)
 	
 		changeSmallDivOpacity(1);
@@ -333,11 +318,11 @@
 			res = str.substr(str.indexOf('_')+1, 1);
 			
 		setTimeout(function(){
-		if(movement == 'left' && res !=0){
+		if(movement == 'left' && res != 0){
 			res--;
 			document.getElementById("image-container").style.backgroundImage ='url("images/gallery/gallery_'+res+'.jpg")';
 		}
-		else if(movement == 'right'){
+		else if(movement == 'right' && res != 15){
 			res++;
 			document.getElementById("image-container").style.backgroundImage ='url("images/gallery/gallery_'+res+'.jpg")';		
 		}
@@ -502,9 +487,7 @@
  
                                           if(!document.getElementById("gallery_0"))
                                           {
-                                           for(var i=0;i<59;i++) {
-											/*  document.getElementById(id).innerHTML+= "<div class=\"gallery_block\" style='left:"+((left*i)+3)+"%;'><img class=\"generate_gallery_img\" id=\"gallery_"+i+"\" src=\"images/images_"+i+".jpg\" onclick = \"openImageHolder(this);\" style=\"opacity:0;\"></div>";
-											*/
+                                           for(var i=0;i<16;i++) {
 											document.getElementById("thumbnailContainer").innerHTML+= "<img class=\"generate_thumbnail\" style=\"left:"+5.5*i+"%;\" src=\"images/gallery/gallery_"+i+".jpg\" id=\"gallery_"+i+"\" onclick = \"openImageHolder(this);\" />";
 											}
 											openImageHolder(document.getElementById("gallery_0"));
