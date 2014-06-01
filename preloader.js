@@ -81,7 +81,7 @@
 		document.getElementById("window-bottom").style.top = "100%";
 	
 		// Use preloaded images
-		document.getElementById("container").style.backgroundImage = "URL('images/ironman.jpg')";
+		document.getElementById("container").style.background = "#101010";
 		document.getElementById("container").style.opacity = 1;
 		
 		//For preview-containers
@@ -98,6 +98,12 @@
 		social[1].style.backgroundImage = "URL('./images/temp/Social media/twitter.svg')";
 		social[2].style.backgroundImage = "URL('./images/temp/Social media/g+.svg')";
 		social[3].style.backgroundImage = "URL('./images/temp/Social media/youtube.svg')";
+		
+		var tab = document.getElementsByClassName("preview_tab");
+		tab[0].style.backgroundImage = "URL('./images/temp/Tabs/spon tab.svg')";
+		tab[1].style.backgroundImage = "URL('./images/temp/Tabs/gall tab.svg')";
+		tab[2].style.backgroundImage = "URL('./images/temp/Tabs/con tab.svg')";
+		tab[3].style.backgroundImage = "URL('./images/temp/Tabs/arch tab.svg')";
 		
 		setTimeout(function(){
 			$("#header").fadeTo(1000,1);
