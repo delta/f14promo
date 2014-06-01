@@ -136,9 +136,7 @@
 
 	function scale(id){
 			var id_num = Number((id.id).substr((id.id).indexOf('e')+1, 1))+1;
-			id.style.opacity = 0;
 			id.style.backgroundImage = "URL('images/temp/Preview/preview"+id_num+" h.svg')";
-			$("#"+id.id).fadeTo(100,1);
 	}
 	function descale(id){
 			var id_num = Number((id.id).substr((id.id).indexOf('e')+1, 1))+1;
@@ -198,17 +196,19 @@
 			},100);
 			
 		   setTimeout(function(){		 	    //make all preview windows appear	
-		   //Display preview tab and content
-			var preview_tab = document.getElementsByClassName("preview_tab");
-			var preview_content = document.getElementsByClassName("preview_content");
 		   for(var i=1;i<=4;i++)
            { 
               var sub_container = document.getElementById("sub_container"+i);
               document.getElementById("main_image"+(i-1)).style.backgroundImage = "URL('images/temp/Preview/preview"+i+".svg')";
-              sub_container.style.cssText = "overflow:hidden;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
-              preview_tab[i-1].style.display = "initial";
-			  preview_content[i-1].style.display = "initial";
-		   }
+              sub_container.style.cssText = "overflow:hidden;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
+           }
+		   	//Display preview tab and content
+			var preview_tab = document.getElementsByClassName("preview_tab");
+			var preview_content = document.getElementsByClassName("preview_content");
+			for (i = 0; i < 4; ++i) {
+            preview_tab[i].style.display = "initial";
+			preview_content[i].style.display = "initial";
+			}
 		   },200);
 		   
 		   $("#breakToHomeUp").fadeTo(1200,0);	//Fade the windows out
