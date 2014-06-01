@@ -54,21 +54,21 @@
 	</div>
 	
 	<div id = "sub_container1">  
-	<div class="preview_tab"></div><div class="preview_content"></div><div id="preview1" class = "preview" onclick="expand(this.id);"><div id = "main_image0" class = "hoverZoom scaleUp"></div></div>
+	<div class="preview_tab"></div><div class="preview_content"></div><div id="preview1" class = "preview" onclick="expand(this.id);"><div id = "main_image0" class = "hoverZoom scaleUp" onmouseover="scale(this);" onmouseleave="descale(this);"></div></div>
           <div id="sponsor_holder">
           <!-- your long content here... -->
           </div>
       </div>
 
-	 <div id = "sub_container2"> <!--div class = 'containerText'>Gallery</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview2" class = "preview" onclick="expand(this.id);"><div id="main_image1" class = "hoverZoom scaleUp"></div></div></div>
+	 <div id = "sub_container2"> <!--div class = 'containerText'>Gallery</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview2" class = "preview" onclick="expand(this.id);"><div id="main_image1" class = "hoverZoom scaleUp" onmouseover="scale(this);" onmouseleave="descale(this);"></div></div></div>
 
 	 
-     <div id = "sub_container3"> <!--div class = 'containerText'>Contacts</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview3" class = "preview" onclick="expand(this.id);"><div id="main_image2" class = "hoverZoom scaleUp"></div></div></div>
+     <div id = "sub_container3"> <!--div class = 'containerText'>Contacts</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview3" class = "preview" onclick="expand(this.id);"><div id="main_image2" class = "hoverZoom scaleUp" onmouseover="scale(this);" onmouseleave="descale(this);"></div></div></div>
 	 <div id = "overlay"></div>
      <div id="fade"></div>
 	 
 
-     <div id = "sub_container4"> <!--div class = 'containerText'>About</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview4" class = "preview" onclick="expand(this.id);"><div id="main_image3" class = "hoverZoom scaleUp"></div></div>
+     <div id = "sub_container4"> <!--div class = 'containerText'>About</div><div class='line'></div--><div class="preview_tab"></div><div class="preview_content"></div><div id="preview4" class = "preview" onclick="expand(this.id);"><div id="main_image3" class = "hoverZoom scaleUp" onmouseover="scale(this);" onmouseleave="descale(this);"></div></div>
 	 <div id="about">
 	 <h1>About</h1>
 		<p><b>Festember</b>, a fest to remember, is the annual cultural extravaganza of NIT Trichy organized in month of September.
@@ -92,8 +92,8 @@
 		<div id="footer-content">
 			<p>POWERED BY <a href="">DELTA</a></p>
 		</div>
-		<p style="width:215px;">For feedback and opinions write to us at</p>
-		<p style="width:135px;">feedback@festember.com</p>
+		<p style="width:200px;">For feedback and opinions write to us at</p>
+		<p style="width:130px;">feedback@festember.com</p>
 	</div>
 	
 	</div>
@@ -134,7 +134,18 @@
 	
 	var res=0 ; //stores id of previous gallery image
 
-  function expand(id)							//For the expansion of 4 windows in landing page
+	function scale(id){
+			var id_num = Number((id.id).substr((id.id).indexOf('e')+1, 1))+1;
+			id.style.opacity = 0;
+			id.style.backgroundImage = "URL('images/temp/Preview/preview"+id_num+" h.svg')";
+			$("#"+id.id).fadeTo(100,1);
+	}
+	function descale(id){
+			var id_num = Number((id.id).substr((id.id).indexOf('e')+1, 1))+1;
+			id.style.backgroundImage = "URL('images/temp/Preview/preview"+id_num+".svg')";
+	}	
+	
+	function expand(id)							//For the expansion of 4 windows in landing page
 		{ 	
 		var k='#'+id;							//Get Id  of preview clicked
 		var subId = $(k).parent().attr('id');	//Get Id of sub_container to be loaded
@@ -194,7 +205,7 @@
            { 
               var sub_container = document.getElementById("sub_container"+i);
               document.getElementById("main_image"+(i-1)).style.backgroundImage = "URL('images/temp/Preview/preview"+i+".svg')";
-              sub_container.style.cssText = "overflow:hidden;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
+              sub_container.style.cssText = "overflow:hidden;-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;";
               preview_tab[i-1].style.display = "initial";
 			  preview_content[i-1].style.display = "initial";
 		   }
@@ -357,9 +368,7 @@
 
 
     var contact_close = function(){
-      
-
-
+	
       	contact_block = document.getElementsByClassName('contact_block');
 
 		  for(var i = contact_block.length - 1; i >= 0; i--)
@@ -675,7 +684,7 @@
                                            reflect_sp_img[j].style.cssText = "display:none;-webkit-opacity: 0;-moz-opacity: 0;opacity: 0;";
                                            }
 
-											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: opacity 1s ease;-moz-transition: opacity 1s ease;-ms-transition: opacity 1s ease;-o-transition: opacity 1s ease;transition: opacity 1s ease;-webkit-transition: -webkit-transform 0.4s ease-in;-moz-transition: -moz-transform 0.4s ease-in;-o-transition: -o-transform 0.4s ease-in;transition: transform 0.4s ease-in;";
                                          
                                              preview[0].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
@@ -699,7 +708,7 @@
 											 generate_gallery_img[i].style.opacity = 0;
 											}
 											 
-											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: opacity 1s ease;-moz-transition: opacity 1s ease;-ms-transition: opacity 1s ease;-o-transition: opacity 1s ease;transition: opacity 1s ease;-webkit-transition: -webkit-transform 0.4s ease-in;-moz-transition: -moz-transform 0.4s ease-in;-o-transition: -o-transform 0.4s ease-in;transition: transform 0.4s ease-in;";
                                          
                                              preview[1].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
@@ -738,9 +747,9 @@
                                              contact_list.style.display ="none";
                                             
 
-                                             title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                             title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: opacity 1s ease;-moz-transition: opacity 1s ease;-ms-transition: opacity 1s ease;-o-transition: opacity 1s ease;transition: opacity 1s ease;-webkit-transition: -webkit-transform 0.4s ease-in;-moz-transition: -moz-transform 0.4s ease-in;-o-transition: -o-transform 0.4s ease-in;transition: transform 0.4s ease-in;";
                                                                                    
-                                             preview[2].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+                                             preview[2].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease,transform 0s;";
                                            
 
                                         break;
@@ -753,7 +762,7 @@
                                            
 											document.getElementById("about").style.display = "none";
                                             
-											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
+											 title_img.style.cssText =  "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: opacity 1s ease;-moz-transition: opacity 1s ease;-ms-transition: opacity 1s ease;-o-transition: opacity 1s ease;transition: opacity 1s ease;-webkit-transition: -webkit-transform 0.4s ease-in;-moz-transition: -moz-transform 0.4s ease-in;-o-transition: -o-transform 0.4s ease-in;transition: transform 0.4s ease-in;";
                                                                                    
                                              preview[3].style.cssText = "-webkit-opacity: 1;-moz-opacity: 1;opacity: 1;-webkit-transition: all 1s ease;-moz-transition: all 1s ease;-ms-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;";
                                             
@@ -809,7 +818,7 @@ $(document).ready(function(){
 		$('#rightArrow').click(function(){
 			changeImage('right');
 		});
-    }); 
+}); 
 
 /*************varun*************/
 
